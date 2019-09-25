@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD37FC6E-DD67-4620-AEE8-D66C100C6513}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>XPCar</RootNamespace>
+    <AssemblyName>ST-9980AP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DC_TEST_9980AP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>EQ_Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SqliteSugar">
+      <HintPath>bin\Debug\Lib\SqliteSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>bin\Debug\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ToggleButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ToggleButton.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph, Version=5.1.4.31904, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\ACTest\frmAC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\ACTest\frmAC.Designer.cs">
+      <DependentUpon>frmAC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\ACTest\frmACResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\ACTest\frmACResult.Designer.cs">
+      <DependentUpon>frmACResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmBaseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmBaseInfo.Designer.cs">
+      <DependentUpon>frmBaseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmCanBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmCanBtn.Designer.cs">
+      <DependentUpon>frmCanBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmChargePara.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmChargePara.Designer.cs">
+      <DependentUpon>frmChargePara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmChargeStop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmChargeStop.Designer.cs">
+      <DependentUpon>frmChargeStop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmCharging.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmCharging.Designer.cs">
+      <DependentUpon>frmCharging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmConsist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmConsist.Designer.cs">
+      <DependentUpon>frmConsist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmConsistBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmConsistBtn.Designer.cs">
+      <DependentUpon>frmConsistBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmConsistDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\frmConsistDetail.Designer.cs">
+      <DependentUpon>frmConsistDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmConsistResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\frmConsistResult.Designer.cs">
+      <DependentUpon>frmConsistResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmHandshake.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmHandshake.Designer.cs">
+      <DependentUpon>frmHandshake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmInterop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmInterop.Designer.cs">
+      <DependentUpon>frmInterop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmInteropResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\frmInteropResult.Designer.cs">
+      <DependentUpon>frmInteropResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmMsgCan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmMsgCan.Designer.cs">
+      <DependentUpon>frmMsgCan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmSoftwareVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\frmSoftwareVersion.Designer.cs">
+      <DependentUpon>frmSoftwareVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\frmUpgrade.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\frmUpgrade.Designer.cs">
+      <DependentUpon>frmUpgrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\SysUpgrade\frmUpgradeWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\SysUpgrade\frmUpgradeWin.Designer.cs">
+      <DependentUpon>frmUpgradeWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Wave\frmWave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\Wave\frmWave.Designer.cs">
+      <DependentUpon>frmWave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BaseService.cs" />
+    <Compile Include="Common\BaseConvert.cs" />
+    <Compile Include="Common\BitHelper.cs" />
+    <Compile Include="Common\Function.cs" />
+    <Compile Include="Common\KeyConst.cs" />
+    <Compile Include="Common\LambdaComparer.cs" />
+    <Compile Include="Common\Log.cs" />
+    <Compile Include="Common\MatchCheck.cs" />
+    <Compile Include="Component\WarningLight.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component\WarningLight.Designer.cs">
+      <DependentUpon>WarningLight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consist\Calc\IMeasureResult.cs" />
+    <Compile Include="Consist\Calc\MeasureFormat.cs" />
+    <Compile Include="Consist\Calc\MeasureInterval.cs" />
+    <Compile Include="Consist\Calc\MeasureLength.cs" />
+    <Compile Include="Consist\Calc\MeasureTimeout.cs" />
+    <Compile Include="Consist\ConsistCommon.cs" />
+    <Compile Include="Consist\ConsistFactoryManager.cs" />
+    <Compile Include="Consist\DataAccess\Access_Any.cs" />
+    <Compile Include="Consist\DataAccess\Access_BCP.cs" />
+    <Compile Include="Consist\DataAccess\Access_BCS.cs" />
+    <Compile Include="Consist\DataAccess\Access_BEM.cs" />
+    <Compile Include="Consist\DataAccess\Access_BCL.cs" />
+    <Compile Include="Consist\DataAccess\Access_BHM.cs" />
+    <Compile Include="Consist\DataAccess\Access_BMT.cs" />
+    <Compile Include="Consist\DataAccess\Access_BMV.cs" />
+    <Compile Include="Consist\DataAccess\Access_BRM.cs" />
+    <Compile Include="Consist\DataAccess\Access_BRO.cs" />
+    <Compile Include="Consist\DataAccess\Access_BSD.cs" />
+    <Compile Include="Consist\DataAccess\Access_BSM.cs" />
+    <Compile Include="Consist\DataAccess\Access_BSP.cs" />
+    <Compile Include="Consist\DataAccess\Access_BST.cs" />
+    <Compile Include="Consist\DataAccess\Access_CCS.cs" />
+    <Compile Include="Consist\DataAccess\Access_CEM.cs" />
+    <Compile Include="Consist\DataAccess\Access_CHM.cs" />
+    <Compile Include="Consist\DataAccess\Access_CML.cs" />
+    <Compile Include="Consist\DataAccess\Access_Common.cs" />
+    <Compile Include="Consist\DataAccess\Access_CRM.cs" />
+    <Compile Include="Consist\DataAccess\Access_CRO.cs" />
+    <Compile Include="Consist\DataAccess\Access_CSD.cs" />
+    <Compile Include="Consist\DataAccess\Access_CST.cs" />
+    <Compile Include="Consist\DataAccess\Access_CTS.cs" />
+    <Compile Include="Consist\DataAccess\Access_Test.cs" />
+    <Compile Include="Consist\IConsistFactory.cs" />
+    <Compile Include="Consist\Measure.cs" />
+    <Compile Include="Consist\Summary\Consist_DN1001to03.cs" />
+    <Compile Include="Consist\Summary\Consist_DN1004.cs" />
+    <Compile Include="Consist\Summary\Consist_DN2001to02.cs" />
+    <Compile Include="Consist\Summary\Consist_DN2003to04.cs" />
+    <Compile Include="Consist\Summary\Consist_DN2005.cs" />
+    <Compile Include="Consist\Summary\Consist_DN2006.cs" />
+    <Compile Include="Consist\Summary\Consist_DN2007to08.cs" />
+    <Compile Include="Consist\Summary\Consist_DN2009.cs" />
+    <Compile Include="Consist\Summary\Consist_DN2010.cs" />
+    <Compile Include="Consist\Summary\Consist_DN3001.cs" />
+    <Compile Include="Consist\Summary\Consist_DN3002.cs" />
+    <Compile Include="Consist\Summary\Consist_DN3003.cs" />
+    <Compile Include="Consist\Summary\Consist_DN3004.cs" />
+    <Compile Include="Consist\Summary\Consist_DN3005_07.cs" />
+    <Compile Include="Consist\Summary\Consist_DN3006_08.cs" />
+    <Compile Include="Consist\Summary\Consist_DN3009to10.cs" />
+    <Compile Include="Consist\Summary\Consist_DN4001to04.cs" />
+    <Compile Include="Consist\Summary\Consist_DP1001.cs" />
+    <Compile Include="Consist\Summary\Consist_DP1002.cs" />
+    <Compile Include="Consist\Summary\Consist_DP1003.cs" />
+    <Compile Include="Consist\Summary\Consist_DP2001.cs" />
+    <Compile Include="Consist\Summary\Consist_DP2002.cs" />
+    <Compile Include="Consist\Summary\Consist_DP2003.cs" />
+    <Compile Include="Consist\Summary\Consist_DP3001.cs" />
+    <Compile Include="Consist\Summary\Consist_DP3002.cs" />
+    <Compile Include="Consist\Summary\Consist_DP3003.cs" />
+    <Compile Include="Consist\Summary\Consist_DP3004.cs" />
+    <Compile Include="Consist\Summary\Consist_DP3005.cs" />
+    <Compile Include="Consist\Summary\Consist_DP3006to07.cs" />
+    <Compile Include="Consist\Summary\Consist_DP4001.cs" />
+    <Compile Include="Consist\Summary\Consist_Undefined.cs" />
+    <Compile Include="Database\DbContext.cs" />
+    <Compile Include="Database\DbService.cs" />
+    <Compile Include="Encrypt\DeviceHelper.cs" />
+    <Compile Include="Encrypt\Encryption.cs" />
+    <Compile Include="Encrypt\TimeClass.cs" />
+    <Compile Include="Prj\Bind\BaseTable.cs" />
+    <Compile Include="Prj\Bind\MsgLight.cs" />
+    <Compile Include="Prj\Bind\MsgBig.cs" />
+    <Compile Include="Prj\Controller\ACController.cs" />
+    <Compile Include="Prj\Controller\ConfigController.cs" />
+    <Compile Include="Prj\Controller\ConsistController.cs" />
+    <Compile Include="Prj\Controller\GeneralController.cs" />
+    <Compile Include="Prj\Controller\InteropController.cs" />
+    <Compile Include="Prj\Controller\MainController.cs" />
+    <Compile Include="Prj\Controller\MainStatus.cs" />
+    <Compile Include="Prj\Controller\UpgradeController.cs" />
+    <Compile Include="Prj\Controller\WaveController.cs" />
+    <Compile Include="Prj\Data\DataCollection.cs" />
+    <Compile Include="Prj\Controller\CanMsgController.cs" />
+    <Compile Include="Prj\Data\DataResolve.cs" />
+    <Compile Include="Prj\Data\MutiPackage.cs" />
+    <Compile Include="Prj\Data\PrjConfig.cs" />
+    <Compile Include="Prj\Flow\RepositoryManager.cs" />
+    <Compile Include="Prj\Flow\RcvdProtocolManager.cs" />
+    <Compile Include="Prj\Flow\SendProtocolManager.cs" />
+    <Compile Include="Prj\Flow\ValueManager.cs" />
+    <Compile Include="Prj\Model\BaseInfo.cs" />
+    <Compile Include="Prj\Model\ConsistItems.cs" />
+    <Compile Include="Prj\Model\GetAC.cs" />
+    <Compile Include="Prj\Model\GetACInterop.cs" />
+    <Compile Include="Prj\Model\GetChargePara.cs" />
+    <Compile Include="Prj\Model\GetChargeStop.cs" />
+    <Compile Include="Prj\Model\GetCharging.cs" />
+    <Compile Include="Prj\Model\SettingACInterop.cs" />
+    <Compile Include="Prj\Model\SettingChargePara.cs" />
+    <Compile Include="Prj\Model\SettingChargeStop.cs" />
+    <Compile Include="Prj\Model\SettingCharging.cs" />
+    <Compile Include="Prj\Model\SettingDC.cs" />
+    <Compile Include="Prj\Model\SettingHandshake.cs" />
+    <Compile Include="Prj\Model\TestAC.cs" />
+    <Compile Include="Prj\Model\TestInterop.cs" />
+    <Compile Include="Prj\Model\TestResult.cs" />
+    <Compile Include="Prj\Model\ConsistMsg.cs" />
+    <Compile Include="Prj\Model\EachFrameModel.cs" />
+    <Compile Include="Prj\Model\CanMsgRich.cs" />
+    <Compile Include="Prj\Model\CanMsg.cs" />
+    <Compile Include="Prj\Model\TestConfig.cs" />
+    <Compile Include="Prj\Model\TestItemsReport.cs" />
+    <Compile Include="Prj\Model\UiChargePara.cs" />
+    <Compile Include="Prj\Model\UiChargeStop.cs" />
+    <Compile Include="Prj\Model\UiCharging.cs" />
+    <Compile Include="Prj\Model\GetHandShake.cs" />
+    <Compile Include="Prj\Prj.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol\DecodeProtocol.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BCL.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BCP.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BCS.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BEM.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BHM.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BMT.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BMV.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BRM.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BRO.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BSD.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BSM.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BSP.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_BST.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_CCS.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_CEM.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_CHM.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_CML.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_CRM.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_CRO.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_CSD.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_CST.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_CTS.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgSorts\Msg_Undefined.cs" />
+    <Compile Include="Protocol\Decode\Msg\Msg_MutiPackageHead.cs" />
+    <Compile Include="Protocol\Decode\Msg\Msg_MutiPackageReady.cs" />
+    <Compile Include="Protocol\Decode\Msg\Msg_MutiPackageText.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_ACInteropGet.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_ACGet.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_AlarmGet.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_DCGet.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_DCSet.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_Discard.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_CanOpenAck.cs" />
+    <Compile Include="Protocol\Decode\DecodePackageCommon.cs" />
+    <Compile Include="Protocol\Decode\DecodeManager.cs" />
+    <Compile Include="Protocol\Decode\IDecodePackageFactory.cs" />
+    <Compile Include="Protocol\Decode\Msg\IMsgFactory.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgCommon.cs" />
+    <Compile Include="Protocol\Decode\Msg\MsgManager.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_BaseInfo.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_CanMsg.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_ChargeStopGet.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_ChargingGet.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_Handshake.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_Undefined.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_Upgrade.cs" />
+    <Compile Include="Protocol\Decode\Service\Decode_VerGet.cs" />
+    <Compile Include="Protocol\Decode\Service\Deocde_ChargeParaGet.cs" />
+    <Compile Include="Protocol\EncodeProtocol.cs" />
+    <Compile Include="Protocol\ConstCmd.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolACGet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolACSet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolAlarmGet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolDCGet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolChargeParaGet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolChargeParaSet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolChargeStopGet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolChargeStopSet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolChargingGet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolBaseInfo.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolCanClose.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolCanOpen.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolChargingSet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolDCSet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolHandshakeSet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolConsistStart.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolHandshakeGet.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolSysStart.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolSysStop.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolUpgrade.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolVerGet.cs" />
+    <Compile Include="Protocol\ProtocolHelper.cs" />
+    <Compile Include="Protocol\Unsolved.cs" />
+    <Compile Include="Sys.Comm\CommIO.cs" />
+    <Compile Include="Sys.Comm\CommIOState.cs" />
+    <Compile Include="Sys.Comm\SysDelegate.cs" />
+    <Compile Include="Sys.IO\ConfigIO.cs" />
+    <Compile Include="Sys.IO\DocFile\CSVHelper.cs" />
+    <Compile Include="Sys.IO\DocFile\CSVManager.cs" />
+    <Compile Include="Sys.IO\DocFile\WordHelper.cs" />
+    <Compile Include="Sys.IO\DocFile\WordManager.cs" />
+    <Compile Include="Sys.IO\Port\SerialPortIO.cs" />
+    <Compile Include="Sys.IO\Port\SerialPortIOState.cs" />
+    <Compile Include="Task\TaskCommon.cs" />
+    <Compile Include="Task\RawData.cs" />
+    <Compile Include="Timers\ThreadTimer.cs" />
+    <Compile Include="Timers\TimerManager.cs" />
+    <EmbeddedResource Include="Client\ACTest\frmAC.resx">
+      <DependentUpon>frmAC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\ACTest\frmACResult.resx">
+      <DependentUpon>frmACResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmBaseInfo.resx">
+      <DependentUpon>frmBaseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmCanBtn.resx">
+      <DependentUpon>frmCanBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmChargePara.resx">
+      <DependentUpon>frmChargePara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmChargeStop.resx">
+      <DependentUpon>frmChargeStop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmCharging.resx">
+      <DependentUpon>frmCharging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmConsist.resx">
+      <DependentUpon>frmConsist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmConsistBtn.resx">
+      <DependentUpon>frmConsistBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmConsistDetail.resx">
+      <DependentUpon>frmConsistDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmConsistResult.resx">
+      <DependentUpon>frmConsistResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmHandshake.resx">
+      <DependentUpon>frmHandshake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmInterop.resx">
+      <DependentUpon>frmInterop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmInteropResult.resx">
+      <DependentUpon>frmInteropResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmMsgCan.resx">
+      <DependentUpon>frmMsgCan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmSoftwareVersion.resx">
+      <DependentUpon>frmSoftwareVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmUpgrade.resx">
+      <DependentUpon>frmUpgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\SysUpgrade\frmUpgradeWin.resx">
+      <DependentUpon>frmUpgradeWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\Wave\frmWave.resx">
+      <DependentUpon>frmWave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Ball_green.bmp" />
+    <None Include="Images\Main_Logo.ico" />
+    <None Include="Images\EQ_Logo.ico" />
+    <None Include="Images\Background_Science.jpg" />
+    <None Include="Images\Button.jpg" />
+    <None Include="Images\Logo_White.png" />
+    <Content Include="EQ_Logo.ico" />
+    <Content Include="Main_Logo.ico" />
+    <None Include="Images\Ball_red.bmp" />
+    <None Include="Images\Background.png" />
+    <Content Include="Images\Ball_gray.bmp" />
+    <None Include="Images\Logo.png" />
+    <None Include="Images\CompanyName.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

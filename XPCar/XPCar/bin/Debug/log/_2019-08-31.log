@@ -1,0 +1,841 @@
+2019-08-31 08:45:06,792 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 08:46:38,056 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 08:46:38,118 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 10:00:28,178 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 10:00:45,856 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:00:45,947 [ERROR] [1] [Log][Error] - AddRow()
+System.ArgumentException: 输入字符串的格式不正确。不能在 DLC 列中存储 <11 02 01 FF FF 00 11 >。所需类型是 Int32。 ---> System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   在 System.Data.Common.Int32Storage.Set(Int32 record, Object value)
+   在 System.Data.DataColumn.set_Item(Int32 record, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.DataColumn.set_Item(Int32 record, Object value)
+   在 System.Data.DataTable.NewRecordFromArray(Object[] value)
+   在 System.Data.DataRowCollection.Add(Object[] values)
+   在 XPCar.Prj.Bind.MsgBig.AddRow(CanMsgRich model) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Bind\MsgBig.cs:行号 25
+2019-08-31 10:00:46,435 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:00:46,465 [ERROR] [1] [Log][Error] - AddRow()
+System.ArgumentException: 输入字符串的格式不正确。不能在 DLC 列中存储 <11 02 01 FF FF 00 11 >。所需类型是 Int32。 ---> System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   在 System.Data.Common.Int32Storage.Set(Int32 record, Object value)
+   在 System.Data.DataColumn.set_Item(Int32 record, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.DataColumn.set_Item(Int32 record, Object value)
+   在 System.Data.DataTable.NewRecordFromArray(Object[] value)
+   在 System.Data.DataRowCollection.Add(Object[] values)
+   在 XPCar.Prj.Bind.MsgBig.AddRow(CanMsgRich model) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Bind\MsgBig.cs:行号 25
+2019-08-31 10:00:48,529 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+table CanMsg has no column named TimeIncrement
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 10:00:48,545 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+table CanMsg has no column named TimeIncrement
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 10:01:09,132 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:04:07,486 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 10:04:12,812 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:04:15,512 [ERROR] [1] [Log][Error] - AddRow()
+System.ArgumentException: 输入字符串的格式不正确。不能在 DLC 列中存储 <11 02 01 FF FF 00 11 >。所需类型是 Int32。 ---> System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   在 System.Data.Common.Int32Storage.Set(Int32 record, Object value)
+   在 System.Data.DataColumn.set_Item(Int32 record, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.DataColumn.set_Item(Int32 record, Object value)
+   在 System.Data.DataTable.NewRecordFromArray(Object[] value)
+   在 System.Data.DataRowCollection.Add(Object[] values)
+   在 XPCar.Prj.Bind.MsgBig.AddRow(CanMsgRich model) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Bind\MsgBig.cs:行号 25
+2019-08-31 10:04:20,833 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 108
+2019-08-31 10:07:22,495 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 10:07:30,035 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:30,546 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:30,745 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:30,930 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:31,110 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:31,308 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:31,509 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:31,678 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:31,866 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:32,055 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:32,238 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:32,430 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:07:33,870 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 108
+2019-08-31 10:10:05,302 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 10:11:27,055 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 10:11:40,540 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:11:54,048 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:11:55,848 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:11:56,572 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:11:56,776 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:12:13,459 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 10:12:20,371 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:12:26,404 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:12:38,624 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:12:41,321 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:12:42,069 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:13:24,645 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:13:53,413 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 10:13:55,447 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 108
+2019-08-31 10:42:39,339 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 10:45:43,273 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 10:46:30,479 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 10:46:30,531 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 108
+2019-08-31 10:56:26,161 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 10:56:57,843 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 10:56:57,896 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 11:45:07,947 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 13:46:44,164 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 13:46:44,253 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 14:00:42,348 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 14:01:08,465 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 14:01:08,515 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 14:20:05,526 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 14:20:11,998 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:12,147 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:12,326 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:12,519 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:12,705 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:12,900 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:13,081 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:13,267 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:13,470 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:13,657 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:13,862 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:14,042 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:19,666 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:19,861 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:20,056 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:20,256 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:20,433 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:20,629 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:20,836 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:21,032 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:21,218 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:21,585 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:21,783 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:32,812 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:33,010 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:33,211 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:33,391 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:33,591 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:33,771 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:33,973 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:34,157 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:34,346 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:34,538 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:34,737 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:34,928 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:35,113 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:35,297 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:35,482 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:35,664 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:35,867 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:36,054 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:36,244 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:36,433 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:36,620 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:36,824 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:37,016 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:37,209 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:37,397 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:37,585 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:37,813 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:38,041 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:38,262 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:38,457 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:38,652 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:38,856 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:39,061 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:39,250 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:39,465 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:40,514 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:40,725 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:40,927 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:41,126 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:41,330 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:42,342 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:42,549 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:20:42,773 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:27,261 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:30,320 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:30,919 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:31,116 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:31,287 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:31,461 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:31,649 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:31,823 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:32,015 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:32,202 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:32,386 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:32,577 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:32,781 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:32,987 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:33,164 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:33,365 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:33,597 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:33,789 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:33,971 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:34,158 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:34,328 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:34,525 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:34,719 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:34,886 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:35,073 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:35,286 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:35,475 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:35,674 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:35,872 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:36,065 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:38,317 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:38,507 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:38,701 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:38,879 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:39,081 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:39,276 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:39,449 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:39,653 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:39,834 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:40,018 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:40,225 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:40,403 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:40,614 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:40,807 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:41,009 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:41,208 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:41,395 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:41,599 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:41,798 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:42,001 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:42,182 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:42,383 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:42,587 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:42,777 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:42,980 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:21:43,168 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:23:40,517 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 2, Data = 30 33 
+2019-08-31 14:26:40,616 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 14:26:40,666 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 108
+2019-08-31 15:43:28,676 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 15:43:52,546 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -10, Cannot decode Len = 36, Data = 7E 30 30 46 46 34 33 35 30 30 30 31 46 30 30 30 33 30 31 30 38 30 31 30 34 30 31 39 33 30 30 32 37 30 30 33 
+2019-08-31 15:43:52,548 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 59, Data = 45 30 30 30 30 30 31 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 0D 41 
+2019-08-31 15:43:52,599 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 1, Data = 36 
+2019-08-31 15:43:56,872 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 55, Data = 7E 30 30 46 46 34 33 37 30 30 30 30 30 30 30 30 30 30 31 30 38 0D 37 32 7E 30 30 46 46 34 31 30 31 30 30 31 46 30 30 30 33 30 31 30 38 30 31 30 34 30 31 39 33 30 30 
+2019-08-31 15:43:56,876 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 14, Data = 32 37 30 30 33 45 30 30 30 30 30 31 0D 30 
+2019-08-31 15:43:56,978 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 1, Data = 43 
+2019-08-31 15:44:51,530 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 15:44:51,560 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 15:47:39,225 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -10, Cannot decode Len = 26, Data = 7E 30 30 46 46 34 33 37 30 30 30 32 32 30 30 30 33 30 31 30 38 0D 36 42 7E 30 
+2019-08-31 15:48:23,343 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 15:48:23,354 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 15:48:48,004 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 15:48:48,016 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 15:49:11,146 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 15:49:11,159 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 15:49:24,494 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 15:49:24,504 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 15:50:48,229 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -10, Cannot decode Len = 26, Data = 7E 30 30 46 46 34 33 37 30 30 30 32 32 30 30 30 33 30 31 30 38 0D 36 42 7E 30 
+2019-08-31 15:51:34,734 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 15:51:34,747 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 15:51:50,047 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 15:51:50,059 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 15:52:05,090 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 15:52:05,101 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 15:52:20,272 [ERROR] [10] [Log][Error] - BigDataInsert()Type of lists = System.Collections.Generic.List`1[XPCar.Prj.Model.CanMsg]
+System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+2019-08-31 15:52:20,283 [ERROR] [10] [Log][Error] - CommitToRespository()-> CanMsg Error!
+System.Exception: System.Data.SQLite.SQLiteException (0x80004005): SQL logic error or missing database
+unrecognized token: "'充电机报文CRM:充电机辨识 辨识结果:BMS不能辨识 充电机编号:00000001 充电机所在区域编码:AB"
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   在 SQLiteSugar.SqlHelper.ExecuteCommand(String sql, SQLiteParameter[] pars)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](IEnumerable`1 entities)
+   在 SQLiteSugar.SqlSugarClient.SqlBulkCopy[T](List`1 entities)
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 25
+   在 XPCar.Database.DbService.BigDataInsert[T](List`1 lists) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Database\DbService.cs:行号 35
+   在 XPCar.Prj.Flow.RepositoryManager.CommitToRespository() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RepositoryManager.cs:行号 133
+2019-08-31 15:56:55,245 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 15:56:55,277 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 108
+2019-08-31 16:03:03,381 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:03:23,253 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:03:23,308 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:05:35,678 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:06:59,325 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:06:59,374 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:07:50,409 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:10:08,452 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:10:08,506 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:22:32,327 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:22:34,523 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:22:34,583 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:24:29,775 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:24:43,503 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:24:43,554 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:25:32,097 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:25:46,465 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:25:46,516 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:28:15,510 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:30:11,450 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:30:11,534 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:30:53,662 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:31:34,314 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:31:34,370 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:32:19,592 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:32:28,819 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:32:28,873 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:32:57,306 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:35:42,123 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:35:42,173 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:39:54,457 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:40:42,305 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:40:42,357 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:50:53,493 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:51:06,650 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:51:06,702 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:51:29,671 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:51:35,979 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:51:36,030 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 16:52:29,665 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 16:52:44,469 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 16:52:44,522 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:04:23,620 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:05:25,782 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:05:25,836 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:06:46,571 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:06:56,599 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:06:56,651 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:08:17,162 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:08:20,586 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:08:20,644 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:08:38,540 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:08:46,560 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:08:46,617 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:09:26,006 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:09:45,409 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:09:45,461 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:09:56,264 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:09:58,426 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:09:58,488 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:10:48,289 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:11:17,507 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:11:17,557 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:38:05,593 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:38:09,751 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:38:09,816 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:47:44,003 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:47:54,570 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:47:54,627 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:48:17,388 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:48:57,026 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:48:57,078 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 17:51:16,687 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 17:51:34,178 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 17:51:34,228 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 18:00:47,176 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 18:06:07,977 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 18:06:14,545 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 18:06:14,596 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-08-31 18:06:42,696 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-08-31 18:06:50,750 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-08-31 18:06:50,786 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112

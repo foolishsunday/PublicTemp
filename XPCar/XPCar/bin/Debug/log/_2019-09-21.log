@@ -1,0 +1,444 @@
+2019-09-21 08:56:58,487 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 08:57:06,056 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 08:57:06,117 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 08:59:49,882 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 09:00:05,641 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 09:00:05,688 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 09:00:24,881 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 09:00:31,965 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 09:00:32,026 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 09:01:19,214 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 09:01:54,247 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 09:01:54,313 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 09:19:55,113 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 09:32:55,529 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 09:32:58,571 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 09:32:58,668 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 09:37:17,923 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 09:37:21,949 [ERROR] [1] [Log][Error] - Connect()
+System.UnauthorizedAccessException: 对端口“COM10”的访问被拒绝。
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   在 System.IO.Ports.SerialPort.Open()
+   在 XPCar.Sys.IO.Port.SerialPortIO.Connect() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Sys.IO\Port\SerialPortIO.cs:行号 65
+2019-09-21 09:37:22,980 [ERROR] [1] [Log][Error] - Connect()
+System.UnauthorizedAccessException: 对端口“COM10”的访问被拒绝。
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   在 System.IO.Ports.SerialPort.Open()
+   在 XPCar.Sys.IO.Port.SerialPortIO.Connect() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Sys.IO\Port\SerialPortIO.cs:行号 65
+2019-09-21 10:03:52,626 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:03:56,677 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 10:03:56,818 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 10:18:20,043 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:20:30,255 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:24:58,377 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:26:24,811 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:30:36,604 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 10:36:20,472 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:39:32,496 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -12, Cannot decode Len = 28, deleteLen = 28, Data = 7E 30 30 46 46 34 33 30 33 30 31 30 30 30 30 30 37 44 46 30 43 31 46 30 46 0D 34 33 
+2019-09-21 10:39:34,037 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -12, Cannot decode Len = 30, deleteLen = 30, Data = 45 36 7E 30 30 46 46 34 33 30 33 30 31 30 30 30 30 30 37 44 46 30 43 31 46 30 46 0D 34 33 
+2019-09-21 10:39:35,873 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -12, Cannot decode Len = 30, deleteLen = 30, Data = 45 36 7E 30 30 46 46 34 33 30 33 30 31 30 30 30 30 30 37 44 46 30 43 31 46 30 46 0D 34 33 
+2019-09-21 10:39:36,119 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -12, Cannot decode Len = 30, deleteLen = 30, Data = 45 36 7E 30 30 46 46 34 33 30 33 30 31 30 30 30 30 30 37 44 46 30 43 31 46 30 46 0D 34 33 
+2019-09-21 10:42:07,278 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 10:42:07,331 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 10:46:47,514 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:48:00,587 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 10:48:00,640 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 10:48:55,258 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:50:17,572 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 10:50:17,621 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 10:50:26,210 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:51:20,763 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:52:49,534 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:57:57,461 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 10:58:20,593 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 10:58:20,641 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 10:58:39,779 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:01:32,325 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:01:58,148 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 11:03:19,124 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:03:43,635 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 11:05:40,320 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:05:59,326 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 11:17:36,267 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:17:38,268 [ERROR] [1] [Log][Error] - Connect()
+System.UnauthorizedAccessException: 对端口“COM10”的访问被拒绝。
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   在 System.IO.Ports.SerialPort.Open()
+   在 XPCar.Sys.IO.Port.SerialPortIO.Connect() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Sys.IO\Port\SerialPortIO.cs:行号 65
+2019-09-21 11:22:53,250 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:23:13,617 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 11:23:13,665 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 11:25:44,583 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:26:17,978 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 11:27:14,723 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:27:16,465 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 11:27:16,553 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 11:34:47,357 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:34:49,894 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 11:34:49,960 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 11:36:51,407 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 11:36:54,248 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 11:36:54,355 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 13:47:46,467 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 13:48:06,784 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 13:48:06,861 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 13:48:25,493 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 13:49:21,144 [ERROR] [1] [Log][Error] - Connect()
+System.UnauthorizedAccessException: 对端口“COM10”的访问被拒绝。
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   在 System.IO.Ports.SerialPort.Open()
+   在 XPCar.Sys.IO.Port.SerialPortIO.Connect() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Sys.IO\Port\SerialPortIO.cs:行号 65
+2019-09-21 13:53:44,669 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 13:53:44,716 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 13:55:12,896 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 14:00:43,168 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 14:00:43,226 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 14:34:31,662 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 14:34:40,290 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 14:34:40,376 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 14:36:40,129 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 14:37:37,842 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 14:37:37,904 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 16:48:49,932 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 16:49:13,276 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 16:49:13,338 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:01:48,749 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:02:03,654 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:02:03,714 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:02:49,775 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:02:56,347 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:02:56,425 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:03:40,635 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:03:43,467 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:03:43,552 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:09:18,830 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:09:20,430 [ERROR] [5] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:09:20,493 [ERROR] [7] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:15:35,305 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:15:39,103 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:15:39,186 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:18:30,488 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:18:32,319 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:18:32,402 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:22:04,150 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:22:24,112 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:22:24,171 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:23:46,445 [ERROR] [1] [Log][Error] - Void Init()()
+System.IO.FileNotFoundException: 未能找到文件“D:\Github\Work\Work\Aplus\XPCar\XPCar\bin\Debug\Aplus.exe.config”。
+文件名:“D:\Github\Work\Work\Aplus\XPCar\XPCar\bin\Debug\Aplus.exe.config”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   在 System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   在 System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   在 System.Xml.XmlTextReaderImpl.OpenUrlDelegate(Object xmlResolver)
+   在 System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)
+   在 System.Threading.CompressedStack.Run(CompressedStack compressedStack, ContextCallback callback, Object state)
+   在 System.Xml.XmlTextReaderImpl.OpenUrl()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   在 System.Xml.XmlDocument.Load(XmlReader reader)
+   在 System.Xml.XmlDocument.Load(String filename)
+   在 XPCar.Sys.IO.ConfigIO..ctor(String filePath) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Sys.IO\ConfigIO.cs:行号 18
+   在 XPCar.Prj.Data.PrjConfig..ctor(String configFilePath) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Data\PrjConfig.cs:行号 26
+   在 XPCar.Prj.Controller.MainController..ctor(String configFilePath) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Controller\MainController.cs:行号 31
+   在 XPCar.Prj.Prj.Init() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Prj.cs:行号 50
+2019-09-21 17:34:29,279 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:34:37,313 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:34:37,394 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:35:55,324 [ERROR] [1] [Log][Error] - Void Init()()
+System.IO.FileNotFoundException: 未能找到文件“D:\Github\Work\Work\Aplus\XPCar\XPCar\bin\Debug\Aplus.exe.config”。
+文件名:“D:\Github\Work\Work\Aplus\XPCar\XPCar\bin\Debug\Aplus.exe.config”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   在 System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   在 System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   在 System.Xml.XmlTextReaderImpl.OpenUrlDelegate(Object xmlResolver)
+   在 System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)
+   在 System.Threading.CompressedStack.Run(CompressedStack compressedStack, ContextCallback callback, Object state)
+   在 System.Xml.XmlTextReaderImpl.OpenUrl()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   在 System.Xml.XmlDocument.Load(XmlReader reader)
+   在 System.Xml.XmlDocument.Load(String filename)
+   在 XPCar.Sys.IO.ConfigIO..ctor(String filePath) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Sys.IO\ConfigIO.cs:行号 18
+   在 XPCar.Prj.Data.PrjConfig..ctor(String configFilePath) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Data\PrjConfig.cs:行号 26
+   在 XPCar.Prj.Controller.MainController..ctor(String configFilePath) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Controller\MainController.cs:行号 31
+   在 XPCar.Prj.Prj.Init() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Prj.cs:行号 55
+2019-09-21 17:36:48,813 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:36:52,681 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:36:52,774 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:37:35,472 [ERROR] [1] [Log][Error] - Void Init()()
+System.IO.FileNotFoundException: 未能找到文件“D:\Github\Work\Work\Aplus\XPCar\XPCar\bin\Debug\Aplus.exe.config”。
+文件名:“D:\Github\Work\Work\Aplus\XPCar\XPCar\bin\Debug\Aplus.exe.config”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   在 System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   在 System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   在 System.Xml.XmlTextReaderImpl.OpenUrlDelegate(Object xmlResolver)
+   在 System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)
+   在 System.Threading.CompressedStack.Run(CompressedStack compressedStack, ContextCallback callback, Object state)
+   在 System.Xml.XmlTextReaderImpl.OpenUrl()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   在 System.Xml.XmlDocument.Load(XmlReader reader)
+   在 System.Xml.XmlDocument.Load(String filename)
+   在 XPCar.Sys.IO.ConfigIO..ctor(String filePath) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Sys.IO\ConfigIO.cs:行号 18
+   在 XPCar.Prj.Data.PrjConfig..ctor(String configFilePath) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Data\PrjConfig.cs:行号 26
+   在 XPCar.Prj.Controller.MainController..ctor(String configFilePath) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Controller\MainController.cs:行号 31
+   在 XPCar.Prj.Prj.Init() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Prj.cs:行号 55
+2019-09-21 17:38:10,966 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:38:13,223 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:38:13,314 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 17:39:42,531 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-21 17:39:44,683 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-21 17:39:44,775 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 100
+2019-09-21 18:15:30,759 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!

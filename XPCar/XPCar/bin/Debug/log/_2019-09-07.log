@@ -1,0 +1,83 @@
+2019-09-07 17:08:34,727 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-07 17:10:00,999 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-07 17:10:01,061 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-09-07 17:11:55,484 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-07 17:12:11,123 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-07 17:12:11,185 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-09-07 17:42:07,893 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-07 17:42:21,594 [ERROR] [1] [Log][Error] - GetRegisterDate()
+System.ArgumentOutOfRangeException: 索引和长度必须引用该字符串内的位置。
+参数名: length
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 XPCar.Client.frmLogin.GetRegisterDate(String machineCode) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Client\frmLogin.cs:行号 63
+2019-09-07 17:43:35,902 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-07 17:43:43,010 [ERROR] [1] [Log][Error] - GetRegisterDate()
+System.ArgumentOutOfRangeException: 索引和长度必须引用该字符串内的位置。
+参数名: length
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 XPCar.Client.frmLogin.GetRegisterDate(String machineCode) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Client\frmLogin.cs:行号 63
+2019-09-07 17:43:54,179 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-07 17:43:54,210 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-09-07 17:44:02,079 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-07 17:44:06,453 [ERROR] [1] [Log][Error] - GetRegisterDate()
+System.ArgumentOutOfRangeException: 索引和长度必须引用该字符串内的位置。
+参数名: length
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 XPCar.Client.frmLogin.GetRegisterDate(String machineCode) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Client\frmLogin.cs:行号 63
+2019-09-07 17:44:15,326 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-07 17:44:15,372 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-09-07 17:45:01,750 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-07 17:45:15,907 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-07 17:45:15,954 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-09-07 17:48:09,727 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-07 17:52:38,870 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-07 17:55:32,501 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-07 17:55:32,564 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
+2019-09-07 17:55:47,130 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-07 17:55:52,253 [ERROR] [1] [Log][Error] - GetRegisterDate()
+System.ArgumentOutOfRangeException: 索引和长度必须引用该字符串内的位置。
+参数名: length
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 XPCar.Client.frmLogin.GetRegisterDate(String machineCode) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Client\frmLogin.cs:行号 63

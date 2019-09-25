@@ -1,0 +1,15 @@
+2019-09-16 19:44:16,621 [ERROR] [1] [Log][Error] - GetRegisterDate()
+System.ArgumentOutOfRangeException: 索引和长度必须引用该字符串内的位置。
+参数名: length
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 XPCar.Client.frmLogin.GetRegisterDate(String machineCode) 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Client\frmLogin.cs:行号 63
+2019-09-16 19:45:05,147 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-16 19:45:06,609 [ERROR] [7] [Log][Error] - FunctionWorkRead()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkRead() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 68
+2019-09-16 19:45:06,676 [ERROR] [8] [Log][Error] - FunctionWorkDecode()
+System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.WaitHandle.WaitOneNative(SafeHandle waitableSafeHandle, UInt32 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.InternalWaitOne(SafeHandle waitableSafeHandle, Int64 millisecondsTimeout, Boolean hasThreadAffinity, Boolean exitContext)
+   在 System.Threading.WaitHandle.WaitOne(Int32 millisecondsTimeout, Boolean exitContext)
+   在 XPCar.Prj.Flow.RcvdProtocolManager.FunctionWorkDecode() 位置 D:\Github\Work\Work\Aplus\XPCar\XPCar\Prj\Flow\RcvdProtocolManager.cs:行号 112
