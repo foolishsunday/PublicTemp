@@ -157,7 +157,9 @@ namespace XPCar.Prj.Flow
         private void CommitToConsist()
         {
             ConsistFactoryManager consistCalc = new ConsistFactoryManager();
-            string msgName = Prj.ConsistController.SelectedMsgName.Replace(".", "");
+            string msgName = string.Empty;
+            if (!string.IsNullOrEmpty(Prj.ConsistController.SelectedMsgName))
+                msgName = Prj.ConsistController.SelectedMsgName.Replace(".", "");
 
             Function.ConsistResult ret = consistCalc.CreateConsistMachine(msgName);
             if (UpdateConsistResult != null)

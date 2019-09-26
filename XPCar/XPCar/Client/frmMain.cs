@@ -43,7 +43,7 @@ namespace XPCar
         private frmCanBtn _frmCanBtn;
         private frmConsistBtn _frmConsistBtn;
         private frmLogin _frmLogin;
-        //private frmWave _frmWave;
+        private frmWave _frmWave;
         private frmSoftwareVersion _frmSoftwareVersion;
 #if AC_TEST
         private frmAC _frmAC;
@@ -100,7 +100,7 @@ namespace XPCar
 #endif
 
             Prj.Prj.RepositoryManager.Reset();
-            this.tbpWaveForm.Parent = null;
+            //this.tbpWaveForm.Parent = null;
 
         }
         private void InitFrmSize()
@@ -560,16 +560,16 @@ namespace XPCar
                 }
                 Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.DCGet);
             }
-            //else if (tbcMain.SelectedTab.Name == "tbpWaveForm")
-            //{
-            //    if (_frmWave == null)
-            //    {
-            //        _frmWave = new frmWave();
-            //        _frmWave.Dock = DockStyle.Fill;
-            //        tbpWaveForm.Controls.Add(_frmWave);
-            //    }
-            //    Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.Alarm);
-            //}
+            else if (tbcMain.SelectedTab.Name == "tbpWaveForm")
+            {
+                if (_frmWave == null)
+                {
+                    _frmWave = new frmWave();
+                    _frmWave.Dock = DockStyle.Fill;
+                    tbpWaveForm.Controls.Add(_frmWave);
+                }
+                Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.BaseInfo);
+            }
             LoadButton(tbcMain.SelectedIndex);
         }
 

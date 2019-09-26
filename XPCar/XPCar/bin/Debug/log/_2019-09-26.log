@@ -1,0 +1,9 @@
+2019-09-26 12:29:30,941 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-26 12:30:38,592 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -10, Cannot decode Len = 26, deleteLen = 26, Data = 7E 30 30 46 46 34 33 37 30 30 30 30 42 30 30 30 33 30 30 45 41 0D 34 30 7E 30 
+2019-09-26 12:30:45,356 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 55, deleteLen = 55, Data = 7E 30 30 46 46 34 33 37 30 30 30 30 30 30 30 30 30 30 30 45 41 0D 35 35 7E 30 30 46 46 34 31 30 31 30 30 30 42 30 30 30 33 30 30 45 41 30 30 45 41 30 31 34 30 30 30 30 
+2019-09-26 12:30:45,356 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 13, deleteLen = 13, Data = 30 30 30 37 44 30 30 30 30 30 30 0D 45 32 
+2019-09-26 12:31:04,742 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -10, Cannot decode Len = 36, deleteLen = 36, Data = 7E 30 30 46 46 34 33 35 30 30 30 30 30 30 30 30 30 30 30 45 43 30 30 45 41 30 31 34 30 30 30 32 37 30 30 33 
+2019-09-26 12:31:05,180 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -10, Cannot decode Len = 36, deleteLen = 36, Data = 7E 30 30 46 46 34 33 35 30 30 30 30 42 30 30 30 33 30 30 45 43 30 30 45 41 30 31 34 31 30 30 32 37 30 30 33 
+2019-09-26 12:31:05,180 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = 0, Cannot decode Len = 59, deleteLen = 59, Data = 45 30 30 37 38 30 33 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 0D 36 31 
+2019-09-26 12:33:28,530 [DEBUG] [1] [Log][Debug] - FrmMain_Load(): Initial Success!
+2019-09-26 12:34:11,887 [WARN ] [8] [Log][Warn] - VerifyProtocolFormat() errorCode = -10, Cannot decode Len = 26, deleteLen = 26, Data = 7E 30 30 46 46 34 33 37 30 30 30 30 42 30 30 30 33 30 30 45 45 0D 33 43 7E 30 
