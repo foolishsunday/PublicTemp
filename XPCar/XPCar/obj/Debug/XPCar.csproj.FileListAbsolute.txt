@@ -240,7 +240,6 @@ D:\Github\Work\ST-9980APlus\XPCar\XPCar\bin\Debug\SqliteSugar.dll
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\bin\Debug\System.Data.SQLite.dll
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\bin\Debug\SqliteSugar.xml
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\bin\Debug\System.Data.SQLite.xml
-D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.csprojAssemblyReference.cache
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.Client.ACTest.frmAC.resources
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.Client.ACTest.frmACResult.resources
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.Client.frmBaseInfo.resources
@@ -264,7 +263,7 @@ D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.Client.SysUpgrade.frmUpg
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.Client.Wave.frmWave.resources
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.Properties.Resources.resources
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.csproj.GenerateResource.cache
-D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.csproj.CoreCompileInputs.cache
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.csproj.CopyComplete
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\ST-9980AP.exe
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\ST-9980AP.pdb
+D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.csprojAssemblyReference.cache

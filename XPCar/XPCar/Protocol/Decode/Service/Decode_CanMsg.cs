@@ -42,6 +42,8 @@ namespace XPCar.Protocol.Decode.Service
                 if (Prj.Prj.ValueManager.PreMsgCreateTime.Year <= 2000) //说明该报文为第一条报文
                 {
                     canGridRich.TimeIncrement = "0";
+                    Prj.Prj.ValueManager.FirstCreateTime = canGridRich.CreateTime;
+                    canGridRich.SpanTime = 0;
                 }
                 else
                 {
@@ -50,6 +52,7 @@ namespace XPCar.Protocol.Decode.Service
                                         + span.Minutes.ToString().PadLeft(2, '0') + KeyConst.Punctuation.Colon
                                         + span.Seconds.ToString().PadLeft(2, '0') + KeyConst.Punctuation.Space
                                         + span.Milliseconds.ToString("f0");
+                    canGridRich.SpanTime = (canGridRich.CreateTime - Prj.Prj.ValueManager.FirstCreateTime).TotalMilliseconds;
 
                 }
                 Prj.Prj.ValueManager.PreMsgCreateTime = canGridRich.CreateTime;
@@ -59,6 +62,7 @@ namespace XPCar.Protocol.Decode.Service
 
                 Prj.Prj.CanMsgController.AddModel(canGridRich);//加入显示buffer
                 Prj.Prj.CSVManager.AddModel(canGridRich);   //加入写CSV buffer
+                Prj.Prj.WaveController.AddModel(canGridRich);   //加入画时序图
 
                 canGridRich.ConsistMsg.ObjectNo = canGridRich.ObjectNo;
 

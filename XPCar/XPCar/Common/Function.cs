@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using XPCar.Prj.Model;
@@ -499,6 +500,106 @@ namespace XPCar.Common
                 }
             }
             return sb.ToString();
+        }
+
+        public static string MapMsgIndex(double val)
+        {
+            switch (val)
+            {
+                case 1: return "BHM";
+                case 2: return "CHM";
+                case 3: return "BRM";
+                case 4: return "CRM";
+                case 5: return "BCP";
+                case 6: return "BRO";
+                case 7: return "CTS";
+                case 8: return "CML";
+                case 9: return "CRO";
+                case 10: return "BCL";
+                case 11: return "BCS";
+                case 12: return "BSM";
+                case 13: return "BST";
+                case 14: return "CCS";
+                case 15: return "CST";
+                case 16: return "BSD";
+                case 17: return "CSD";
+                case 18: return "BEM";
+                case 19: return "CEM";
+                case 20: return "BSP";
+                case 21: return "BMT";
+                case 22: return "BMV";
+                default: return "";
+            }
+        }
+        public static int MapMsgName(string name)
+        {
+            switch (name)
+            {
+                case "BHM": return 1;
+                case "CHM": return 2;
+                case "BRM": return 3;
+                case "CRM": return 4;
+                case "BCP": return 5;
+                case "BRO": return 6;
+                case "CTS": return 7;
+                case "CML": return 8;
+                case "CRO": return 9;
+                case "BCL": return 10;
+                case "BCS": return 11;
+                case "BSM": return 12;
+                case "BST": return 13;
+                case "CCS": return 14;
+                case "CST": return 15;
+                case "BSD": return 16;
+                case "CSD": return 17;
+                case "BEM": return 18;
+                case "CEM": return 19;
+                case "BSP": return 20;
+                case "BMT": return 21;
+                case "BMV": return 22;
+                default:    return 0;
+            }
+        }
+        public static Color MapMsgColor(double val)
+        {
+            switch (val + 1)
+            {
+                case 1: return Color.Blue;
+                case 2: return Color.Red;
+                case 3: return Color.Green;
+                case 4: return Color.Cyan;
+                case 5: return Color.Yellow;
+                case 6: return Color.DarkBlue;
+                case 7: return Color.Coral;
+                case 8: return Color.Lime;
+                case 9: return Color.Purple;
+                case 10: return Color.Olive;
+                case 11: return Color.DarkSeaGreen;
+                case 12: return Color.DarkSlateBlue;
+                case 13: return Color.DarkTurquoise;
+                case 14: return Color.DeepPink;
+                case 15: return Color.GreenYellow;
+                case 16: return Color.Orchid;
+                case 17: return Color.Sienna;
+                case 18: return Color.SlateGray;
+                case 19: return Color.Thistle;
+                case 20: return Color.LightSalmon;
+                case 21: return Color.LightSeaGreen;
+                case 22: return Color.LightSkyBlue;
+                default: return Color.White;
+            }
+        }
+
+        public static string MapDatetime(double val)
+        {
+            long ticks = (long)val;
+            DateTime date = new DateTime(2000, 1, 1, 0, 0, 0, 0).AddMilliseconds(ticks);
+            string hour = date.Hour.ToString().PadLeft(2, '0');
+            string minute = date.Minute.ToString().PadLeft(2, '0');
+            string second = date.Second.ToString().PadLeft(2, '0');
+            string ms = date.Millisecond.ToString().PadLeft(3, '0');
+            return hour + KeyConst.Punctuation.Colon + minute + KeyConst.Punctuation.Colon + second + "." + ms;
+                
         }
     }
 

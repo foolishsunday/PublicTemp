@@ -459,6 +459,7 @@ namespace XPCar
             _MainController.WarningLight.Off();
             _MainController.WarningLight.ComStateImage -= this.HandleCommStateImageUpdated;
             Prj.Prj.CSVManager.StopSave();
+            Prj.Prj.WaveController.StopTask();
         }
 
 
@@ -564,7 +565,7 @@ namespace XPCar
             {
                 if (_frmWave == null)
                 {
-                    _frmWave = new frmWave();
+                    _frmWave = new frmWave(ClientRectangle.Width, ClientRectangle.Height);
                     _frmWave.Dock = DockStyle.Fill;
                     tbpWaveForm.Controls.Add(_frmWave);
                 }

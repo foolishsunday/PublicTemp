@@ -331,6 +331,7 @@
     <Compile Include="Prj\Model\GetChargePara.cs" />
     <Compile Include="Prj\Model\GetChargeStop.cs" />
     <Compile Include="Prj\Model\GetCharging.cs" />
+    <Compile Include="Prj\Model\GraphPoint.cs" />
     <Compile Include="Prj\Model\SettingACInterop.cs" />
     <Compile Include="Prj\Model\SettingChargePara.cs" />
     <Compile Include="Prj\Model\SettingChargeStop.cs" />
@@ -441,6 +442,7 @@
     <Compile Include="Task\RawData.cs" />
     <Compile Include="Timers\ThreadTimer.cs" />
     <Compile Include="Timers\TimerManager.cs" />
+    <Compile Include="Wave\DrawGraphics.cs" />
     <EmbeddedResource Include="Client\ACTest\frmAC.resx">
       <DependentUpon>frmAC.cs</DependentUpon>
     </EmbeddedResource>

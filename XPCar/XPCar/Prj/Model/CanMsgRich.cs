@@ -16,7 +16,7 @@ namespace XPCar.Prj.Model
 
         public DateTime CreateTime;
         public int MaxIndex;
-
+        public double SpanTime;
         public ConsistMsg ConsistMsg;
         public CanMsgRich()
         {

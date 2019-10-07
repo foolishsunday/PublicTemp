@@ -465,5 +465,9 @@ namespace XPCar.Common
                 Dual
             }
         }
+        public class WavePara
+        {
+            public const int CurveCnt = 22;
+        }
     }
 }
