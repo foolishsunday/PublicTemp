@@ -48,7 +48,8 @@ namespace XPCar.Protocol
             public const string UPGRADE = "10";
             public const string DC_SET = "80";
             public const string AC_SET = "20";
-            public const string VER_GET = "03"; 
+            public const string VER_GET = "03";
+            public const string TIME_SYNC = "09";//add for 实时时间
         }
         public static class CmdContent
         {
@@ -102,6 +103,7 @@ namespace XPCar.Protocol
             public const string AC_SET = "4320";//设置交流，回复
 
             public const string VER_GET = "4103";
+            public const string TIME_SYNC = "4309";//add for 实时时间
         }
 
         //此处只为内容长度，须剪掉帧头、帧尾、校验码数量
@@ -110,7 +112,8 @@ namespace XPCar.Protocol
             public const int DLC_LEN = 2;//加了dlc之后为2
 
             public const int UNDEFINED = 0;
-            public const int CAN = 36 - 12 + DLC_LEN;
+            //public const int CAN = 36 - 12 + DLC_LEN;
+
             public const int BASE_INFO = 46 - 12;
             public const int SYS_START = 20 - 12;
 
@@ -139,6 +142,9 @@ namespace XPCar.Protocol
             public const int ALARM_GET = 8;
             public const int AC_INTEROP_GET = 16;
             public const int VER_GET = 16;
+
+            public const int CAN = 44;  //add for 实时时间 
+            public const int TIME_SYNC = 18;//add for 实时时间 
         }
 
     }

@@ -41,7 +41,7 @@ namespace XPCar.Prj
         public static TimerManager TimerManager;
         //public static ConsistTestManager ConsistTestManager;
         public static ValueManager ValueManager;//add for 时间增量
-        public static Unsolved Unsolved;        //存放未完整包
+
         public static WaveController WaveController;
         public static void Init()
         {
@@ -80,7 +80,6 @@ namespace XPCar.Prj
                 UpgradeController = new UpgradeController();
 
                 ValueManager = new ValueManager();//add for 时间增量
-                Unsolved = new Unsolved();
 
                 WaveController = new WaveController();
             }

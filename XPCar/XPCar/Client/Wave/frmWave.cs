@@ -25,25 +25,27 @@ namespace XPCar.Client.Wave
         private void Init(int width, int height)
         {
             _DrawGraphics = new DrawGraphics(zgcMsgGraph, width, height);
-            //Prj.Prj.WaveController.Init(_DrawGraphics);
+
             Prj.Prj.WaveController.DrawWave += this.HandleDrawWave;
-            //gp.SetPointPair(200, "CHM");
-            //gp.SetPointPair(5600, "CHM");
-            //gp.SetPointPair(8800, "CHM");
-            //gp.SetPointPair(12, "BHM");
-            //gp.SetPointPair(300, "BHM");
-            //gp.SetPointPair(2315, "BHM");
-            //_DrawGraphics.AddPoint(gp);
         }
-        private void HandleDrawWave(PointPairList[] data)
+        private void HandleDrawWave(PointPairList[] points, PointPairList[] lines)
         {
             Action async = delegate ()
             {
                 for (int i = 0; i < KeyConst.WavePara.CurveCnt; i++)
                 {
-                    _DrawGraphics.DrawPointPairList(data);
+                    _DrawGraphics.DrawPointPairList(points, lines);
                     zgcMsgGraph.Refresh();
                 }
+            };
+            this.BeginInvoke(async);
+        }
+        public void HandleClear()
+        {
+            Action async = delegate ()
+            {
+                _DrawGraphics.Clear();
+                zgcMsgGraph.Refresh();
             };
             this.BeginInvoke(async);
         }

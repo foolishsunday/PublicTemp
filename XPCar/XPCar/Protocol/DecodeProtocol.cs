@@ -22,6 +22,7 @@ namespace XPCar.Protocol
             int undecodeLen = 0;
             int errorCode = 0;
             int deleteLen = 0;
+            string error = string.Empty;
             try
             {
                 byte CmdTypeHigh = 0;
@@ -177,6 +178,7 @@ namespace XPCar.Protocol
                         buf.RemoveRange(0, _Pos);  //清除不符合协议规范的数据
                         deleteLen += this._Pos;
                         Reset(ref model);
+                        error += errorCode.ToString() + " ";
                     }
                     else if (_State == 100)
                     {
@@ -198,7 +200,7 @@ namespace XPCar.Protocol
                 }
                 if (undecode != string.Empty)
                 {
-                    string warn = string.Format(" errorCode = {0}, Cannot decode Len = {1}, deleteLen = {2}, Data = {3}", errorCode, undecodeLen, deleteLen, undecode);
+                    string warn = string.Format(" errorCode = {0}, Cannot decode Len = {1}, deleteLen = {2}, Data = {3}", error, undecodeLen, deleteLen, undecode);
                     Log.Warn(System.Reflection.MethodBase.GetCurrentMethod().Name, warn);
                 }
             }
@@ -311,6 +313,10 @@ namespace XPCar.Protocol
             else if (Enumerable.SequenceEqual(cmd, ProtocolHelper.ConvertCharToBytes(ConstCmd.CmdAck.VER_GET)))
             {
                 model.SetFrameName(ConstCmd.CmdAck.VER_GET, ConstCmd.FrameLen.VER_GET);
+            }
+            else if (Enumerable.SequenceEqual(cmd, ProtocolHelper.ConvertCharToBytes(ConstCmd.CmdAck.TIME_SYNC)))//add for 实时时间
+            {
+                model.SetFrameName(ConstCmd.CmdAck.TIME_SYNC, ConstCmd.FrameLen.TIME_SYNC);
             }
             else
             {

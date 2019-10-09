@@ -15,6 +15,7 @@ namespace XPCar.Protocol.Decode.Service
             //string[] arr = Function.SplitMsgData(content);
             BaseInfo info = DecodeBaseInfo(buf);
             Prj.Prj.RcvdProtocolManager.DoUpdateBaseInfo(info);
+            Prj.Prj.WaveController.SetWaveBaseInfo(info);
         }
         private BaseInfo DecodeBaseInfo(List<byte> buf)
         {

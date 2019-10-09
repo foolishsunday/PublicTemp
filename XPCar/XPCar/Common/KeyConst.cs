@@ -71,7 +71,7 @@ namespace XPCar.Common
 
         public class TextFormat
         {
-            public const string Date = "yyyyMMdd hh:mm:ss fff";
+            public const string Date = "yyyyMMdd HH:mm:ss fff";
 
         }
         public class MdiText_Common
@@ -468,6 +468,7 @@ namespace XPCar.Common
         public class WavePara
         {
             public const int CurveCnt = 22;
+            public const int LineCnt = 5;
         }
     }
 }

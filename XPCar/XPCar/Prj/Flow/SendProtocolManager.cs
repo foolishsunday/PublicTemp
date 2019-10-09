@@ -158,6 +158,12 @@ namespace XPCar.Prj.Flow
             protocol.AddContent(data);
             SendData(protocol);
         }
+        public void SendTimeSyncSet()//add for 实时时间
+        {
+            EncodeProtocolTimeSyncSet protocol = new EncodeProtocolTimeSyncSet();
+            protocol.AddContent();
+            SendData(protocol);
+        }
         #endregion 写CMD
 
         private void SendData(EncodeProtocol protocol)

@@ -164,11 +164,12 @@ namespace XPCar.Client
         {
             try
             {
+                //Prj.Prj.TimerManager.Stop();
                 Prj.Prj.SendProtocolManager.SendConsistStart(_ConsistController.ItemIndex);
                 _ConsistController.ConsistStarted = true;
                 _ConsistController.SelectedMsgName = _ConsistController.ClickMsgName;
 
-                Thread.Sleep(30);
+                Thread.Sleep(50);
                 if (PressStartBtn != null)
                     PressStartBtn(_ConsistController.ItemIndex);
 
@@ -182,6 +183,7 @@ namespace XPCar.Client
                         return;
                     }
                 }
+                //Prj.Prj.TimerManager.Start();
             }
             catch (Exception ex)
             {

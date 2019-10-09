@@ -33,13 +33,14 @@ namespace XPCar.Protocol.Decode.Service
                 canGridRich = msgManager.DecodeMsgData(flowId, contentBytes);
                 canGridRich.Direction = this._Direction;
                 canGridRich.Dlc = dlc;
-                canGridRich.CreateTime = DateTime.Now;
+                //canGridRich.CreateTime = DateTime.Now;//add for 实时时间
+                canGridRich.CreateTime = DecodeDatetime(buf);
                 canGridRich.Id = msgId;
                 canGridRich.MsgData = Function.AppendSpaceIn2Char(msgData, dlc);
                 canGridRich.CreateTimestamp = canGridRich.CreateTime.ToString(KeyConst.TextFormat.Date);
 
                 //时间增量
-                if (Prj.Prj.ValueManager.PreMsgCreateTime.Year <= 2000) //说明该报文为第一条报文
+                if (Prj.Prj.ValueManager.IsFirstMsg()) //说明该报文为第一条报文,add for 实时时间
                 {
                     canGridRich.TimeIncrement = "0";
                     Prj.Prj.ValueManager.FirstCreateTime = canGridRich.CreateTime;
@@ -91,6 +92,51 @@ namespace XPCar.Protocol.Decode.Service
             contentBytes = BaseConvert.CutLists2Lists(buf, 17 + ConstCmd.FrameLen.DLC_LEN, 16);    //截取msg内容
             string msgData = BaseConvert.AsciiBytes2String(BaseConvert.CutLists(contentBytes, 0, 16));
             return msgData;
+        }
+        private DateTime DecodeDatetime(List<byte> buf)//add for 实时时间
+        {
+            byte[] data = BaseConvert.CutLists(buf, 35, 18);   //截取时间
+            string[] arr = Function.SplitMsgData(data);
+            int i = 0;
+
+            string high = arr[i++];
+            string low = arr[i++];
+
+            int year = BaseConvert.HexStr2Int32(high + low);
+            if (year < 2000 || year > 2999)
+                year = 2010;
+
+            int month = BaseConvert.HexStr2Int32(arr[i++]);
+            if (month < 1 || month > 12)
+                month = 1;
+
+
+            int day = BaseConvert.HexStr2Int32(arr[i++]);
+            if (day < 1 || day > 31)
+                day = 1;
+
+            int hour = BaseConvert.HexStr2Int32(arr[i++]);
+            if (hour < 0 || hour > 24)
+                hour = 0;
+
+            int minute = BaseConvert.HexStr2Int32(arr[i++]);
+            if (minute < 0 || minute > 59)
+                minute = 0;
+
+            int second = BaseConvert.HexStr2Int32(arr[i++]);
+            if (second < 0 || second > 59)
+                second = 0;
+
+            high = arr[i++];
+            low = arr[i++];
+            int ms = BaseConvert.HexStr2Int32(high + low);
+            if (ms > 999 || ms < 0)
+                ms = 0;
+
+
+            DateTime date = new DateTime(year, month, day, hour, minute, second, ms);
+            return date;
+
         }
     }
 }

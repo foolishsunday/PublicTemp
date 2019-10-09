@@ -65,6 +65,7 @@ namespace XPCar
             InitSendTimer();
             InitBottom();
             InitButton();
+            InitWave();
 #if AC_TEST
             InitAC();
             InitFrmSize();
@@ -194,6 +195,13 @@ namespace XPCar
             _frmCanBtn.ClearCanMsg += _frmMsgCan.ClearCanMsg;
             _frmConsist.PressStartBtn += this.HandlePressStartBtn;
             LoadButton(0);
+        }
+        private void InitWave()
+        {
+            _frmWave = new frmWave(ClientRectangle.Width, ClientRectangle.Height);
+            _frmWave.Dock = DockStyle.Fill;
+            tbpWaveForm.Controls.Add(_frmWave);
+            _frmCanBtn.ClearCanMsg += _frmWave.HandleClear;
         }
 #endregion 初始化
 
@@ -563,12 +571,7 @@ namespace XPCar
             }
             else if (tbcMain.SelectedTab.Name == "tbpWaveForm")
             {
-                if (_frmWave == null)
-                {
-                    _frmWave = new frmWave(ClientRectangle.Width, ClientRectangle.Height);
-                    _frmWave.Dock = DockStyle.Fill;
-                    tbpWaveForm.Controls.Add(_frmWave);
-                }
+
                 Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.BaseInfo);
             }
             LoadButton(tbcMain.SelectedIndex);

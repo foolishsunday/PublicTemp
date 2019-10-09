@@ -424,10 +424,10 @@
     <Compile Include="Protocol\Encode\EncodeProtocolHandshakeGet.cs" />
     <Compile Include="Protocol\Encode\EncodeProtocolSysStart.cs" />
     <Compile Include="Protocol\Encode\EncodeProtocolSysStop.cs" />
+    <Compile Include="Protocol\Encode\EncodeProtocolTimeSyncSet.cs" />
     <Compile Include="Protocol\Encode\EncodeProtocolUpgrade.cs" />
     <Compile Include="Protocol\Encode\EncodeProtocolVerGet.cs" />
     <Compile Include="Protocol\ProtocolHelper.cs" />
-    <Compile Include="Protocol\Unsolved.cs" />
     <Compile Include="Sys.Comm\CommIO.cs" />
     <Compile Include="Sys.Comm\CommIOState.cs" />
     <Compile Include="Sys.Comm\SysDelegate.cs" />

@@ -46,6 +46,7 @@ namespace XPCar.Protocol.Decode
                 case ConstCmd.CmdAck.CHARGE_STOP_SET:
                 case ConstCmd.CmdAck.SYS_START:
                 case ConstCmd.CmdAck.AC_SET:
+                case ConstCmd.CmdAck.TIME_SYNC://add for 实时时间
                     return new Decode_Discard();
                 case ConstCmd.CmdAck.UPGRADE_ACK:
                     return new Decode_Upgrade();

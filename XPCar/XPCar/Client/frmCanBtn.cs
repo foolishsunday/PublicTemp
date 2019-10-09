@@ -47,6 +47,8 @@ namespace XPCar.Client
                 else
                 {
                     Prj.Prj.MainController.OpenCatch();
+                    Prj.Prj.SendProtocolManager.SendTimeSyncSet();
+                    Thread.Sleep(100);
                     Prj.Prj.SendProtocolManager.SendCanOpen();
                     btnCanCatch.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
                 }

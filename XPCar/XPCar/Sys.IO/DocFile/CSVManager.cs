@@ -43,7 +43,7 @@ namespace XPCar.Sys.IO.DocFile
             {
                 if (_CSVHelper.CreateFile(path) == true)
                 {
-                    string head = "帧序号,收发标志,帧间隔时间,时间增量,帧ID,DLC,数据,BMS报文翻译";//add for 时间增量
+                    string head = "帧序号,收发标志,帧时间,时间增量,帧ID,DLC,数据,BMS报文翻译";//add for 时间增量
                     _CSVHelper.WriteLine(path, head);
                     return true;
                 }

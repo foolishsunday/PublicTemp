@@ -251,6 +251,19 @@ namespace XPCar.Common
             }
             return strList.ToArray();
         }
+        public static string[] SplitMsgData(byte[] content)//add for 实时时间
+        {
+            string msgData = BaseConvert.AsciiBytes2String(content);
+            List<string> strList = new List<string>();
+            for (int i = 0; i < msgData.Length; i += 2)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append(msgData[i]);
+                sb.Append(msgData[i + 1]);
+                strList.Add(sb.ToString());
+            }
+            return strList.ToArray();
+        }
         public static double ShrinkKeepOffset(int num, int times, int keepCnt, int offset)
         {
             double shrink = ShrinkCntTimes(num, times);
