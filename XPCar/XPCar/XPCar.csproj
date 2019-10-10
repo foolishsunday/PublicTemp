@@ -53,6 +53,10 @@
     <ApplicationIcon>EQ_Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IrisSkin4, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=127be25a6db25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IrisSkin4.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\log4net.dll</HintPath>
@@ -207,6 +211,12 @@
     <Compile Include="Client\frmUpgrade.Designer.cs">
       <DependentUpon>frmUpgrade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client\Statistics\frmStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\Statistics\frmStatistics.Designer.cs">
+      <DependentUpon>frmStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client\SysUpgrade\frmUpgradeWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +307,7 @@
     <Compile Include="Consist\Summary\Consist_DP3005.cs" />
     <Compile Include="Consist\Summary\Consist_DP3006to07.cs" />
     <Compile Include="Consist\Summary\Consist_DP4001.cs" />
+    <Compile Include="Consist\Summary\Consist_DP4002.cs" />
     <Compile Include="Consist\Summary\Consist_Undefined.cs" />
     <Compile Include="Database\DbContext.cs" />
     <Compile Include="Database\DbService.cs" />
@@ -313,6 +324,7 @@
     <Compile Include="Prj\Controller\InteropController.cs" />
     <Compile Include="Prj\Controller\MainController.cs" />
     <Compile Include="Prj\Controller\MainStatus.cs" />
+    <Compile Include="Prj\Controller\StatisticsController.cs" />
     <Compile Include="Prj\Controller\UpgradeController.cs" />
     <Compile Include="Prj\Controller\WaveController.cs" />
     <Compile Include="Prj\Data\DataCollection.cs" />
@@ -338,6 +350,7 @@
     <Compile Include="Prj\Model\SettingCharging.cs" />
     <Compile Include="Prj\Model\SettingDC.cs" />
     <Compile Include="Prj\Model\SettingHandshake.cs" />
+    <Compile Include="Prj\Model\StatisticsData.cs" />
     <Compile Include="Prj\Model\TestAC.cs" />
     <Compile Include="Prj\Model\TestInterop.cs" />
     <Compile Include="Prj\Model\TestResult.cs" />
@@ -499,6 +512,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client\frmUpgrade.resx">
       <DependentUpon>frmUpgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\Statistics\frmStatistics.resx">
+      <DependentUpon>frmStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client\SysUpgrade\frmUpgradeWin.resx">
       <DependentUpon>frmUpgradeWin.cs</DependentUpon>

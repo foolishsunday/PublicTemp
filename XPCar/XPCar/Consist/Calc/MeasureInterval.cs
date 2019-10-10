@@ -30,19 +30,12 @@ namespace XPCar.Consist.Calc
             _Std = StandarNormalInterval(consistId);
             try
             {
-                if (_MsgName == KeyConst.CanMsgId.BRM
-                || _MsgName == KeyConst.CanMsgId.BCP
-                || _MsgName == KeyConst.CanMsgId.BCS
-                || _MsgName == KeyConst.CanMsgId.BMV
-                || _MsgName == KeyConst.CanMsgId.BSP)
+                if (_MsgName == KeyConst.CanMsgId.BRM || _MsgName == KeyConst.CanMsgId.BCP || _MsgName == KeyConst.CanMsgId.BCS
+                    || _MsgName == KeyConst.CanMsgId.BMV || _MsgName == KeyConst.CanMsgId.BSP)
                 {
                     CalPeriodPackageInterval();
                     text += GetMinPeriodTestText(consistId);
                     text += GetMaxPeriodTestText(consistId);
-
-                    //CalInnerPackageGap();
-                    //text += GetMinIntervalTestText(consistId);
-                    //text += GetMaxIntervalTestText(consistId);
                 }
                 else
                 {
@@ -57,6 +50,25 @@ namespace XPCar.Consist.Calc
                 Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
             }
             return text;
+        }
+        public void GenerateIntervalList()
+        {
+            try
+            {
+                if (_MsgName == KeyConst.CanMsgId.BRM || _MsgName == KeyConst.CanMsgId.BCP || _MsgName == KeyConst.CanMsgId.BCS
+                    || _MsgName == KeyConst.CanMsgId.BMV || _MsgName == KeyConst.CanMsgId.BSP)
+                {
+                    CalPeriodPackageInterval();
+                }
+                else
+                {
+                    _Intervals = Function.CalcInterval(_Data);//一个完整多包里，包与包之间的间隔
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
         }
         private string GetMinPeriodTestText(string consistId)
         {
@@ -75,23 +87,7 @@ namespace XPCar.Consist.Calc
                     result = KeyConst.Consist.Result.Unqualified;
                     _IntervalResult &= false;
                 }
-                //if (_DistinctCnt != 1)
-                //{
-                //    if (IsMinPeriodOk(consistId))
-                //    {
-                //        result = KeyConst.Consist.Result.Qualified;
-                //    }
-                //    else
-                //    {
-                //        result = KeyConst.Consist.Result.Unqualified;
-                //        _IntervalResult &= false;
-                //    }
-                //}
-                //else//只有一条数据
-                //{
-                //    result = KeyConst.Consist.Result.Qualified;
-                //    min = _Std[4].ToString();
-                //}
+
                 text = _MsgName + "最小周期" + KeyConst.Punctuation.Colon + min + KeyConst.Punctuation.Space + result + KeyConst.Punctuation.Space;
             }
             catch(Exception ex)
@@ -119,24 +115,6 @@ namespace XPCar.Consist.Calc
                     result = KeyConst.Consist.Result.Unqualified;
                     _IntervalResult &= false;
                 }
-                //if (_DistinctCnt != 1)
-                //{
-                //    if (IsMaxPeriodOk(consistId))
-                //    {
-                //        result = KeyConst.Consist.Result.Qualified;
-                //    }
-                //    else
-                //    {
-                //        result = KeyConst.Consist.Result.Unqualified;
-                //        _IntervalResult &= false;
-                //    }
-                //}
-                //else//只有一条数据
-                //{
-
-                //    result = KeyConst.Consist.Result.Qualified;
-                //    max = _Std[4].ToString();
-                //}
 
                 text += _MsgName + "最大周期" + KeyConst.Punctuation.Colon + max
                     + KeyConst.Punctuation.Space + result + KeyConst.Punctuation.Space;
@@ -149,77 +127,77 @@ namespace XPCar.Consist.Calc
             return text;
 
         }
-        private string GetMinIntervalTestText(string consistId)
-        {
-            string text = string.Empty;
-            try
-            {
-                string result;
-                string min = MinInterval().ToString();
-                if (IsMinGapOk(consistId))
-                {
-                    result = KeyConst.Consist.Result.Qualified;
-                }
-                else
-                {
-                    result = KeyConst.Consist.Result.Unqualified;
-                    _IntervalResult &= false;
-                }
-                text = _MsgName + "最小间隔" + KeyConst.Punctuation.Colon + min + KeyConst.Punctuation.Space + result + KeyConst.Punctuation.Space;
-            }
-            catch (Exception ex)
-            {
-                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
-            }
-            return text;
+        //private string GetMinIntervalTestText(string consistId)
+        //{
+        //    string text = string.Empty;
+        //    try
+        //    {
+        //        string result;
+        //        string min = MinInterval().ToString();
+        //        if (IsMinGapOk(consistId))
+        //        {
+        //            result = KeyConst.Consist.Result.Qualified;
+        //        }
+        //        else
+        //        {
+        //            result = KeyConst.Consist.Result.Unqualified;
+        //            _IntervalResult &= false;
+        //        }
+        //        text = _MsgName + "最小间隔" + KeyConst.Punctuation.Colon + min + KeyConst.Punctuation.Space + result + KeyConst.Punctuation.Space;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+        //    }
+        //    return text;
 
-        }
-        private string GetMaxIntervalTestText(string consistId)
-        {
-            string text = string.Empty;
+        //}
+        //private string GetMaxIntervalTestText(string consistId)
+        //{
+        //    string text = string.Empty;
      
-            try
-            {
-                string result;
-                string max = MaxInterval().ToString();
-                if (IsMaxGapOk(consistId))
-                {
-                    result = KeyConst.Consist.Result.Qualified;
-                }
-                else
-                {
-                    result = KeyConst.Consist.Result.Unqualified;
-                    _IntervalResult &= false;
-                }
+        //    try
+        //    {
+        //        string result;
+        //        string max = MaxInterval().ToString();
+        //        if (IsMaxGapOk(consistId))
+        //        {
+        //            result = KeyConst.Consist.Result.Qualified;
+        //        }
+        //        else
+        //        {
+        //            result = KeyConst.Consist.Result.Unqualified;
+        //            _IntervalResult &= false;
+        //        }
 
-                text = _MsgName + "最大间隔" + KeyConst.Punctuation.Colon + max + KeyConst.Punctuation.Space + result + KeyConst.Punctuation.Space;
-            }
-            catch (Exception ex)
-            {
-                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
-            }
-            return text;
+        //        text = _MsgName + "最大间隔" + KeyConst.Punctuation.Colon + max + KeyConst.Punctuation.Space + result + KeyConst.Punctuation.Space;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+        //    }
+        //    return text;
 
-        }
-        private void CalInnerPackageGap()
-        {
-            try
-            {
-                var distinct = _Data.GroupBy(r => r.PackageId);
-                foreach (var item in distinct)
-                {
-                    int itemKey = Convert.ToInt32(item.Key.ToString());
-                    var pckgData = _Data.Where(r => r.PackageId == itemKey).OrderBy(o => o.ObjectNo).ToList();
-                    List<long> interval = Function.CalcInterval(pckgData);
-                    _Intervals.Clear();
-                    _Intervals.AddRange(interval);
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
-            }
-        }
+        //}
+        //private void CalInnerPackageGap()
+        //{
+        //    try
+        //    {
+        //        var distinct = _Data.GroupBy(r => r.PackageId);
+        //        foreach (var item in distinct)
+        //        {
+        //            int itemKey = Convert.ToInt32(item.Key.ToString());
+        //            var pckgData = _Data.Where(r => r.PackageId == itemKey).OrderBy(o => o.ObjectNo).ToList();
+        //            List<long> interval = Function.CalcInterval(pckgData);
+        //            _Intervals.Clear();
+        //            _Intervals.AddRange(interval);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+        //    }
+        //}
         private void CalPeriodPackageInterval()
         {
             try
@@ -235,15 +213,34 @@ namespace XPCar.Consist.Calc
                 Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
             }
         }
-        private long MaxInterval()
+        public long MaxInterval()
         {
+            if (_Intervals.Count == 0)
+                return 0;
             return _Intervals.Max();
         }
-        private long MinInterval()
+        public long MinInterval()
         {
+            if (_Intervals.Count == 0)
+                return 0;
             return _Intervals.Min();
         }
 
+        public double AvgInterval()
+        {
+            if (_Intervals.Count == 0)
+                return 0;
+            double avg = _Intervals.Average();
+            return Math.Round(avg, 3);
+        }
+        public string BeginDate()
+        {
+            return _Data[0].CreateTimestamp;
+        }
+        public string EndDate()
+        {
+            return _Data[_Data.Count()-1].CreateTimestamp;
+        }
         private long[] StandarNormalInterval(string consistId)
         {
             long[] lens = new long[5];
@@ -338,11 +335,6 @@ namespace XPCar.Consist.Calc
         }
         public bool IsResultOk()
         {
-            return _IntervalResult;
-        }
-        public bool CommitResultToSummary(bool result)
-        {
-            _IntervalResult &= result;
             return _IntervalResult;
         }
     }

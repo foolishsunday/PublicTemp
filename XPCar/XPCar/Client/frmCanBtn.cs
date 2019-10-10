@@ -72,6 +72,7 @@ namespace XPCar.Client
                     Prj.Prj.CanMsgController.Reset();
                     Prj.Prj.RepositoryManager.Reset();
                     Prj.Prj.ValueManager.Reset(); //add for 时间增量
+                    Prj.Prj.StatisticsController.Reset();
                     //tsslbCSV.Text = " 实时保存 : 未保存";
                     //_frmMsgCan.ClearCanMsg();
                     if (ClearCanMsg != null)

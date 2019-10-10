@@ -42,9 +42,12 @@ namespace XPCar.Protocol.Decode.Service
                 //时间增量
                 if (Prj.Prj.ValueManager.IsFirstMsg()) //说明该报文为第一条报文,add for 实时时间
                 {
-                    canGridRich.TimeIncrement = "0";
-                    Prj.Prj.ValueManager.FirstCreateTime = canGridRich.CreateTime;
-                    canGridRich.SpanTime = 0;
+                    if (canGridRich.ConsistMsg.MsgName != "UNDEFINED")//第一条报文，且不为非标
+                    {
+                        canGridRich.TimeIncrement = "0";
+                        Prj.Prj.ValueManager.FirstCreateTime = canGridRich.CreateTime;
+                        canGridRich.SpanTime = 0;
+                    }
                 }
                 else
                 {

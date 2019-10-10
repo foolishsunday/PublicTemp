@@ -21,6 +21,7 @@ using System.Data;
 using XPCar.Client.ACTest;
 using XPCar.Client.SysUpgrade;
 using XPCar.Client.Wave;
+using XPCar.Client.Statistics;
 
 namespace XPCar
 {
@@ -45,8 +46,9 @@ namespace XPCar
         private frmLogin _frmLogin;
         private frmWave _frmWave;
         private frmSoftwareVersion _frmSoftwareVersion;
+        private frmStatistics _frmStatistics;
 #if AC_TEST
-        private frmAC _frmAC;
+        //private frmAC _frmAC;
         //private frmSingle _frmSingle;
 #endif
         private void FrmMain_Load(object sender, EventArgs e)
@@ -66,6 +68,7 @@ namespace XPCar
             InitBottom();
             InitButton();
             InitWave();
+            InitStatistics();
 #if AC_TEST
             InitAC();
             InitFrmSize();
@@ -109,11 +112,11 @@ namespace XPCar
             this.Width = 1090;
             this.Height = 600;
         }
-        //private void InitSkin()
-        //{
-        //    string path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + _MainController.Config.SkinPath;
-        //    skinEng.SkinFile = path;
-        //}
+        private void InitSkin()
+        {
+            string path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + _MainController.Config.SkinPath;
+            skinEng.SkinFile = path;
+        }
         private void InitMenu()
         {
             tsmiDev.Visible = _MainController.Config.DeveloperItem;
@@ -203,10 +206,16 @@ namespace XPCar
             tbpWaveForm.Controls.Add(_frmWave);
             _frmCanBtn.ClearCanMsg += _frmWave.HandleClear;
         }
+        private void InitStatistics()
+        {
+            _frmStatistics = new frmStatistics();
+            _frmStatistics.Dock = DockStyle.Fill;
+            tbpStatistics.Controls.Add(_frmStatistics);
+        }
 #endregion 初始化
 
 
-#region 条形Paint
+        #region 条形Paint
         private void PnlSplit_Paint(object sender, PaintEventArgs e)
         {
             PanelPaint(sender, e);
@@ -467,7 +476,7 @@ namespace XPCar
             _MainController.WarningLight.Off();
             _MainController.WarningLight.ComStateImage -= this.HandleCommStateImageUpdated;
             Prj.Prj.CSVManager.StopSave();
-            Prj.Prj.WaveController.StopTask();
+            //Prj.Prj.WaveController.StopTask();
         }
 
 
@@ -571,8 +580,14 @@ namespace XPCar
             }
             else if (tbcMain.SelectedTab.Name == "tbpWaveForm")
             {
-
                 Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.BaseInfo);
+            }
+            else if (tbcMain.SelectedTab.Name == "tbpStatistics")
+            {
+                if (_frmStatistics == null)
+                {
+
+                }
             }
             LoadButton(tbcMain.SelectedIndex);
         }

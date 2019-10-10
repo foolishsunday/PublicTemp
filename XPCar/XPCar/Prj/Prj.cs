@@ -43,6 +43,7 @@ namespace XPCar.Prj
         public static ValueManager ValueManager;//add for 时间增量
 
         public static WaveController WaveController;
+        public static StatisticsController StatisticsController;
         public static void Init()
         {
             try
@@ -82,6 +83,8 @@ namespace XPCar.Prj
                 ValueManager = new ValueManager();//add for 时间增量
 
                 WaveController = new WaveController();
+
+                StatisticsController = new StatisticsController();
             }
             catch (Exception ex)
             {

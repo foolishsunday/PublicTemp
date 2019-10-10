@@ -30,8 +30,14 @@ namespace XPCar.Wave
 
             pane = graph.GraphPane;
 
-            pane.YAxis.ScaleFormatEvent += new Axis.ScaleFormatHandler(HandleYScaleFormat);
+
+            pane.Y2Axis.IsVisible = true;
+            pane.Y2Axis.MajorTic.IsOpposite = true;
+
             pane.XAxis.ScaleFormatEvent += new Axis.ScaleFormatHandler(HandleXScaleFormat);
+            pane.YAxis.ScaleFormatEvent += new Axis.ScaleFormatHandler(HandleYScaleFormat);
+            pane.Y2Axis.ScaleFormatEvent += new Axis.ScaleFormatHandler(HandleY2ScaleFormat);
+
 
             pane.Title.Text = "充电控制时序图";
             pane.XAxis.Title.Text = "时间(ms)";
@@ -42,7 +48,7 @@ namespace XPCar.Wave
 
             pane.XAxis.Title.FontSpec.FontColor = Color.Blue;
             pane.XAxis.Title.FontSpec.Size = 12f;
-            pane.XAxis.Title.IsOmitMag = false;
+            pane.XAxis.Title.IsOmitMag = false;//是否显示指数幂
             pane.XAxis.Scale.Min = 0;
             pane.XAxis.Scale.FontSpec.Size = 8f;
 
@@ -60,6 +66,20 @@ namespace XPCar.Wave
             pane.YAxis.Scale.FontSpec.Size = 8f;
             pane.YAxis.MajorGrid.IsVisible = true;//参考线
 
+
+            pane.Y2Axis.Title.FontSpec.FontColor = Color.Blue;
+            pane.Y2Axis.Title.FontSpec.Size = 12f;
+            pane.Y2Axis.Title.IsOmitMag = false;//是否显示指数幂
+            pane.Y2Axis.Scale.Min = 0;
+            pane.Y2Axis.Scale.Max = 25;
+            pane.Y2Axis.Title.Text = "刻度值";
+            pane.Y2Axis.Scale.IsUseTenPower = false;//Y轴不以10的幂显示
+            pane.Y2Axis.Scale.MinorStep = 1;
+            pane.Y2Axis.Scale.MajorStep = 1;
+            pane.Y2Axis.Scale.FontSpec.Size = 8f;
+
+            pane.YAxis.Scale.IsPreventLabelOverlap = true;
+            pane.Y2Axis.Scale.IsPreventLabelOverlap = true;
             //pane.YAxis.MinorGrid.IsVisible = true;
             ////网格线
             //pane.XAxis.MinorGrid.IsVisible = false;
@@ -84,62 +104,96 @@ namespace XPCar.Wave
                 IsThereTitle[i] = false;
             }
         }
-        public void DrawPointPairList(PointPairList[] lists, PointPairList[] lines)
+        public void DrawLineList(PointPairList[] lines)
         {
-
-            PointPairList line = new PointPairList();
-            SymbolType circle = SymbolType.Circle;
-            for (int i = 0; i < KeyConst.WavePara.LineCnt; i++)
+            try
             {
-                line = lines[i];
-                LineItem lineItem;
-                string lineTitle = string.Empty;
-                Color lineColor = Color.Transparent;
-                if (line != null && line.Count() > 0)
+                PointPairList line = new PointPairList();
+                SymbolType circle = SymbolType.Circle;
+                float lineWidth;
+                for (int i = 0; i < KeyConst.WavePara.LineCnt; i++)
                 {
-                    if (line[0].X == 0 && !IsThereTitle[i])//第一条数据，添加title
+                    line = lines[i];
+                    LineItem lineItem;
+                    string lineTitle = string.Empty;
+                    Color lineColor = Color.Transparent;
+                    if (line != null && line.Count() > 0)
                     {
-                        lineTitle = GetLineTitle(i);
-                        IsThereTitle[i] = true;
+                        lineColor = GetLineColor(i);
+                        if (line[0].X == 0 && !IsThereTitle[i])//第一条数据，添加title
+                        {
+                            lineTitle = GetLineTitle(i);
+                            IsThereTitle[i] = true;
+                            lineWidth = 2.5F;
+                        }
+                        else
+                        {
+                            lineWidth = 1.5F;
+                        }
+        
+                        lineItem = pane.AddCurve(lineTitle, line, lineColor, circle);
+                        lineItem.Label.FontSpec = new FontSpec();
+                        lineItem.Label.FontSpec.Size = 10F;
+                        lineItem.Line.Width = lineWidth;
+                        lineItem.Symbol.Size = 0.5F;
+                        lineItem.Symbol.Fill = new Fill(lineColor);
 
                     }
-                    lineColor = GetLineColor(i);
-                    lineItem = pane.AddCurve(lineTitle, line, lineColor, circle);
-                    lineItem.Line.Width = 2.5F;
-                    lineItem.Symbol.Size = 1F;
-                    lineItem.Symbol.Fill = new Fill(lineColor);
                 }
             }
-
-            SymbolType square = SymbolType.Square;
-            
-            PointPairList xy = new PointPairList();
-            for (int i = 0; i < KeyConst.WavePara.CurveCnt; i++)
+            catch (Exception ex)
             {
-                xy = lists[i];
-                LineItem lineItem;
-                if (xy != null && xy.Count() > 0)
-                {
-                    //string lineName = Function.MapMsgIndex(xy[0].Y);
-                    lineItem = pane.AddCurve("", xy, Color.Transparent, square);
-                    lineItem.Symbol.Size = 5.0F;
-                    lineItem.Symbol.Fill = new Fill(Function.MapMsgColor(xy[0].Y));
-                }
-       
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
             }
+        }
+        public void DrawPointList(PointPairList[] lists)
+        {
+            try
+            {
+                SymbolType square = SymbolType.Square;
 
+                PointPairList xy = new PointPairList();
+                for (int i = 0; i < KeyConst.WavePara.CurveCnt; i++)
+                {
+                    xy = lists[i];
+                    LineItem lineItem;
+                    if (xy != null && xy.Count() > 0)
+                    {
+                        //string lineName = Function.MapMsgIndex(xy[0].Y);
+                        lineItem = pane.AddCurve("", xy, Color.Transparent, square);
+                        lineItem.Symbol.Size = 7.0F;
+                        lineItem.Symbol.Fill = new Fill(Function.MapMsgColor(xy[0].Y));
+                    }
 
-            graph.AxisChange();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+        }
+        public void DrawWaveList(PointPairList[] points, PointPairList[] lines)
+        {
+            DrawLineList(lines);
+            DrawPointList(points);
+            try
+            {
+                graph.AxisChange();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
         }
         private string GetLineTitle(int lineIndex)
         {
             switch (lineIndex)
             {
-                case 0: return "充电电压";
-                case 1: return "充电电流";
-                case 2: return "CC1电压";
-                case 3: return "CC2电压";
-                case 4: return "辅源电压";
+                case 0: return KeyConst.HeaderText.CURVE_CHARGE_V;
+                case 1: return KeyConst.HeaderText.CURVE_CHARGE_I;
+                case 2: return KeyConst.HeaderText.CURVE_CC1;
+                case 3: return KeyConst.HeaderText.CURVE_CC2;
+                case 4: return KeyConst.HeaderText.CURVE_ASSIST;
                 default: return "";
             }
         }
@@ -148,38 +202,14 @@ namespace XPCar.Wave
             switch (lineIndex)
             {
                 case 0: return Color.Tomato;
-                case 1: return Color.MediumVioletRed;
-                case 2: return Color.Teal;
+                case 1: return Color.Aqua;
+                case 2: return Color.MediumVioletRed;
                 case 3: return Color.LawnGreen;
                 case 4: return Color.DarkBlue;
                 default: return Color.Transparent;
             }
         }
-        public void DrawPoint(GraphPoint pnt)
-        {
-            SymbolType square = SymbolType.Square;
-            PointPairList xy = new PointPairList();
-            
-            for (int i = 0; i < KeyConst.WavePara.CurveCnt; i++)
-            {
-                xy = pnt.GetPointPairPerGroup(i);
-                LineItem lineItem;
-                if (xy != null && xy.Count() > 0)
-                {
-                    //string lineName = Function.MapMsgIndex(xy[0].Y);
 
-                    lineItem = pane.AddCurve("", xy, Color.Transparent, square);
-                    lineItem.Symbol.Size = 5.0F;
-                    lineItem.Symbol.Fill = new Fill(Function.MapMsgColor(xy[0].Y));
-                }
-                //画到zedGraphControl1控件中
-                graph.AxisChange();
-            }
-
-            //pane.XAxis.Type = AxisType.Date;
-            //pane.XAxis.Scale.Format = "HH:mm:ss.fff"; //显示到毫秒
-            //pane.XAxis.Scale.TextLabels = xAxis;
-        }
         public string HandleYScaleFormat(GraphPane pane, Axis axis, double val, int index)
         {
             return Function.MapMsgIndex(val);
@@ -187,6 +217,10 @@ namespace XPCar.Wave
         public string HandleXScaleFormat(GraphPane pane, Axis axis, double val, int index)
         {
             return Function.MapDatetime(val);
+        }
+        public string HandleY2ScaleFormat(GraphPane pane, Axis axis, double val, int index)
+        {
+            return Function.MapY2Name(val);
         }
         public void Clear()
         {

@@ -103,6 +103,8 @@ namespace XPCar.Prj.Controller
         {
             Prj.RepositoryManager.WakeupCommit(CommitState.ConsistData);
             Prj.WaveController.WackupDraw();
+            Prj.StatisticsController.AddStatisticsData();
+
             UpdateCalcState(KeyConst.MdiText_Calc.Calculating); //底部工具栏显示：计算中...
             Thread.Sleep(500);//等待提交数据库完成
             _UpdateMsgTimer.Stop();

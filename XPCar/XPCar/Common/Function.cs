@@ -514,7 +514,37 @@ namespace XPCar.Common
             }
             return sb.ToString();
         }
-
+        public static string MapY2Name(double val)
+        {
+            switch (val)
+            {
+                case 1: return "-100";
+                case 2: return "-50";
+                case 3: return "0";
+                case 4: return "50";
+                case 5: return "100";
+                case 6: return "150";
+                case 7: return "200";
+                case 8: return "250";
+                case 9: return "300";
+                case 10: return "350";
+                case 11: return "400";
+                case 12: return "450";
+                case 13: return "500";
+                case 14: return "550";
+                case 15: return "600";
+                case 16: return "650";
+                case 17: return "700";
+                case 18: return "750";
+                case 19: return "800";
+                case 20: return "850";
+                case 21: return "900";
+                case 22: return "950";
+                case 23: return "1000";
+                case 24: return "1050";
+                default: return "";
+            }
+        }
         public static string MapMsgIndex(double val)
         {
             switch (val)
@@ -541,6 +571,7 @@ namespace XPCar.Common
                 case 20: return "BSP";
                 case 21: return "BMT";
                 case 22: return "BMV";
+                case 23: return "UNDEFINED";
                 default: return "";
             }
         }
@@ -570,6 +601,7 @@ namespace XPCar.Common
                 case "BSP": return 20;
                 case "BMT": return 21;
                 case "BMV": return 22;
+                case "UNDEFINED":return 23;
                 default:    return 0;
             }
         }
@@ -599,6 +631,7 @@ namespace XPCar.Common
                 case 20: return Color.LightSalmon;
                 case 21: return Color.LightSeaGreen;
                 case 22: return Color.LightSkyBlue;
+                case 23: return Color.LightSlateGray;
                 default: return Color.White;
             }
         }

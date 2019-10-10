@@ -37,6 +37,8 @@
             this.tbpChargePara = new System.Windows.Forms.TabPage();
             this.tbpCharging = new System.Windows.Forms.TabPage();
             this.tbpChargeStop = new System.Windows.Forms.TabPage();
+            this.tbpWaveForm = new System.Windows.Forms.TabPage();
+            this.tbpStatistics = new System.Windows.Forms.TabPage();
             this.splContainCan = new System.Windows.Forms.SplitContainer();
             this.grpbSysStartBtn = new System.Windows.Forms.GroupBox();
             this.btnSysStart = new System.Windows.Forms.Button();
@@ -65,6 +67,7 @@
             this.tsmiSys = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSysUpgrade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRegister = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLowerDeviceVer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDev = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenSendCmd = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCloseSendCmd = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,8 +78,7 @@
             this.tscbBaud = new System.Windows.Forms.ToolStripComboBox();
             this.tsmiConn = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.tbpWaveForm = new System.Windows.Forms.TabPage();
-            this.tsmiLowerDeviceVer = new System.Windows.Forms.ToolStripMenuItem();
+            this.skinEng = new Sunisoft.IrisSkin.SkinEngine();
             this.tbcMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splContainCan)).BeginInit();
             this.splContainCan.Panel1.SuspendLayout();
@@ -104,6 +106,7 @@
             this.tbcMain.Controls.Add(this.tbpCharging);
             this.tbcMain.Controls.Add(this.tbpChargeStop);
             this.tbcMain.Controls.Add(this.tbpWaveForm);
+            this.tbcMain.Controls.Add(this.tbpStatistics);
             this.tbcMain.ItemSize = new System.Drawing.Size(120, 22);
             this.tbcMain.Location = new System.Drawing.Point(17, 5);
             this.tbcMain.Margin = new System.Windows.Forms.Padding(0);
@@ -179,6 +182,24 @@
             this.tbpChargeStop.TabIndex = 5;
             this.tbpChargeStop.Text = "充电结束阶段";
             this.tbpChargeStop.UseVisualStyleBackColor = true;
+            // 
+            // tbpWaveForm
+            // 
+            this.tbpWaveForm.Location = new System.Drawing.Point(4, 26);
+            this.tbpWaveForm.Name = "tbpWaveForm";
+            this.tbpWaveForm.Size = new System.Drawing.Size(1028, 392);
+            this.tbpWaveForm.TabIndex = 8;
+            this.tbpWaveForm.Text = "控制时序图";
+            this.tbpWaveForm.UseVisualStyleBackColor = true;
+            // 
+            // tbpStatistics
+            // 
+            this.tbpStatistics.Location = new System.Drawing.Point(4, 26);
+            this.tbpStatistics.Name = "tbpStatistics";
+            this.tbpStatistics.Size = new System.Drawing.Size(1028, 392);
+            this.tbpStatistics.TabIndex = 9;
+            this.tbpStatistics.Text = "统计";
+            this.tbpStatistics.UseVisualStyleBackColor = true;
             // 
             // splContainCan
             // 
@@ -375,6 +396,7 @@
             // msMenu
             // 
             this.msMenu.BackColor = System.Drawing.SystemColors.Control;
+            this.msMenu.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.msMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTestItem,
@@ -386,7 +408,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Margin = new System.Windows.Forms.Padding(3);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(1090, 25);
+            this.msMenu.Size = new System.Drawing.Size(1090, 24);
             this.msMenu.TabIndex = 1;
             this.msMenu.Text = "标题菜单";
             this.msMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.MsMenu_Paint);
@@ -397,20 +419,20 @@
             this.tsmiSingle,
             this.tsmiDual});
             this.tsmiTestItem.Name = "tsmiTestItem";
-            this.tsmiTestItem.Size = new System.Drawing.Size(68, 21);
+            this.tsmiTestItem.Size = new System.Drawing.Size(65, 20);
             this.tsmiTestItem.Text = "测试项目";
             // 
             // tsmiSingle
             // 
             this.tsmiSingle.Name = "tsmiSingle";
-            this.tsmiSingle.Size = new System.Drawing.Size(100, 22);
+            this.tsmiSingle.Size = new System.Drawing.Size(94, 22);
             this.tsmiSingle.Text = "单枪";
             this.tsmiSingle.Click += new System.EventHandler(this.TsmiSingle_Click);
             // 
             // tsmiDual
             // 
             this.tsmiDual.Name = "tsmiDual";
-            this.tsmiDual.Size = new System.Drawing.Size(100, 22);
+            this.tsmiDual.Size = new System.Drawing.Size(94, 22);
             this.tsmiDual.Text = "双枪";
             this.tsmiDual.Click += new System.EventHandler(this.TsmiDual_Click);
             // 
@@ -419,13 +441,13 @@
             this.tsmiBoard.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiShow});
             this.tsmiBoard.Name = "tsmiBoard";
-            this.tsmiBoard.Size = new System.Drawing.Size(44, 21);
+            this.tsmiBoard.Size = new System.Drawing.Size(41, 20);
             this.tsmiBoard.Text = "视图";
             // 
             // tsmiShow
             // 
             this.tsmiShow.Name = "tsmiShow";
-            this.tsmiShow.Size = new System.Drawing.Size(129, 22);
+            this.tsmiShow.Size = new System.Drawing.Size(124, 22);
             this.tsmiShow.Text = "隐藏/显示";
             this.tsmiShow.Click += new System.EventHandler(this.TsmiShow_Click);
             // 
@@ -436,22 +458,29 @@
             this.tsmiRegister,
             this.tsmiLowerDeviceVer});
             this.tsmiSys.Name = "tsmiSys";
-            this.tsmiSys.Size = new System.Drawing.Size(44, 21);
+            this.tsmiSys.Size = new System.Drawing.Size(41, 20);
             this.tsmiSys.Text = "系统";
             // 
             // tsmiSysUpgrade
             // 
             this.tsmiSysUpgrade.Name = "tsmiSysUpgrade";
-            this.tsmiSysUpgrade.Size = new System.Drawing.Size(180, 22);
+            this.tsmiSysUpgrade.Size = new System.Drawing.Size(154, 22);
             this.tsmiSysUpgrade.Text = "系统升级";
             this.tsmiSysUpgrade.Click += new System.EventHandler(this.TsmiSysUpgrade_Click);
             // 
             // tsmiRegister
             // 
             this.tsmiRegister.Name = "tsmiRegister";
-            this.tsmiRegister.Size = new System.Drawing.Size(180, 22);
+            this.tsmiRegister.Size = new System.Drawing.Size(154, 22);
             this.tsmiRegister.Text = "注册";
             this.tsmiRegister.Click += new System.EventHandler(this.TsmiRegister_Click);
+            // 
+            // tsmiLowerDeviceVer
+            // 
+            this.tsmiLowerDeviceVer.Name = "tsmiLowerDeviceVer";
+            this.tsmiLowerDeviceVer.Size = new System.Drawing.Size(154, 22);
+            this.tsmiLowerDeviceVer.Text = "下位机软件版本";
+            this.tsmiLowerDeviceVer.Click += new System.EventHandler(this.TsmiLowerDeviceVer_Click);
             // 
             // tsmiDev
             // 
@@ -459,20 +488,20 @@
             this.tsmiOpenSendCmd,
             this.tsmiCloseSendCmd});
             this.tsmiDev.Name = "tsmiDev";
-            this.tsmiDev.Size = new System.Drawing.Size(80, 21);
+            this.tsmiDev.Size = new System.Drawing.Size(77, 20);
             this.tsmiDev.Text = "开发者选项";
             // 
             // tsmiOpenSendCmd
             // 
             this.tsmiOpenSendCmd.Name = "tsmiOpenSendCmd";
-            this.tsmiOpenSendCmd.Size = new System.Drawing.Size(148, 22);
+            this.tsmiOpenSendCmd.Size = new System.Drawing.Size(142, 22);
             this.tsmiOpenSendCmd.Text = "开启发送命令";
             this.tsmiOpenSendCmd.Click += new System.EventHandler(this.TsmiOpenSendCmd_Click);
             // 
             // tsmiCloseSendCmd
             // 
             this.tsmiCloseSendCmd.Name = "tsmiCloseSendCmd";
-            this.tsmiCloseSendCmd.Size = new System.Drawing.Size(148, 22);
+            this.tsmiCloseSendCmd.Size = new System.Drawing.Size(142, 22);
             this.tsmiCloseSendCmd.Text = "关闭发送命令";
             this.tsmiCloseSendCmd.Click += new System.EventHandler(this.TsmiCloseSendCmd_Click);
             // 
@@ -482,7 +511,7 @@
             this.tsmiPortSetting,
             this.tsmiBaud});
             this.端口配置ToolStripMenuItem.Name = "端口配置ToolStripMenuItem";
-            this.端口配置ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.端口配置ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.端口配置ToolStripMenuItem.Text = "端口配置";
             // 
             // tsmiPortSetting
@@ -490,7 +519,7 @@
             this.tsmiPortSetting.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tscbPort});
             this.tsmiPortSetting.Name = "tsmiPortSetting";
-            this.tsmiPortSetting.Size = new System.Drawing.Size(112, 22);
+            this.tsmiPortSetting.Size = new System.Drawing.Size(106, 22);
             this.tsmiPortSetting.Text = "端口号";
             // 
             // tscbPort
@@ -504,7 +533,7 @@
             this.tsmiBaud.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tscbBaud});
             this.tsmiBaud.Name = "tsmiBaud";
-            this.tsmiBaud.Size = new System.Drawing.Size(112, 22);
+            this.tsmiBaud.Size = new System.Drawing.Size(106, 22);
             this.tsmiBaud.Text = "波特率";
             // 
             // tscbBaud
@@ -515,7 +544,7 @@
             // tsmiConn
             // 
             this.tsmiConn.Name = "tsmiConn";
-            this.tsmiConn.Size = new System.Drawing.Size(68, 21);
+            this.tsmiConn.Size = new System.Drawing.Size(65, 20);
             this.tsmiConn.Text = "打开设备";
             this.tsmiConn.Click += new System.EventHandler(this.TsmiConn_Click);
             // 
@@ -523,31 +552,23 @@
             // 
             this.pnlMain.Controls.Add(this.splContainMain);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 25);
+            this.pnlMain.Location = new System.Drawing.Point(0, 24);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1090, 580);
+            this.pnlMain.Size = new System.Drawing.Size(1090, 581);
             this.pnlMain.TabIndex = 4;
             // 
-            // tbpWaveForm
+            // skinEng
             // 
-            this.tbpWaveForm.Location = new System.Drawing.Point(4, 26);
-            this.tbpWaveForm.Name = "tbpWaveForm";
-            this.tbpWaveForm.Size = new System.Drawing.Size(1028, 392);
-            this.tbpWaveForm.TabIndex = 8;
-            this.tbpWaveForm.Text = "控制时序图";
-            this.tbpWaveForm.UseVisualStyleBackColor = true;
-            // 
-            // tsmiLowerDeviceVer
-            // 
-            this.tsmiLowerDeviceVer.Name = "tsmiLowerDeviceVer";
-            this.tsmiLowerDeviceVer.Size = new System.Drawing.Size(180, 22);
-            this.tsmiLowerDeviceVer.Text = "下位机软件版本";
-            this.tsmiLowerDeviceVer.Click += new System.EventHandler(this.TsmiLowerDeviceVer_Click);
+            this.skinEng.@__DrawButtonFocusRectangle = true;
+            this.skinEng.DisabledButtonTextColor = System.Drawing.Color.Gray;
+            this.skinEng.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
+            this.skinEng.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.skinEng.SerialNumber = "";
+            this.skinEng.SkinFile = null;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1090, 627);
             this.Controls.Add(this.pnlMain);
@@ -638,6 +659,8 @@
         private System.Windows.Forms.GroupBox grpbSysStartBtn;
         private System.Windows.Forms.TabPage tbpWaveForm;
         private System.Windows.Forms.ToolStripMenuItem tsmiLowerDeviceVer;
+        private System.Windows.Forms.TabPage tbpStatistics;
+        private Sunisoft.IrisSkin.SkinEngine skinEng;
     }
 }
 

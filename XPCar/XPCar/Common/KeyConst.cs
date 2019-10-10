@@ -312,6 +312,20 @@ namespace XPCar.Common
             public const string INTEROP_PURPOSE = "测试目的";
             public const string INTEROP_STEP = "测试步骤";
             public const string INTEROP_JUDGE = "合格评判";
+
+            public const string MSG_NAME = "报文名称";
+            public const string MSG_COUNT = "报文总数";
+            public const string MIN_INTERVAL = "最小间隔(ms)";
+            public const string MAX_INTERVAL = "最大间隔(ms)";
+            public const string AVG_INTERVAL = "平均间隔(ms)";
+            public const string BeginDate = "开始时间";
+            public const string EndDate = "结束时间";
+
+            public const string CURVE_CHARGE_V = "充电电压(1V/div)";
+            public const string CURVE_CHARGE_I = "充电电流(0.3A/div)";
+            public const string CURVE_CC1 = "CC1电压(0.3V/div)";
+            public const string CURVE_CC2 = "CC2电压(0.3V/div)";
+            public const string CURVE_ASSIST = "辅源电压(0.3V/div)";
         }
 
 

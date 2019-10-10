@@ -27,6 +27,8 @@ namespace XPCar.Client.Wave
             _DrawGraphics = new DrawGraphics(zgcMsgGraph, width, height);
 
             Prj.Prj.WaveController.DrawWave += this.HandleDrawWave;
+            Prj.Prj.WaveController.DrawLineTitle();
+
         }
         private void HandleDrawWave(PointPairList[] points, PointPairList[] lines)
         {
@@ -34,7 +36,7 @@ namespace XPCar.Client.Wave
             {
                 for (int i = 0; i < KeyConst.WavePara.CurveCnt; i++)
                 {
-                    _DrawGraphics.DrawPointPairList(points, lines);
+                    _DrawGraphics.DrawWaveList(points, lines);
                     zgcMsgGraph.Refresh();
                 }
             };
