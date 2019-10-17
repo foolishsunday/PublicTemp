@@ -14,27 +14,33 @@ using static XPCar.Common.KeyConst;
 namespace XPCar.Prj.Controller
 {
     public delegate void AppendCanMsgHandle(CanMsgRich model);
-    //public delegate void DisplaySourceHandle(DataTable dt);
     public delegate void UpdateCalcStateHandle(string text);
+
     public class CanMsgController: CanMsgRich
     {
         public event AppendCanMsgHandle AppendCanMsg;
         public event UpdateCalcStateHandle UpdateCalcState;
 
         public static readonly object MsgLocker = new object();
-        //private MsgLight _MsgLight;
+
         private MsgBig _MsgBig;
+        //private MsgBig[] _MsgBigArr;
+        //private int MsgArrCnt = 10;
         private ThreadTimer _UpdateMsgTimer;
         private int _Index;
         private bool _PauseCan;
         private bool _LastLineCursorMove;
         public void Init()
         {
-            //_MsgLight = new MsgLight();
-            //_MsgLight.Init();
 
             _MsgBig = new MsgBig();
             _MsgBig.Init();
+
+            //_MsgBigArr = new MsgBig[MsgArrCnt];
+            //for (int i = 0; i < MsgArrCnt; i++)
+            //{
+            //    _MsgBigArr[i] = new MsgBig();
+            //}
 
             _UpdateMsgTimer = new ThreadTimer(UpdateMsgTick);
             _UpdateMsgTimer.Interval = 2000;
@@ -89,6 +95,10 @@ namespace XPCar.Prj.Controller
         {
             //_MsgLight.AddRow(model);
             _MsgBig.AddRow(model);  //add for big data source at 2019.08.03
+            //if (_MsgBig.IsExceeded(10000))
+            //{
+            //    _MsgBig.RemoveAt();
+            //}
             //_MsgLight.KeepRows(Prj.MainController.Config.KeepRowCount);
         }
         public void Reset()
@@ -108,19 +118,11 @@ namespace XPCar.Prj.Controller
             UpdateCalcState(KeyConst.MdiText_Calc.Calculating); //底部工具栏显示：计算中...
             Thread.Sleep(500);//等待提交数据库完成
             _UpdateMsgTimer.Stop();
-            //MsgDataForm(2);
-            //delete for big data source at 2019.08.03
-            //DbService db = new DbService();
-            //_DbTable = db.QueryMsgAll();
-            //if(!Prj.CanMsgController.IsPause())
-            //    DisplayDbSource(_DbTable);
 
-            //add for big data source at 2019.08.03
-            //if (!Prj.CanMsgController.IsPause())
-            //    DisplayDbSource(null);
-            //end
             SetLastLineCursor(false);
-            UpdateCalcState(KeyConst.MdiText_Calc.CalcFinish);//底部工具栏显示：计算完成...
+
+            UpdateCalcState(KeyConst.MdiText_Calc.CalcFinish);//底部工具栏显示：计算完成
+            Prj.GeneralController.RefreshAutoConsistResult();
         }
         public void SetCanPause()
         {

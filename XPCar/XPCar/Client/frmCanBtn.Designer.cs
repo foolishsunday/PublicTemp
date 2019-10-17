@@ -34,11 +34,13 @@
             this.btnClearCan = new System.Windows.Forms.Button();
             this.btnCanCatch = new System.Windows.Forms.Button();
             this.btnCanPause = new System.Windows.Forms.Button();
+            this.cbTranslate = new System.Windows.Forms.CheckBox();
             this.grpbCanBtn.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpbCanBtn
             // 
+            this.grpbCanBtn.Controls.Add(this.cbTranslate);
             this.grpbCanBtn.Controls.Add(this.btnSaveCSV);
             this.grpbCanBtn.Controls.Add(this.btnOpenFolder);
             this.grpbCanBtn.Controls.Add(this.btnClearCan);
@@ -49,7 +51,7 @@
             this.grpbCanBtn.Margin = new System.Windows.Forms.Padding(0);
             this.grpbCanBtn.Name = "grpbCanBtn";
             this.grpbCanBtn.Padding = new System.Windows.Forms.Padding(0);
-            this.grpbCanBtn.Size = new System.Drawing.Size(482, 46);
+            this.grpbCanBtn.Size = new System.Drawing.Size(530, 46);
             this.grpbCanBtn.TabIndex = 16;
             this.grpbCanBtn.TabStop = false;
             // 
@@ -113,6 +115,17 @@
             this.btnCanPause.UseVisualStyleBackColor = true;
             this.btnCanPause.Click += new System.EventHandler(this.BtnCanPause_Click);
             // 
+            // cbTranslate
+            // 
+            this.cbTranslate.AutoSize = true;
+            this.cbTranslate.Location = new System.Drawing.Point(479, 18);
+            this.cbTranslate.Name = "cbTranslate";
+            this.cbTranslate.Size = new System.Drawing.Size(48, 16);
+            this.cbTranslate.TabIndex = 13;
+            this.cbTranslate.Text = "翻译";
+            this.cbTranslate.UseVisualStyleBackColor = true;
+            this.cbTranslate.CheckedChanged += new System.EventHandler(this.cbTranslate_CheckedChanged);
+            // 
             // frmCanBtn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -120,8 +133,9 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.grpbCanBtn);
             this.Name = "frmCanBtn";
-            this.Size = new System.Drawing.Size(482, 46);
+            this.Size = new System.Drawing.Size(530, 46);
             this.grpbCanBtn.ResumeLayout(false);
+            this.grpbCanBtn.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -134,5 +148,6 @@
         private System.Windows.Forms.Button btnClearCan;
         private System.Windows.Forms.Button btnCanCatch;
         private System.Windows.Forms.Button btnCanPause;
+        private System.Windows.Forms.CheckBox cbTranslate;
     }
 }

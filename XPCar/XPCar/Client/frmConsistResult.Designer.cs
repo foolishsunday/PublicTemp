@@ -306,6 +306,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "一致性测试结果";
+            this.Load += new System.EventHandler(this.frmConsistResult_Load);
             this.tlpConsistResult.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel12.ResumeLayout(false);

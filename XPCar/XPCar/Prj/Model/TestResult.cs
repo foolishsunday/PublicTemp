@@ -55,13 +55,13 @@ namespace XPCar.Prj.Model
             report.TestText1 = TestText;
             if (IsSummaryOk)
             {
-                report.TestResult1 = KeyConst.Consist.Result.Qualified;
+                report.TestResult1 = KeyConst.Consist.Result.Qualified + Environment.NewLine;
                 report.TestSummary = KeyConst.Consist.Result.Qualified;
 
             }
             else
             {
-                report.TestResult1 = KeyConst.Consist.Result.Unqualified;
+                report.TestResult1 = KeyConst.Consist.Result.Unqualified + Environment.NewLine;
                 report.TestSummary = KeyConst.Consist.Result.Unqualified;
             }
             return report;

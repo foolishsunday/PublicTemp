@@ -60,17 +60,17 @@ namespace XPCar.Prj.Bind
             return null;
         }
 
-        public void KeepRows(int cnt)
-        {
-            if (this._Index > cnt)
-            {
-                this._Datatable.Rows.RemoveAt(0);
-            }
-        }
-        public int GetIndex()
-        {
-            return this._Index;
-        }
+        //public void KeepRows(int cnt)
+        //{
+        //    if (this._Index > cnt)
+        //    {
+        //        this._Datatable.Rows.RemoveAt(0);
+        //    }
+        //}
+        //public int GetIndex()
+        //{
+        //    return this._Index;
+        //}
         public void SetIndex(int index)
         {
             this._Index = index;

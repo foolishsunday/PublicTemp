@@ -21,5 +21,8 @@ namespace XPCar.Prj.Flow
             else
                 return false;
         }
+
+        public bool EnableTranslate { get; set; }
+
     }
 }

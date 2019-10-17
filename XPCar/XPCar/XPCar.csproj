@@ -109,6 +109,18 @@
     <Compile Include="Client\ACTest\frmACResult.Designer.cs">
       <DependentUpon>frmACResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client\BMS\frmBMS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Client\BMS\frmBMS.Designer.cs">
+      <DependentUpon>frmBMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Consist\frmConsistConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\Consist\frmConsistConfig.Designer.cs">
+      <DependentUpon>frmConsistConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client\frmBaseInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -315,7 +327,6 @@
     <Compile Include="Encrypt\Encryption.cs" />
     <Compile Include="Encrypt\TimeClass.cs" />
     <Compile Include="Prj\Bind\BaseTable.cs" />
-    <Compile Include="Prj\Bind\MsgLight.cs" />
     <Compile Include="Prj\Bind\MsgBig.cs" />
     <Compile Include="Prj\Controller\ACController.cs" />
     <Compile Include="Prj\Controller\ConfigController.cs" />
@@ -350,6 +361,7 @@
     <Compile Include="Prj\Model\SettingCharging.cs" />
     <Compile Include="Prj\Model\SettingDC.cs" />
     <Compile Include="Prj\Model\SettingHandshake.cs" />
+    <Compile Include="Prj\Model\StandardSet.cs" />
     <Compile Include="Prj\Model\StatisticsData.cs" />
     <Compile Include="Prj\Model\TestAC.cs" />
     <Compile Include="Prj\Model\TestInterop.cs" />
@@ -462,6 +474,12 @@
     <EmbeddedResource Include="Client\ACTest\frmACResult.resx">
       <DependentUpon>frmACResult.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Client\BMS\frmBMS.resx">
+      <DependentUpon>frmBMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\Consist\frmConsistConfig.resx">
+      <DependentUpon>frmConsistConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client\frmBaseInfo.resx">
       <DependentUpon>frmBaseInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -570,5 +588,6 @@
     <None Include="Images\Logo.png" />
     <None Include="Images\CompanyName.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

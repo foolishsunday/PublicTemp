@@ -39,7 +39,7 @@ namespace XPCar.Wave
             pane.Y2Axis.ScaleFormatEvent += new Axis.ScaleFormatHandler(HandleY2ScaleFormat);
 
 
-            pane.Title.Text = "充电控制时序图";
+            pane.Title.Text = "";
             pane.XAxis.Title.Text = "时间(ms)";
 
 
@@ -78,7 +78,7 @@ namespace XPCar.Wave
             pane.Y2Axis.Scale.MajorStep = 1;
             pane.Y2Axis.Scale.FontSpec.Size = 8f;
 
-            pane.YAxis.Scale.IsPreventLabelOverlap = true;
+            pane.YAxis.Scale.IsPreventLabelOverlap = true;//坐标值显示是否允许重叠，如果False的话，控件会根据坐标值长度自动消除部分坐标值的显示状态
             pane.Y2Axis.Scale.IsPreventLabelOverlap = true;
             //pane.YAxis.MinorGrid.IsVisible = true;
             ////网格线
@@ -86,8 +86,8 @@ namespace XPCar.Wave
 
             //是否允许纵向缩放
             graph.IsEnableVZoom = false;
-
-            graph.IsEnableZoom = false;
+            graph.PanModifierKeys = System.Windows.Forms.Keys.Shift;
+            //graph.IsEnableZoom = false;
 
             //鼠标经过图表上的点时是否显示该点所对应的值 默认为false 
             //graph.IsShowPointValues = true;
@@ -110,7 +110,7 @@ namespace XPCar.Wave
             {
                 PointPairList line = new PointPairList();
                 SymbolType circle = SymbolType.Circle;
-                float lineWidth;
+
                 for (int i = 0; i < KeyConst.WavePara.LineCnt; i++)
                 {
                     line = lines[i];
@@ -124,17 +124,12 @@ namespace XPCar.Wave
                         {
                             lineTitle = GetLineTitle(i);
                             IsThereTitle[i] = true;
-                            lineWidth = 2.5F;
-                        }
-                        else
-                        {
-                            lineWidth = 1.5F;
                         }
         
                         lineItem = pane.AddCurve(lineTitle, line, lineColor, circle);
                         lineItem.Label.FontSpec = new FontSpec();
                         lineItem.Label.FontSpec.Size = 10F;
-                        lineItem.Line.Width = lineWidth;
+                        lineItem.Line.Width = 1.5F; ;
                         lineItem.Symbol.Size = 0.5F;
                         lineItem.Symbol.Fill = new Fill(lineColor);
 

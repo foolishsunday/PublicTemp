@@ -33,10 +33,7 @@
             this.tbpCan = new System.Windows.Forms.TabPage();
             this.tbpConsist = new System.Windows.Forms.TabPage();
             this.tbpInterop = new System.Windows.Forms.TabPage();
-            this.tbpHandshake = new System.Windows.Forms.TabPage();
-            this.tbpChargePara = new System.Windows.Forms.TabPage();
-            this.tbpCharging = new System.Windows.Forms.TabPage();
-            this.tbpChargeStop = new System.Windows.Forms.TabPage();
+            this.tbpBMS = new System.Windows.Forms.TabPage();
             this.tbpWaveForm = new System.Windows.Forms.TabPage();
             this.tbpStatistics = new System.Windows.Forms.TabPage();
             this.splContainCan = new System.Windows.Forms.SplitContainer();
@@ -51,13 +48,6 @@
             this.pnlSplit = new System.Windows.Forms.Panel();
             this.pnlPageButton = new System.Windows.Forms.Panel();
             this.splContainMain = new System.Windows.Forms.SplitContainer();
-            this.ssBottom = new System.Windows.Forms.StatusStrip();
-            this.tsddbConn = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsslConnect = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsslSpace = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsslbCSV = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsslCalc = new System.Windows.Forms.ToolStripStatusLabel();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiTestItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSingle = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,6 +58,7 @@
             this.tsmiSysUpgrade = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRegister = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLowerDeviceVer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiStdSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDev = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenSendCmd = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCloseSendCmd = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +70,12 @@
             this.tsmiConn = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.skinEng = new Sunisoft.IrisSkin.SkinEngine();
+            this.tsddbConn = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsslConnect = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslSpace = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslbCSV = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslCalc = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ssBottom = new System.Windows.Forms.StatusStrip();
             this.tbcMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splContainCan)).BeginInit();
             this.splContainCan.Panel1.SuspendLayout();
@@ -90,9 +87,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splContainMain)).BeginInit();
             this.splContainMain.Panel2.SuspendLayout();
             this.splContainMain.SuspendLayout();
-            this.ssBottom.SuspendLayout();
             this.msMenu.SuspendLayout();
             this.pnlMain.SuspendLayout();
+            this.ssBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcMain
@@ -101,10 +98,7 @@
             this.tbcMain.Controls.Add(this.tbpCan);
             this.tbcMain.Controls.Add(this.tbpConsist);
             this.tbcMain.Controls.Add(this.tbpInterop);
-            this.tbcMain.Controls.Add(this.tbpHandshake);
-            this.tbcMain.Controls.Add(this.tbpChargePara);
-            this.tbcMain.Controls.Add(this.tbpCharging);
-            this.tbcMain.Controls.Add(this.tbpChargeStop);
+            this.tbcMain.Controls.Add(this.tbpBMS);
             this.tbcMain.Controls.Add(this.tbpWaveForm);
             this.tbcMain.Controls.Add(this.tbpStatistics);
             this.tbcMain.ItemSize = new System.Drawing.Size(120, 22);
@@ -146,42 +140,15 @@
             this.tbpInterop.Text = "互操作性";
             this.tbpInterop.UseVisualStyleBackColor = true;
             // 
-            // tbpHandshake
+            // tbpBMS
             // 
-            this.tbpHandshake.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbpHandshake.Location = new System.Drawing.Point(4, 26);
-            this.tbpHandshake.Name = "tbpHandshake";
-            this.tbpHandshake.Size = new System.Drawing.Size(1028, 392);
-            this.tbpHandshake.TabIndex = 2;
-            this.tbpHandshake.Text = "上电及充电握手阶段";
-            this.tbpHandshake.UseVisualStyleBackColor = true;
-            // 
-            // tbpChargePara
-            // 
-            this.tbpChargePara.Location = new System.Drawing.Point(4, 26);
-            this.tbpChargePara.Name = "tbpChargePara";
-            this.tbpChargePara.Size = new System.Drawing.Size(1028, 392);
-            this.tbpChargePara.TabIndex = 3;
-            this.tbpChargePara.Text = "充电参数配置阶段";
-            this.tbpChargePara.UseVisualStyleBackColor = true;
-            // 
-            // tbpCharging
-            // 
-            this.tbpCharging.Location = new System.Drawing.Point(4, 26);
-            this.tbpCharging.Name = "tbpCharging";
-            this.tbpCharging.Size = new System.Drawing.Size(1028, 392);
-            this.tbpCharging.TabIndex = 4;
-            this.tbpCharging.Text = "充电阶段";
-            this.tbpCharging.UseVisualStyleBackColor = true;
-            // 
-            // tbpChargeStop
-            // 
-            this.tbpChargeStop.Location = new System.Drawing.Point(4, 26);
-            this.tbpChargeStop.Name = "tbpChargeStop";
-            this.tbpChargeStop.Size = new System.Drawing.Size(1028, 392);
-            this.tbpChargeStop.TabIndex = 5;
-            this.tbpChargeStop.Text = "充电结束阶段";
-            this.tbpChargeStop.UseVisualStyleBackColor = true;
+            this.tbpBMS.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbpBMS.Location = new System.Drawing.Point(4, 26);
+            this.tbpBMS.Name = "tbpBMS";
+            this.tbpBMS.Size = new System.Drawing.Size(1028, 392);
+            this.tbpBMS.TabIndex = 2;
+            this.tbpBMS.Text = "BMS模拟";
+            this.tbpBMS.UseVisualStyleBackColor = true;
             // 
             // tbpWaveForm
             // 
@@ -224,7 +191,7 @@
             this.splContainCan.Panel2.Controls.Add(this.pnlPageButton);
             this.splContainCan.Panel2.Margin = new System.Windows.Forms.Padding(1);
             this.splContainCan.Panel2.Padding = new System.Windows.Forms.Padding(1);
-            this.splContainCan.Size = new System.Drawing.Size(1072, 518);
+            this.splContainCan.Size = new System.Drawing.Size(1119, 518);
             this.splContainCan.SplitterDistance = 450;
             this.splContainCan.TabIndex = 0;
             // 
@@ -311,7 +278,7 @@
             this.pnlSplit.Location = new System.Drawing.Point(1, 1);
             this.pnlSplit.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSplit.Name = "pnlSplit";
-            this.pnlSplit.Size = new System.Drawing.Size(1070, 10);
+            this.pnlSplit.Size = new System.Drawing.Size(1117, 10);
             this.pnlSplit.TabIndex = 4;
             this.pnlSplit.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlSplit_Paint);
             // 
@@ -319,7 +286,7 @@
             // 
             this.pnlPageButton.Location = new System.Drawing.Point(591, 15);
             this.pnlPageButton.Name = "pnlPageButton";
-            this.pnlPageButton.Size = new System.Drawing.Size(482, 46);
+            this.pnlPageButton.Size = new System.Drawing.Size(530, 46);
             this.pnlPageButton.TabIndex = 17;
             // 
             // splContainMain
@@ -334,64 +301,9 @@
             // splContainMain.Panel2
             // 
             this.splContainMain.Panel2.Controls.Add(this.splContainCan);
-            this.splContainMain.Size = new System.Drawing.Size(1084, 593);
+            this.splContainMain.Size = new System.Drawing.Size(1125, 593);
             this.splContainMain.SplitterDistance = 41;
             this.splContainMain.TabIndex = 3;
-            // 
-            // ssBottom
-            // 
-            this.ssBottom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ssBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsddbConn,
-            this.tsslConnect,
-            this.tsslSpace,
-            this.tsslbCSV,
-            this.toolStripStatusLabel1,
-            this.tsslCalc});
-            this.ssBottom.Location = new System.Drawing.Point(0, 605);
-            this.ssBottom.Name = "ssBottom";
-            this.ssBottom.Size = new System.Drawing.Size(1090, 22);
-            this.ssBottom.TabIndex = 4;
-            this.ssBottom.Text = "statusStrip1";
-            // 
-            // tsddbConn
-            // 
-            this.tsddbConn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsddbConn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsddbConn.Name = "tsddbConn";
-            this.tsddbConn.Size = new System.Drawing.Size(13, 20);
-            this.tsddbConn.Text = "toolStripDropDownButton1";
-            // 
-            // tsslConnect
-            // 
-            this.tsslConnect.Name = "tsslConnect";
-            this.tsslConnect.Size = new System.Drawing.Size(162, 17);
-            this.tsslConnect.Text = "Disconnected                   ";
-            // 
-            // tsslSpace
-            // 
-            this.tsslSpace.Name = "tsslSpace";
-            this.tsslSpace.Size = new System.Drawing.Size(24, 17);
-            this.tsslSpace.Text = "    ";
-            // 
-            // tsslbCSV
-            // 
-            this.tsslbCSV.ForeColor = System.Drawing.Color.Black;
-            this.tsslbCSV.Name = "tsslbCSV";
-            this.tsslbCSV.Size = new System.Drawing.Size(107, 17);
-            this.tsslbCSV.Text = " 实时保存 : 未保存";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(24, 17);
-            this.toolStripStatusLabel1.Text = "    ";
-            // 
-            // tsslCalc
-            // 
-            this.tsslCalc.Name = "tsslCalc";
-            this.tsslCalc.Size = new System.Drawing.Size(56, 17);
-            this.tsslCalc.Text = "数据状态";
             // 
             // msMenu
             // 
@@ -408,7 +320,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Margin = new System.Windows.Forms.Padding(3);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(1090, 24);
+            this.msMenu.Size = new System.Drawing.Size(1140, 24);
             this.msMenu.TabIndex = 1;
             this.msMenu.Text = "标题菜单";
             this.msMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.MsMenu_Paint);
@@ -456,7 +368,8 @@
             this.tsmiSys.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiSysUpgrade,
             this.tsmiRegister,
-            this.tsmiLowerDeviceVer});
+            this.tsmiLowerDeviceVer,
+            this.tsmiStdSetting});
             this.tsmiSys.Name = "tsmiSys";
             this.tsmiSys.Size = new System.Drawing.Size(41, 20);
             this.tsmiSys.Text = "系统";
@@ -481,6 +394,13 @@
             this.tsmiLowerDeviceVer.Size = new System.Drawing.Size(154, 22);
             this.tsmiLowerDeviceVer.Text = "下位机软件版本";
             this.tsmiLowerDeviceVer.Click += new System.EventHandler(this.TsmiLowerDeviceVer_Click);
+            // 
+            // tsmiStdSetting
+            // 
+            this.tsmiStdSetting.Name = "tsmiStdSetting";
+            this.tsmiStdSetting.Size = new System.Drawing.Size(154, 22);
+            this.tsmiStdSetting.Text = "误差参数配置";
+            this.tsmiStdSetting.Click += new System.EventHandler(this.tsmiStdSetting_Click);
             // 
             // tsmiDev
             // 
@@ -554,7 +474,7 @@
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 24);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1090, 581);
+            this.pnlMain.Size = new System.Drawing.Size(1140, 611);
             this.pnlMain.TabIndex = 4;
             // 
             // skinEng
@@ -566,11 +486,59 @@
             this.skinEng.SerialNumber = "";
             this.skinEng.SkinFile = null;
             // 
+            // tsddbConn
+            // 
+            this.tsddbConn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsddbConn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbConn.Name = "tsddbConn";
+            this.tsddbConn.Size = new System.Drawing.Size(13, 20);
+            this.tsddbConn.Text = "toolStripDropDownButton1";
+            // 
+            // tsslConnect
+            // 
+            this.tsslConnect.Name = "tsslConnect";
+            this.tsslConnect.Size = new System.Drawing.Size(162, 17);
+            this.tsslConnect.Text = "Disconnected                   ";
+            // 
+            // tsslSpace
+            // 
+            this.tsslSpace.Name = "tsslSpace";
+            this.tsslSpace.Size = new System.Drawing.Size(24, 17);
+            this.tsslSpace.Text = "    ";
+            // 
+            // tsslbCSV
+            // 
+            this.tsslbCSV.ForeColor = System.Drawing.Color.Black;
+            this.tsslbCSV.Name = "tsslbCSV";
+            this.tsslbCSV.Size = new System.Drawing.Size(107, 17);
+            this.tsslbCSV.Text = " 实时保存 : 未保存";
+            // 
+            // tsslCalc
+            // 
+            this.tsslCalc.Name = "tsslCalc";
+            this.tsslCalc.Size = new System.Drawing.Size(56, 17);
+            this.tsslCalc.Text = "数据状态";
+            // 
+            // ssBottom
+            // 
+            this.ssBottom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ssBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddbConn,
+            this.tsslConnect,
+            this.tsslSpace,
+            this.tsslbCSV,
+            this.tsslCalc});
+            this.ssBottom.Location = new System.Drawing.Point(0, 635);
+            this.ssBottom.Name = "ssBottom";
+            this.ssBottom.Size = new System.Drawing.Size(1140, 22);
+            this.ssBottom.TabIndex = 4;
+            this.ssBottom.Text = "statusStrip1";
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1090, 627);
+            this.ClientSize = new System.Drawing.Size(1140, 657);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.ssBottom);
             this.Controls.Add(this.msMenu);
@@ -599,11 +567,11 @@
             this.splContainMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splContainMain)).EndInit();
             this.splContainMain.ResumeLayout(false);
-            this.ssBottom.ResumeLayout(false);
-            this.ssBottom.PerformLayout();
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             this.pnlMain.ResumeLayout(false);
+            this.ssBottom.ResumeLayout(false);
+            this.ssBottom.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -618,20 +586,10 @@
         private System.Windows.Forms.Button btnSysStart;
 
         private System.Windows.Forms.SplitContainer splContainMain;
-        private System.Windows.Forms.StatusStrip ssBottom;
-        private System.Windows.Forms.ToolStripDropDownButton tsddbConn;
-        private System.Windows.Forms.ToolStripStatusLabel tsslConnect;
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiBoard;
         private System.Windows.Forms.ToolStripMenuItem tsmiShow;
-        private System.Windows.Forms.ToolStripStatusLabel tsslbCSV;
-        private System.Windows.Forms.ToolStripStatusLabel tsslSpace;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel tsslCalc;
-        private System.Windows.Forms.TabPage tbpHandshake;
-        private System.Windows.Forms.TabPage tbpChargePara;
-        private System.Windows.Forms.TabPage tbpCharging;
-        private System.Windows.Forms.TabPage tbpChargeStop;
+        private System.Windows.Forms.TabPage tbpBMS;
         private System.Windows.Forms.TabPage tbpInterop;
         private System.Windows.Forms.ToolStripMenuItem 端口配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiPortSetting;
@@ -661,6 +619,13 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiLowerDeviceVer;
         private System.Windows.Forms.TabPage tbpStatistics;
         private Sunisoft.IrisSkin.SkinEngine skinEng;
+        private System.Windows.Forms.ToolStripMenuItem tsmiStdSetting;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbConn;
+        private System.Windows.Forms.ToolStripStatusLabel tsslConnect;
+        private System.Windows.Forms.ToolStripStatusLabel tsslSpace;
+        private System.Windows.Forms.ToolStripStatusLabel tsslbCSV;
+        private System.Windows.Forms.ToolStripStatusLabel tsslCalc;
+        private System.Windows.Forms.StatusStrip ssBottom;
     }
 }
 

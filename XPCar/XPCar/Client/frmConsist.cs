@@ -27,6 +27,7 @@ namespace XPCar.Client
         private ConsistController _ConsistController;
         private frmConsistResult _frmConsistResult;
         public event PressStartBtnHandle PressStartBtn;
+        private delegate void MyWinDelegate();
         private enum ThreadState
         {
             Run,
@@ -53,6 +54,7 @@ namespace XPCar.Client
 
                 _ConsistController.SetConsistMap(db);
                 Prj.Prj.RepositoryManager.UpdateConsistResult += this.HandleUpdateConsistResult;
+                Prj.Prj.GeneralController.FinishConsist += this.HandleFinishConsist;
 
                 DisableSortMode();
             }
@@ -154,8 +156,10 @@ namespace XPCar.Client
         }
         public void PressView()
         {
-            BtnViewReport_Click(null, null);
+            ViewReport();
         }
+        public delegate void ThreadFunDelegate();
+
         public void PressReset()
         {
             BtnConsistReset_Click(null, null);
@@ -269,24 +273,17 @@ namespace XPCar.Client
                 ShowAlarm("输出报告失败！请联系管理员处理！");
             }
         }
-        private void BtnViewReport_Click(object sender, EventArgs e)
+        private void ViewReport()
         {
-            try
+            if (_frmConsistResult != null)
             {
-                if (_frmConsistResult != null)
-                {
-                    _frmConsistResult.Close();
-                    _frmConsistResult.Dispose();
-                }
-                if (string.IsNullOrEmpty(_ConsistController.ClickMsgName)) return;
+                _frmConsistResult.Close();
+                _frmConsistResult.Dispose();
+            }
+            if (string.IsNullOrEmpty(_ConsistController.ClickMsgName)) return;
 
-                _frmConsistResult = new frmConsistResult(_ConsistController.ClickMsgName.Replace(".", ""));
-                _frmConsistResult.Show();
-            }
-            catch(Exception ex)
-            {
-                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
-            }
+            _frmConsistResult = new frmConsistResult(_ConsistController.ClickMsgName.Replace(".", ""));
+            _frmConsistResult.Show();
         }
         private void HandleUpdateConsistResult(string msgName, Function.ConsistResult result)
         {
@@ -352,6 +349,25 @@ namespace XPCar.Client
                 brush = new LinearGradientBrush(pnlSplit.ClientRectangle, FColor, TColor, LinearGradientMode.Vertical);
                 g.FillRectangle(brush, pnlSplit.ClientRectangle);
             }
+        }
+        private void HandleFinishConsist()//一致性测试完，主动弹出结果
+        {
+      
+            if (_ConsistController.ConsistStarted)
+            {
+                if (IsNormalTest())   //从一致性测试，恢复为正常测试，无须显示一致性测试结果
+                    return;
+                MyWinDelegate del = new MyWinDelegate(ViewReport);
+                this.BeginInvoke(del);
+                //ViewReport();
+            }
+        }
+        private bool IsNormalTest()
+        {
+            if (_ConsistController.ItemIndex < 0)
+                return true;
+            else
+                return false;
         }
     }
 }

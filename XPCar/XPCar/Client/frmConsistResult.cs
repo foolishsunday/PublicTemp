@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using XPCar.Common;
 using XPCar.Database;
@@ -28,9 +29,11 @@ namespace XPCar.Client
             {
                 DbService db = new DbService();
                 TestItemsReport report = db.QueryReport(_ItemId);
+
                 UpdateItemReport(report);
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
             }
@@ -50,6 +53,11 @@ namespace XPCar.Client
             //this.rtbConsistResult4.Text = report.TestResult4;
 
             this.rtbSummary.Text = report.TestSummary;
+        }
+
+        private void frmConsistResult_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

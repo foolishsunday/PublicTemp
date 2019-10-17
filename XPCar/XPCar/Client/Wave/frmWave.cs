@@ -47,6 +47,7 @@ namespace XPCar.Client.Wave
             Action async = delegate ()
             {
                 _DrawGraphics.Clear();
+                Prj.Prj.WaveController.DrawLineTitle();
                 zgcMsgGraph.Refresh();
             };
             this.BeginInvoke(async);

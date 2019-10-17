@@ -22,6 +22,8 @@ using XPCar.Client.ACTest;
 using XPCar.Client.SysUpgrade;
 using XPCar.Client.Wave;
 using XPCar.Client.Statistics;
+using XPCar.Client.Consist;
+using XPCar.Client.BMS;
 
 namespace XPCar
 {
@@ -35,10 +37,10 @@ namespace XPCar
         private frmMsgCan _frmMsgCan;
         private frmConsist _frmConsist;
         private frmBaseInfo _frmBaseInfo;
-        private frmHandshake _frmHandshake;
-        private frmChargePara _frmChargePara;
-        private frmCharging _frmCharging;
-        private frmChargeStop _frmChargeStop;
+        //private frmHandshake _frmHandshake;
+        //private frmChargePara _frmChargePara;
+        //private frmCharging _frmCharging;
+        //private frmChargeStop _frmChargeStop;
         private frmInterop _frmInterop;
         private frmUpgradeWin _frmUpgradeWin;
         private frmCanBtn _frmCanBtn;
@@ -47,9 +49,10 @@ namespace XPCar
         private frmWave _frmWave;
         private frmSoftwareVersion _frmSoftwareVersion;
         private frmStatistics _frmStatistics;
+        private frmConsistConfig _frmConsistStd;
+        private frmBMS _frmBMS;
 #if AC_TEST
-        //private frmAC _frmAC;
-        //private frmSingle _frmSingle;
+        private frmAC _frmAC;
 #endif
         private void FrmMain_Load(object sender, EventArgs e)
         {
@@ -105,6 +108,7 @@ namespace XPCar
 
             Prj.Prj.RepositoryManager.Reset();
             //this.tbpWaveForm.Parent = null;
+            //this.tbpStatistics.Parent = null;
 
         }
         private void InitFrmSize()
@@ -527,46 +531,15 @@ namespace XPCar
                 }
                 Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.BaseInfo);
             }
-            else if (tbcMain.SelectedTab.Name == "tbpHandshake")
+            else if (tbcMain.SelectedTab.Name == "tbpBMS")
             {
-                if (_frmHandshake == null)
+                if (_frmBMS == null)
                 {
-                    _frmHandshake = new frmHandshake();
-                    _frmHandshake.Dock = DockStyle.Fill;
-                    tbpHandshake.Controls.Add(_frmHandshake);
+                    _frmBMS = new frmBMS();
+                    _frmBMS.Dock = DockStyle.Fill;
+                    tbpBMS.Controls.Add(_frmBMS);
                 }
-                Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.Handshake);
-            }
-            else if (tbcMain.SelectedTab.Name == "tbpChargePara")
-            {
-                if (_frmChargePara == null)
-                {
-                    _frmChargePara = new frmChargePara();
-                    _frmChargePara.Dock = DockStyle.Fill;
-                    tbpChargePara.Controls.Add(_frmChargePara);
-                }
-                Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.ChargeParaGet);
-
-            }
-            else if (tbcMain.SelectedTab.Name == "tbpCharging")
-            {
-                if (_frmCharging == null)
-                {
-                    _frmCharging = new frmCharging();
-                    _frmCharging.Dock = DockStyle.Fill;
-                    tbpCharging.Controls.Add(_frmCharging);
-                }
-                Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.ChargingGet);
-            }
-            else if (tbcMain.SelectedTab.Name == "tbpChargeStop")
-            {
-                if (_frmChargeStop == null)
-                {
-                    _frmChargeStop = new frmChargeStop();
-                    _frmChargeStop.Dock = DockStyle.Fill;
-                    tbpChargeStop.Controls.Add(_frmChargeStop);
-                }
-                Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.ChargeStop);
+                _frmBMS.EnterBMSPage();
             }
             else if (tbcMain.SelectedTab.Name == "tbpInterop")
             {
@@ -584,10 +557,7 @@ namespace XPCar
             }
             else if (tbcMain.SelectedTab.Name == "tbpStatistics")
             {
-                if (_frmStatistics == null)
-                {
 
-                }
             }
             LoadButton(tbcMain.SelectedIndex);
         }
@@ -655,6 +625,17 @@ namespace XPCar
             _frmSoftwareVersion = new frmSoftwareVersion();
             _frmSoftwareVersion.Dock = DockStyle.Fill;
             _frmSoftwareVersion.Show();
+        }
+
+        private void tsmiStdSetting_Click(object sender, EventArgs e)
+        {
+            if (_frmConsistStd != null)
+            {
+                _frmConsistStd.Close();
+                _frmConsistStd.Dispose();
+            }
+            _frmConsistStd = new frmConsistConfig();
+            _frmConsistStd.Show();
         }
     }
 }

@@ -18,6 +18,7 @@ namespace XPCar.Client
             InitializeComponent();
             _frmConsist = consist;
             _frmCanBtn = canBtn;
+
         }
 
         private void BtnConsistTest_Click(object sender, EventArgs e)

@@ -17,6 +17,7 @@ namespace XPCar.Prj.Controller
     public delegate void UpdateACResultHandle();
     public delegate void UpdateACInteropHandle(GetACInterop data);
     public delegate void UpdateVersionHandle(string ver, string flowno);
+    public delegate void FinishConsistHandle();
     public class GeneralController
     {
         public event UpdateHandShakeHandle UpdateHandShake;
@@ -30,6 +31,7 @@ namespace XPCar.Prj.Controller
         public event UpdateACResultHandle UpdateACResult;
         public event UpdateACInteropHandle UpdateACInterop;
         public event UpdateVersionHandle UpdateVersion;
+        public event FinishConsistHandle FinishConsist;
         public void RefreshHandshake(GetHandShake data)
         {
             if (UpdateHandShake != null)
@@ -84,6 +86,11 @@ namespace XPCar.Prj.Controller
         {
             if (UpdateVersion != null)
                 UpdateVersion(data, flowNo);
+        }
+        public void RefreshAutoConsistResult()
+        {
+            if (FinishConsist != null)
+                FinishConsist();
         }
     }
 }

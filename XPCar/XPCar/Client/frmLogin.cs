@@ -63,7 +63,7 @@ namespace XPCar.Client
                 string regCode = tbRegCode.Text.Substring(0, 64);
                 Encrypt.Encryption encryption = new Encrypt.Encryption();
                 string stdRegCode = Encrypt.Encryption.Encrypt(machineCode, Encrypt.Encryption.CRYPTO_KEY);
-
+      
                 if (regCode == stdRegCode)
                 {
                     string time = tbRegCode.Text.Substring(64);

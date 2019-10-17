@@ -481,7 +481,7 @@ namespace XPCar.Common
         }
         public class WavePara
         {
-            public const int CurveCnt = 22;
+            public const int CurveCnt = 23;
             public const int LineCnt = 5;
         }
     }

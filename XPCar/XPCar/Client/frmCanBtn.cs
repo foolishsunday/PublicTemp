@@ -175,5 +175,10 @@ namespace XPCar.Client
                 Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
             }
         }
+
+        private void cbTranslate_CheckedChanged(object sender, EventArgs e)
+        {
+            Prj.Prj.ValueManager.EnableTranslate = cbTranslate.Checked;
+        }
     }
 }

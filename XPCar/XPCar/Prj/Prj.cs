@@ -25,7 +25,9 @@ namespace XPCar.Prj
 #if DC_TEST_9980AP
         public static string ConfigFilePath = "Aplus.exe.config";
 #elif DC_TEST_9980A
-        public static string ConfigFilePath = "ST-9980A.exe.config";
+                public static string ConfigFilePath = "ST-9980A.exe.config";
+#elif AC_TEST
+        public static string ConfigFilePath = "ST-9980AP.exe.config";
 #endif
         public static SerialPortIO PortIO;
         public static MainController MainController;

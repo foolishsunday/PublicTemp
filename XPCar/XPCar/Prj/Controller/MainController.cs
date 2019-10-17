@@ -7,6 +7,7 @@ using XPCar.Common;
 using XPCar.Component;
 using XPCar.Prj;
 using XPCar.Prj.Data;
+using XPCar.Prj.Model;
 using XPCar.Sys.Comm;
 using XPCar.Sys.IO.Port;
 
@@ -20,7 +21,6 @@ namespace XPCar.Prj.Controller
         public event CommIOStatusUpdated CommIOStatusUpdated;
         public event CommIOButtonUpdated CommIOButtonUpdated;
         //public event MsgDataFormHandle MsgDataForm;
-
 
         private PrjConfig _Config;
         public WarningLight WarningLight;
@@ -121,6 +121,7 @@ namespace XPCar.Prj.Controller
         {
             get { return _Config; }
         }
+
         public void SaveConfig()
         {
             _Config.Save();

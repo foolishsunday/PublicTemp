@@ -80,7 +80,7 @@ namespace XPCar.Consist.Calc
                 {
                     _LengthResult = true;
                     text = KeyConst.Consist.Result.Qualified;
-                    return _MsgName + "长度" + KeyConst.Punctuation.Colon + dataLen + KeyConst.Punctuation.Space + text + KeyConst.Punctuation.Space;
+                    return _MsgName + "长度" + KeyConst.Punctuation.Colon + dataLen + KeyConst.Punctuation.Space + text + KeyConst.Punctuation.Space + Environment.NewLine;
                 }
             }
               
@@ -97,7 +97,7 @@ namespace XPCar.Consist.Calc
                 _LengthResult = false;
                 text = KeyConst.Consist.Result.Unqualified;
             }
-            return _MsgName + "长度" + KeyConst.Punctuation.Colon + dataLen + KeyConst.Punctuation.Space + text + KeyConst.Punctuation.Space;
+            return _MsgName + "长度" + KeyConst.Punctuation.Colon + dataLen + KeyConst.Punctuation.Space + text + KeyConst.Punctuation.Space + Environment.NewLine;
         }
         private int SpecialMutiQualifiedLen(string msgName, int std)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -94,22 +95,27 @@ namespace XPCar.Prj.Flow
         {
             while (true)
             {
+
                 if (_Stocker.List().Count > 100 || _Commit == CommitState.ConsistData)
                 {
                     lock (_Locker)
                     {
-                        StockerMoveToRepository();
+                        StockerMoveToRepository();//移到仓库
                     }
                 }
-                if (_Repository.List().Count > 100 || _Commit == CommitState.ConsistData)
+
+                if (_Repository.List().Count > 500 || _Commit == CommitState.ConsistData)
                 {
-                    CommitToRespository();
+                    CommitToRespository();  //仓库提交DB
                     if (Prj.ConsistController.ConsistStarted && _Commit == CommitState.ConsistData)
-                        CommitToConsist();
+                        CommitToConsist();  //提交一致性
+
                 }
+        
+   
                 if (Prj.ConsistController.ConsistStarted && _Commit == CommitState.ConsistTestStart)
                 {
-                    CommitToTestStart();
+                    CommitToTestStart();    //提交一致性的开始时间
                 }
                 if (_Commit == CommitState.ConsistTestEnd)  
                     CommitToConsistTimeEnd();
@@ -200,7 +206,7 @@ namespace XPCar.Prj.Flow
                 //case KeyConst.Consist.ItemId.BN1002:
                 //    SetTimer(63000, true);
                 //    break;
-                default:
+                default://不计时
                     SetTimer(0, false);
                     break;
             }

@@ -22,12 +22,12 @@ namespace XPCar.Consist.Calc
         {
             if (_Data != null && _Data.Count > 0)
             {
-                return _MsgName + "格式" + KeyConst.Punctuation.Colon + KeyConst.Consist.Result.Qualified + KeyConst.Punctuation.Space;
+                return _MsgName + "格式" + KeyConst.Punctuation.Colon + KeyConst.Consist.Result.Qualified + KeyConst.Punctuation.Space + Environment.NewLine;
             }
             else
             {
                 _IsResultOk = false;
-                return _MsgName + "格式" + KeyConst.Punctuation.Colon + KeyConst.Consist.Result.Unqualified + KeyConst.Punctuation.Space;
+                return _MsgName + "格式" + KeyConst.Punctuation.Colon + KeyConst.Consist.Result.Unqualified + KeyConst.Punctuation.Space + Environment.NewLine;
             }
         }
         public bool IsResultOk()

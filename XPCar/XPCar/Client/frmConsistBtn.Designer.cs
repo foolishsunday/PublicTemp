@@ -47,7 +47,7 @@
             this.grpbConsistBtn.Margin = new System.Windows.Forms.Padding(0);
             this.grpbConsistBtn.Name = "grpbConsistBtn";
             this.grpbConsistBtn.Padding = new System.Windows.Forms.Padding(0);
-            this.grpbConsistBtn.Size = new System.Drawing.Size(482, 46);
+            this.grpbConsistBtn.Size = new System.Drawing.Size(530, 46);
             this.grpbConsistBtn.TabIndex = 17;
             this.grpbConsistBtn.TabStop = false;
             // 
@@ -98,7 +98,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.grpbConsistBtn);
             this.Name = "frmConsistBtn";
-            this.Size = new System.Drawing.Size(482, 46);
+            this.Size = new System.Drawing.Size(530, 46);
             this.grpbConsistBtn.ResumeLayout(false);
             this.ResumeLayout(false);
 

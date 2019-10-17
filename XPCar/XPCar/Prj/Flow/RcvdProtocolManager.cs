@@ -35,6 +35,7 @@ namespace XPCar.Prj.Flow
       
 
         private static Queue<RawData> _TaskQueue;
+        //private static Queue<long> _TaskNum;
         public RcvdProtocolManager()
         {
             _EventWaitRead = new AutoResetEvent(false);
@@ -47,7 +48,6 @@ namespace XPCar.Prj.Flow
             _RawCollect = new DataCollection();
             _WaitDecodeBuf = new DataCollection();
             _OnlineDecodeBuf = new DataCollection();
-
         }
 
         public void Init(SerialPortIO portIO)
@@ -65,20 +65,22 @@ namespace XPCar.Prj.Flow
             {
                 while (true)
                 {
-                    RawData work = new RawData();
-                    if (_TaskQueue.Count > 0)
-                    {
-                        work = _TaskQueue.Dequeue();
-                        if (work.TaskName == TaskName.Stop)
-                        {
-                            return; //任务为空则停止
-                        }
-                    }
-                    if (work.TaskName == TaskName.ReadPort)
-                    {
-                        DoReadTask();//_RawCollect -> _WaitDecodeBuf
-                        _EventWaitDecode.Set();
-                    }
+                    //RawData work = new RawData();
+                    //if (_TaskQueue.Count > 0)
+                    //{
+                    //    work = _TaskQueue.Dequeue();
+                    //    if (work.TaskName == TaskName.Stop)
+                    //    {
+                    //        return; //任务为空则停止
+                    //    }
+                    //}
+                    //if (work.TaskName == TaskName.ReadPort)
+                    //{
+                    //    DoReadTask();//_RawCollect -> _WaitDecodeBuf
+                    //    _EventWaitDecode.Set();
+                    //}
+                    DoReadTask();//_RawCollect -> _WaitDecodeBuf
+                    _EventWaitDecode.Set();
                     _EventWaitRead.WaitOne();
                 }
             }
@@ -109,18 +111,23 @@ namespace XPCar.Prj.Flow
         /// 读取数据任务压入任务队列，唤醒读取数据进程
         /// </summary>
         /// <param name="rawData"></param>
-        public void EnqueueTask(RawData rawData)
+        //public void EnqueueTask(RawData rawData)
+        //{
+
+        //    _TaskQueue.Enqueue(rawData);
+        //    _EventWaitRead.Set();
+        //}
+        public void EnqueueTask()
         {
 
-            _TaskQueue.Enqueue(rawData);
             _EventWaitRead.Set();
         }
         public void Dispose()
         {
-            RawData package = new RawData();
-            package.TaskName = TaskName.Stop;
+            //RawData package = new RawData();
+            //package.TaskName = TaskName.Stop;
 
-            EnqueueTask(package);
+            //EnqueueTask(package);
             _ThreadRead.Abort();
             _ThreadRead.Join();         //等待工作线程完成
             _EventWaitRead.Close();
@@ -190,8 +197,10 @@ namespace XPCar.Prj.Flow
                     //_RawCollect.AddBuf(buf);
                 }
                 RawData package = new RawData(TaskName.ReadPort, null);
-                EnqueueTask(package);
-                
+                //EnqueueTask(package);
+                EnqueueTask();
+
+
             }
             catch (Exception ex)
             {
