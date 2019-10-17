@@ -151,28 +151,28 @@
     <Compile Include="Client\frmCharging.Designer.cs">
       <DependentUpon>frmCharging.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client\frmConsist.cs">
+    <Compile Include="Client\Consist\frmConsist.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Client\frmConsist.Designer.cs">
+    <Compile Include="Client\Consist\frmConsist.Designer.cs">
       <DependentUpon>frmConsist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client\frmConsistBtn.cs">
+    <Compile Include="Client\Consist\frmConsistBtn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Client\frmConsistBtn.Designer.cs">
+    <Compile Include="Client\Consist\frmConsistBtn.Designer.cs">
       <DependentUpon>frmConsistBtn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client\frmConsistDetail.cs">
+    <Compile Include="Client\Consist\frmConsistDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client\frmConsistDetail.Designer.cs">
+    <Compile Include="Client\Consist\frmConsistDetail.Designer.cs">
       <DependentUpon>frmConsistDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client\frmConsistResult.cs">
+    <Compile Include="Client\Consist\frmConsistResult.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client\frmConsistResult.Designer.cs">
+    <Compile Include="Client\Consist\frmConsistResult.Designer.cs">
       <DependentUpon>frmConsistResult.cs</DependentUpon>
     </Compile>
     <Compile Include="Client\frmHandshake.cs">
@@ -495,16 +495,16 @@
     <EmbeddedResource Include="Client\frmCharging.resx">
       <DependentUpon>frmCharging.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client\frmConsist.resx">
+    <EmbeddedResource Include="Client\Consist\frmConsist.resx">
       <DependentUpon>frmConsist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client\frmConsistBtn.resx">
+    <EmbeddedResource Include="Client\Consist\frmConsistBtn.resx">
       <DependentUpon>frmConsistBtn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client\frmConsistDetail.resx">
+    <EmbeddedResource Include="Client\Consist\frmConsistDetail.resx">
       <DependentUpon>frmConsistDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client\frmConsistResult.resx">
+    <EmbeddedResource Include="Client\Consist\frmConsistResult.resx">
       <DependentUpon>frmConsistResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client\frmHandshake.resx">
