@@ -187,9 +187,9 @@ namespace XPCar.Consist.Calc
         public long TimeoutOffset(long timeout)
         {
             long std = 0;
-            double offset1s = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std1s) / 100F;
-            double offset5s = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std5s) / 100F;
-            double offset10s = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std10s) / 100F;
+            double offset1s = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std1s) / 1000F;
+            double offset5s = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std5s) / 1000F;
+            double offset10s = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std10s) / 1000F;
             if (timeout == 1000)
                 std = (long)(timeout * (1 + offset1s));
             //std = 1200;

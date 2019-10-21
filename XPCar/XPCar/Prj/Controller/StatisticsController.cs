@@ -60,7 +60,15 @@ namespace XPCar.Prj.Controller
         }
         public void InitStatisticsData()
         {
-            AddStatisticsData();
+            try
+            {
+                AddStatisticsData();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+
         }
         public void AddStatisticsData()
         {
@@ -105,16 +113,7 @@ namespace XPCar.Prj.Controller
         }
         public void Reset()
         {
-            try
-            {
-                _Data.Rows.Clear();
-                if (DoStatisticsData != null)
-                    DoStatisticsData(_Data);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
-            }
+            InitStatisticsData();
         }
         public DataTable DataBind()
         {

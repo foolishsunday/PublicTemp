@@ -23,6 +23,13 @@ namespace XPCar.Client.Statistics
             AddHeaderText();
             SetColumnsWidth();
             Prj.Prj.StatisticsController.DoStatisticsData += this.HandleStatisticsData;
+
+
+            //禁止自动排序
+            for (int i = 0; i < this.dgvStatistics.Columns.Count; i++)
+            {
+                this.dgvStatistics.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             Prj.Prj.StatisticsController.InitStatisticsData();
         }
         private void AddHeaderText()
@@ -38,6 +45,7 @@ namespace XPCar.Client.Statistics
         }
         private void SetColumnsWidth()
         {
+            dgvStatistics.RowHeadersWidth = 50;
             dgvStatistics.Columns[0].Width = 100;
             dgvStatistics.Columns[1].Width = 100;
             dgvStatistics.Columns[2].Width = 100;
@@ -50,6 +58,11 @@ namespace XPCar.Client.Statistics
                 dgvStatistics.DataSource = dt;
             };
             this.BeginInvoke(async);
+        }
+
+        private void dgvStatistics_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1);
         }
     }
 }

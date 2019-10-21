@@ -15,7 +15,7 @@ namespace XPCar.Sys.IO.Port
         {
             //this.State = 0;
 
-            this.ReceiveDataBuf = new byte[2048];
+            this.ReceiveDataBuf = new byte[40960];
             this.ReceiveDataLen = 0;
             //this.BufSize = bufSize;
             this.Sp = sp;

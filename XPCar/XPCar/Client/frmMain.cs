@@ -56,7 +56,7 @@ namespace XPCar
 #endif
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            Log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + "()" + ": System Start!");
             Prj.Prj.Init();
 
             this.Init(Prj.Prj.MainController);

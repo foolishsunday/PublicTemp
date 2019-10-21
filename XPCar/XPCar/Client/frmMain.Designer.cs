@@ -156,7 +156,7 @@
             this.tbpWaveForm.Name = "tbpWaveForm";
             this.tbpWaveForm.Size = new System.Drawing.Size(1028, 392);
             this.tbpWaveForm.TabIndex = 8;
-            this.tbpWaveForm.Text = "控制时序图";
+            this.tbpWaveForm.Text = "充电时序图";
             this.tbpWaveForm.UseVisualStyleBackColor = true;
             // 
             // tbpStatistics
@@ -165,7 +165,7 @@
             this.tbpStatistics.Name = "tbpStatistics";
             this.tbpStatistics.Size = new System.Drawing.Size(1028, 392);
             this.tbpStatistics.TabIndex = 9;
-            this.tbpStatistics.Text = "统计";
+            this.tbpStatistics.Text = "统计分析";
             this.tbpStatistics.UseVisualStyleBackColor = true;
             // 
             // splContainCan

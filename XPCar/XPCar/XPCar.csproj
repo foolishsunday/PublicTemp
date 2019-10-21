@@ -467,7 +467,7 @@
     <Compile Include="Task\RawData.cs" />
     <Compile Include="Timers\ThreadTimer.cs" />
     <Compile Include="Timers\TimerManager.cs" />
-    <Compile Include="Wave\DrawGraphics.cs" />
+    <Compile Include="WaveData\DrawGraphics.cs" />
     <EmbeddedResource Include="Client\ACTest\frmAC.resx">
       <DependentUpon>frmAC.cs</DependentUpon>
     </EmbeddedResource>

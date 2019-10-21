@@ -41,7 +41,6 @@ namespace XPCar.Prj
         public static GeneralController GeneralController;
         public static UpgradeController UpgradeController;
         public static TimerManager TimerManager;
-        //public static ConsistTestManager ConsistTestManager;
         public static ValueManager ValueManager;//add for 时间增量
 
         public static WaveController WaveController;

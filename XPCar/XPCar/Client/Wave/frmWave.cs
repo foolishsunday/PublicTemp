@@ -6,10 +6,10 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using XPCar.Wave;
 using XPCar.Prj.Model;
 using XPCar.Common;
 using ZedGraph;
+using XPCar.WaveData;
 
 namespace XPCar.Client.Wave
 {

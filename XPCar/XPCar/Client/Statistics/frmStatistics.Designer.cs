@@ -48,6 +48,7 @@
             this.dgvStatistics.RowTemplate.Height = 23;
             this.dgvStatistics.Size = new System.Drawing.Size(1050, 512);
             this.dgvStatistics.TabIndex = 0;
+            this.dgvStatistics.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvStatistics_RowStateChanged);
             // 
             // frmStatistics
             // 

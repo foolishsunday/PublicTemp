@@ -187,26 +187,32 @@ namespace XPCar.Prj.Flow
         /// <param name="len"></param>
         private void HandleDataReceived(int index, byte[] buf, int len)
         {
+            byte[] readOut = new byte[] { };
             try
             {
-                byte[] readOut = new byte[len];
+                readOut = new byte[len];
                 Array.Copy(buf, readOut, len);
-                lock (_RawCollect)
-                {
-                    _RawCollect.AddBuf(readOut);
-                    //_RawCollect.AddBuf(buf);
-                }
-                RawData package = new RawData(TaskName.ReadPort, null);
-                //EnqueueTask(package);
-                EnqueueTask();
-
 
             }
             catch (Exception ex)
             {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", "read out error!");
                 Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
             }
-
+            try
+            {
+                lock (_RawCollect)
+                {
+                    _RawCollect.AddBuf(readOut);
+                }
+                //RawData package = new RawData(TaskName.ReadPort, null);
+                EnqueueTask();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", "Raw collect error!");
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
         }
         public void DoUpdateBaseInfo(BaseInfo info)
         {

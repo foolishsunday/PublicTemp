@@ -8,7 +8,7 @@ using XPCar.Common;
 using XPCar.Prj.Model;
 using ZedGraph;
 
-namespace XPCar.Wave
+namespace XPCar.WaveData
 {
     public class DrawGraphics
     {

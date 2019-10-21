@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading;
 using XPCar.Common;
 using XPCar.Prj.Model;
-using XPCar.Wave;
 using ZedGraph;
 
 namespace XPCar.Prj.Controller
@@ -14,17 +13,12 @@ namespace XPCar.Prj.Controller
     public class WaveController
     {
         private GraphPoint _GraphPoint;
-        //private Thread _Thread;
         private static readonly object _Locker = new object();
         public event DrawWaveHandle DrawWave;
-        //private EventWaitHandle _EventDraw;
         public BaseInfo WaveBaseInfo { get; set; }
         public WaveController()
         {
             _GraphPoint = new GraphPoint();
-            //_Thread = new Thread(WaveTask);
-            //_Thread.Start();
-            //_EventDraw = new AutoResetEvent(false);
             WaveBaseInfo = new BaseInfo();
         }
 
@@ -81,31 +75,7 @@ namespace XPCar.Prj.Controller
                 Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
             }
         }
-        //private void WaveTask()
-        //{
-        //    try
-        //    {
-        //        while (true)
-        //        {
-        //            lock (_Locker)
-        //            {
-        //                if (DrawWave != null)
-        //                {
-        //                    PointPairList[] lists = _GraphPoint.GetPoints();
-        //                    PointPairList[] lines = _GraphPoint.GetLines();
-        //                    DrawWave(lists, lines);
-        //                    _GraphPoint.ClearAllPoint();
-        //                }
-        //            }
-        //            _EventDraw.WaitOne();
-        //            //Thread.Sleep(1000);
-        //        }
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
-        //    }
-        //}
+
         private void DrawWaveTask(object state)
         {
             lock (_Locker)
@@ -121,20 +91,7 @@ namespace XPCar.Prj.Controller
         }
         public void WackupDraw()
         {
-            //_EventDraw.Set();
             ThreadPool.QueueUserWorkItem(new WaitCallback(DrawWaveTask));
         }
-        //public void StopTask()
-        //{
-        //    try
-        //    {
-        //        _Thread.Abort();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
-        //    }
-
-        //}
     }
 }
