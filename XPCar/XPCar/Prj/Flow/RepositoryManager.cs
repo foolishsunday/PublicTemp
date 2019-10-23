@@ -14,12 +14,11 @@ using XPCar.Timers;
 namespace XPCar.Prj.Flow
 {
     public delegate void UpdateConsistResultHandle(string msgName, Function.ConsistResult result);
-    public enum CommitState
+    public enum ConsistConfigMsgStyle
     {
         None,
-        ConsistData,
-        ConsistTestStart,
-        ConsistTestEnd
+        CommitStartDate,
+        CommitEndDate
     }
     public class RepositoryManager : IDisposable
     {
@@ -28,10 +27,11 @@ namespace XPCar.Prj.Flow
         private Thread _Thread;
         private EventWaitHandle _Wakeup;
         private bool _isDisposed;
-        private CommitState _Commit;
+
         private static readonly object _Locker = new object();
         public event UpdateConsistResultHandle UpdateConsistResult;
         private ThreadTimer _TestTimer;
+        private DbTaskState _TaskState;
         public RepositoryManager()
         {
             _Stocker = new DataResolve();
@@ -40,7 +40,8 @@ namespace XPCar.Prj.Flow
 
             _Wakeup = new AutoResetEvent(false);
             _Thread.Start();
-  
+
+            _TaskState = new DbTaskState();
         }
         ~RepositoryManager()
         {
@@ -96,7 +97,7 @@ namespace XPCar.Prj.Flow
             while (true)
             {
 
-                if (_Stocker.List().Count > 100 || _Commit == CommitState.ConsistData)
+                if (_Stocker.List().Count > 100 || _TaskState.IsCanMsgCommitEnable())
                 {
                     lock (_Locker)
                     {
@@ -104,28 +105,46 @@ namespace XPCar.Prj.Flow
                     }
                 }
 
-                if (_Repository.List().Count > 500 || _Commit == CommitState.ConsistData)
+                if (_Repository.List().Count > 100 || _TaskState.IsCanMsgCommitEnable())
                 {
                     CommitToRespository();  //仓库提交DB
-                    if (Prj.ConsistController.ConsistStarted && _Commit == CommitState.ConsistData)
-                        CommitToConsist();  //提交一致性
+                    _TaskState.DisableCanMsgCommit();
 
                 }
-        
-   
-                if (Prj.ConsistController.ConsistStarted && _Commit == CommitState.ConsistTestStart)
+
+                if (Prj.ConsistController.ConsistStarted)
                 {
-                    CommitToTestStart();    //提交一致性的开始时间
+                    if (_TaskState.GetConsistConfigMsg() == ConsistConfigMsgStyle.CommitStartDate)
+                    {
+                        CommitToTestStart();
+                        _TaskState.SetConsistConfigMsg(ConsistConfigMsgStyle.None);
+                    }
+                    else if (_TaskState.GetConsistConfigMsg() == ConsistConfigMsgStyle.CommitEndDate)
+                    {
+                        CommitConsistResult();
+                        _TaskState.SetConsistConfigMsg(ConsistConfigMsgStyle.None);
+                        Prj.GeneralController.RefreshAutoConsistResult();
+                    }
+                    else { }
                 }
-                if (_Commit == CommitState.ConsistTestEnd)  
-                    CommitToConsistTimeEnd();
-                _Commit = CommitState.None;
                 _Wakeup.WaitOne();
             }
         }
-        public void WakeupCommit(CommitState state)
+        public void WakeupCommit(int state)
         {
-            _Commit = state;
+            if (state == 1)//提交CanMsg
+            {
+                _TaskState.EnableCanMsgCommit();
+            }
+            else if (state == 2)//提交协议一致性计时开始时间
+            {
+                _TaskState.SetConsistConfigMsg(ConsistConfigMsgStyle.CommitStartDate);
+            }
+            else if (state == 3)//提交协议一致性计时结束时间
+            {
+
+                _TaskState.SetConsistConfigMsg(ConsistConfigMsgStyle.CommitEndDate);
+            }
             _Wakeup.Set();
         }
         private void CommitToRespository()
@@ -160,7 +179,7 @@ namespace XPCar.Prj.Flow
 
             }
         }
-        private void CommitToConsist()
+        private void CommitConsistResult()
         {
             ConsistFactoryManager consistCalc = new ConsistFactoryManager();
             string msgName = string.Empty;
@@ -170,26 +189,8 @@ namespace XPCar.Prj.Flow
             Function.ConsistResult ret = consistCalc.CreateConsistMachine(msgName);
             if (UpdateConsistResult != null)
                 UpdateConsistResult(msgName, ret);
-            //int time = consistCalc.ConsistTimeMode(msgName);
-            //if (time > 0)    //需要计时
-            //{
-            //    SetTimer(time);
-            //}
-            //else
-            //{
-            //    Function.ConsistResult ret = consistCalc.CreateConsistMachine(msgName);
-            //    if (UpdateConsistResult != null)
-            //        UpdateConsistResult(msgName, ret);
-            //}
         }
-        private void CommitToConsistTimeEnd()
-        {
-            ConsistFactoryManager consistCalc = new ConsistFactoryManager();
-            string msgName = Prj.ConsistController.SelectedMsgName.Replace(".", "");
-            Function.ConsistResult ret = consistCalc.CreateConsistMachine(msgName);
-            if (UpdateConsistResult != null)
-                UpdateConsistResult(msgName, ret);
-        }
+
         private void CommitToTestStart()
         {
             DbService db = new DbService();
@@ -238,7 +239,7 @@ namespace XPCar.Prj.Flow
         //定时触发WakeupCommit，以计算一致性测试结果
         private void ConsistTest_Tick(object state)
         {
-            WakeupCommit(CommitState.ConsistTestEnd);
+            WakeupCommit(3);
             _TestTimer.Stop();
         }
         public void ResetConsistResult()

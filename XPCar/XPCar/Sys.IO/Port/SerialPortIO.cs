@@ -53,7 +53,7 @@ namespace XPCar.Sys.IO.Port
             state.Sp.Parity = Parity.None;
             state.Sp.PortName = portName;
             state.Sp.BaudRate = baud;
-
+            state.Sp.ReadBufferSize = 40960;
             state.Name = portName;
         }
         public bool Connect()

@@ -632,7 +632,7 @@ namespace XPCar.Common
                 case 21: return Color.LightSeaGreen;
                 case 22: return Color.LightSkyBlue;
                 case 23: return Color.LightSlateGray;
-                default: return Color.White;
+                default: return Color.Black;
             }
         }
 

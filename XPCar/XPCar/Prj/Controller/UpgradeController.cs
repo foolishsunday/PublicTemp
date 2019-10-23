@@ -30,17 +30,17 @@ namespace XPCar.Prj.Controller
             if (UpdateUpgradeState != null)
                 UpdateUpgradeState(text);
         }
-        public void SetReqUpgradeState()
+        public void SetEnableUpgradeState()
         {
             _UpgradeState = 1;
+        }
+        public void SetDisableUpgradeState()
+        {
+            _UpgradeState = 0;
         }
         public bool IsRequestUpgrade()
         {
             return _UpgradeState == 1 ? true : false;
-        }
-        public void Reset()
-        {
-            _UpgradeState = 0;
         }
     }
 }

@@ -42,5 +42,9 @@ namespace XPCar.Prj.Controller
         {
             ItemIndex = -1;
         }
+        public bool IsSelectedNone()
+        {
+            return ItemIndex < 0 ? true : false;
+        }
     }
 }

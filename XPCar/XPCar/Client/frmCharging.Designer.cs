@@ -160,6 +160,9 @@
             this.label73 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
             this.pnlOtherTrouble = new System.Windows.Forms.Panel();
             this.radioButton49 = new System.Windows.Forms.RadioButton();
             this.radioButton50 = new System.Windows.Forms.RadioButton();
@@ -193,10 +196,7 @@
             this.radioButton29 = new System.Windows.Forms.RadioButton();
             this.radioButton30 = new System.Windows.Forms.RadioButton();
             this.label66 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
@@ -391,7 +391,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(901, 130);
+            this.tabPage6.Size = new System.Drawing.Size(910, 130);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "充电机中止充电报文(CST)";
             // 
@@ -694,7 +694,7 @@
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(901, 230);
+            this.tabPage4.Size = new System.Drawing.Size(910, 230);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "电池充电需求报文(BCL)";
             // 
@@ -747,7 +747,7 @@
             this.tbBCLPeriod.Name = "tbBCLPeriod";
             this.tbBCLPeriod.Size = new System.Drawing.Size(77, 21);
             this.tbBCLPeriod.TabIndex = 15;
-            this.tbBCLPeriod.Text = "10";
+            this.tbBCLPeriod.Text = "50";
             // 
             // tbReqI
             // 
@@ -821,7 +821,7 @@
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(901, 230);
+            this.tabPage3.Size = new System.Drawing.Size(910, 230);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "电池充电总状态报文(BCS)";
             // 
@@ -989,7 +989,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(901, 230);
+            this.tabPage1.Size = new System.Drawing.Size(910, 230);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "BMS发送动力蓄电池状态信息报文(BSM)";
             // 
@@ -1644,6 +1644,33 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "BMS中止充电故障原因:";
             // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(595, 53);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(125, 12);
+            this.label65.TabIndex = 11;
+            this.label65.Text = "检测点2电压检测故障:";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(571, 24);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(149, 12);
+            this.label63.TabIndex = 8;
+            this.label63.Text = "BMS元件、输出连接器过温:";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(277, 52);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(119, 12);
+            this.label59.TabIndex = 6;
+            this.label59.Text = "电池组温度过高故障:";
+            // 
             // pnlOtherTrouble
             // 
             this.pnlOtherTrouble.Controls.Add(this.radioButton49);
@@ -2005,15 +2032,6 @@
             this.label66.TabIndex = 13;
             this.label66.Text = "其他故障:";
             // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(595, 53);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(125, 12);
-            this.label65.TabIndex = 11;
-            this.label65.Text = "检测点2电压检测故障:";
-            // 
             // label64
             // 
             this.label64.AutoSize = true;
@@ -2022,24 +2040,6 @@
             this.label64.Size = new System.Drawing.Size(95, 12);
             this.label64.TabIndex = 10;
             this.label64.Text = "高压继电器故障:";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(571, 24);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(149, 12);
-            this.label63.TabIndex = 8;
-            this.label63.Text = "BMS元件、输出连接器过温:";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(277, 52);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(119, 12);
-            this.label59.TabIndex = 6;
-            this.label59.Text = "电池组温度过高故障:";
             // 
             // label60
             // 

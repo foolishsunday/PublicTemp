@@ -24,8 +24,7 @@ namespace XPCar.Prj.Controller
         public static readonly object MsgLocker = new object();
 
         private MsgBig _MsgBig;
-        //private MsgBig[] _MsgBigArr;
-        //private int MsgArrCnt = 10;
+
         private ThreadTimer _UpdateMsgTimer;
         private int _Index;
         private bool _PauseCan;
@@ -35,12 +34,6 @@ namespace XPCar.Prj.Controller
 
             _MsgBig = new MsgBig();
             _MsgBig.Init();
-
-            //_MsgBigArr = new MsgBig[MsgArrCnt];
-            //for (int i = 0; i < MsgArrCnt; i++)
-            //{
-            //    _MsgBigArr[i] = new MsgBig();
-            //}
 
             _UpdateMsgTimer = new ThreadTimer(UpdateMsgTick);
             _UpdateMsgTimer.Interval = 2000;
@@ -60,11 +53,6 @@ namespace XPCar.Prj.Controller
                 model.ObjectNo = this._Index;
                 _UpdateMsgTimer.Stop();
                 _UpdateMsgTimer.Start();
-                //if (!Prj.CanMsgController.IsPause())
-                //{
-                //    MsgDataForm(1);
-                //    DisplayLight();
-                //}
 
                 AppendCanMsg(model);
             }
@@ -111,18 +99,24 @@ namespace XPCar.Prj.Controller
         //TODO:Can Msg停止后，计时触发：把数据提交到数据库
         private void UpdateMsgTick(object state)
         {
-            Prj.RepositoryManager.WakeupCommit(CommitState.ConsistData);
-            Prj.WaveController.WackupDraw();
-            Prj.StatisticsController.AddStatisticsData();
+            _UpdateMsgTimer.Stop();
 
             UpdateCalcState(KeyConst.MdiText_Calc.Calculating); //底部工具栏显示：计算中...
-            Thread.Sleep(500);//等待提交数据库完成
-            _UpdateMsgTimer.Stop();
+
+            Prj.RepositoryManager.WakeupCommit(1);
+            Thread.Sleep(300);//等待提交数据库完成
+
+            Prj.RepositoryManager.WakeupCommit(3);
+            Thread.Sleep(200);
+
+            Prj.WaveController.WackupDraw();
+            Prj.StatisticsController.AddStatisticsData();
+            Thread.Sleep(200);
 
             SetLastLineCursor(false);
 
             UpdateCalcState(KeyConst.MdiText_Calc.CalcFinish);//底部工具栏显示：计算完成
-            Prj.GeneralController.RefreshAutoConsistResult();
+
         }
         public void SetCanPause()
         {

@@ -301,6 +301,24 @@ namespace XPCar.Database
         //    }
         //    return null;
         //}
+        public List<ConsistMsg> QueryMutiPckgConsistMsg(string msgName)
+        {
+            string isLastPackage = "1";
+            List<ConsistMsg> consist = new List<ConsistMsg>();
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg where MsgName=@MsgName and IsLastPackage=@IsLastPackage",
+                        new { MsgName = msgName, IsLastPackage = isLastPackage });
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+            return consist;
+        }
         public List<ConsistMsg> QueryConsistMsg(string msgName)
         {
             List<ConsistMsg> consist = new List<ConsistMsg>();

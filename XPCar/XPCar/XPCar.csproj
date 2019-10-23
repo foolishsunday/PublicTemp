@@ -241,7 +241,6 @@
     <Compile Include="Client\Wave\frmWave.Designer.cs">
       <DependentUpon>frmWave.cs</DependentUpon>
     </Compile>
-    <Compile Include="Common\BaseService.cs" />
     <Compile Include="Common\BaseConvert.cs" />
     <Compile Include="Common\BitHelper.cs" />
     <Compile Include="Common\Function.cs" />
@@ -323,6 +322,7 @@
     <Compile Include="Consist\Summary\Consist_Undefined.cs" />
     <Compile Include="Database\DbContext.cs" />
     <Compile Include="Database\DbService.cs" />
+    <Compile Include="Database\DbTaskState.cs" />
     <Compile Include="Encrypt\DeviceHelper.cs" />
     <Compile Include="Encrypt\Encryption.cs" />
     <Compile Include="Encrypt\TimeClass.cs" />

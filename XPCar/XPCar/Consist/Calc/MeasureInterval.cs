@@ -233,6 +233,16 @@ namespace XPCar.Consist.Calc
             double avg = _Intervals.Average();
             return Math.Round(avg, 3);
         }
+        public int NonstandardIntervalCnt()
+        {
+            int cnt = 0;
+            for (int i = 0; i < _Intervals.Count; i++)
+            {
+                if (_Intervals[i] < _Std[0] || _Intervals[i] > _Std[1])
+                    cnt++;
+            }
+            return cnt;
+        }
         public string BeginDate()
         {
             return _Data[0].CreateTimestamp;

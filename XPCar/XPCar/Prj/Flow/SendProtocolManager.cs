@@ -17,7 +17,7 @@ namespace XPCar.Prj.Flow
     public class SendProtocolManager
     {
         protected SerialPortIO _PortIO;
-
+        private bool _DisableTimingSend;//禁止发送常态查询命令，用于按钮按下时
         public void Init(SerialPortIO portIO)
         {
             this._PortIO = portIO;
@@ -197,6 +197,8 @@ namespace XPCar.Prj.Flow
         }
         private void HandleSendGetCmd(TimeToSend.Page state)
         {
+            if (_DisableTimingSend)//有按钮按下，暂时不发送
+                return;
             switch (state)
             {
                 case TimeToSend.Page.BaseInfo:
@@ -231,6 +233,10 @@ namespace XPCar.Prj.Flow
                 default:
                     break;
             }
+        }
+        public void SetDisalbeTimingSend(bool disable)
+        {
+            _DisableTimingSend = disable;
         }
     }
 }

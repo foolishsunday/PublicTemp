@@ -107,21 +107,7 @@ namespace XPCar.Prj.Flow
                 Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
             }
         }
-        /// <summary>
-        /// 读取数据任务压入任务队列，唤醒读取数据进程
-        /// </summary>
-        /// <param name="rawData"></param>
-        //public void EnqueueTask(RawData rawData)
-        //{
 
-        //    _TaskQueue.Enqueue(rawData);
-        //    _EventWaitRead.Set();
-        //}
-        public void EnqueueTask()
-        {
-
-            _EventWaitRead.Set();
-        }
         public void Dispose()
         {
             //RawData package = new RawData();
@@ -206,7 +192,7 @@ namespace XPCar.Prj.Flow
                     _RawCollect.AddBuf(readOut);
                 }
                 //RawData package = new RawData(TaskName.ReadPort, null);
-                EnqueueTask();
+                _EventWaitRead.Set();
             }
             catch (Exception ex)
             {

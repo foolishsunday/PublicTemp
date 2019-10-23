@@ -41,7 +41,7 @@ namespace XPCar.Prj.Model
         }
         public void AppendNoMsg(string msgName)
         {
-            TestText += "未接收到" + msgName + "报文" + KeyConst.Punctuation.Space;
+            TestText += "未接收到" + msgName + "报文" + KeyConst.Punctuation.Space + KeyConst.Consist.Result.Unqualified;
             IsSummaryOk &= false;
         }
         public void AppendText(string text, bool bResult)

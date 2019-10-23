@@ -14,10 +14,8 @@ using System.Diagnostics;
 
 namespace XPCar.Client
 {
-    public delegate void UpgradeTextHandle(string text);
     public partial class frmUpgrade : UserControl
     {
-        public event UpgradeTextHandle UpgradeText;
         private ThreadTimer _Timer1000ms;
         private ThreadTimer _TimerError;
         public frmUpgrade()
@@ -28,7 +26,6 @@ namespace XPCar.Client
         }
         public void DisposeResource()
         {
-            UpgradeText -= this.HandleUpgradeText;
             if (_Timer1000ms != null)
                 _Timer1000ms.Stop();
             if (_TimerError != null)
@@ -39,7 +36,6 @@ namespace XPCar.Client
         {
             this.tlpUpgrade.Dock = DockStyle.Fill;
             //Prj.Prj.UpgradeController.UpdateUpgradeState += this.HandleUpdateUpgradeState;
-            UpgradeText += this.HandleUpgradeText;
             InitTimer();
         }
         private void InitTimer()
@@ -74,7 +70,7 @@ namespace XPCar.Client
                 return;
             }
 
-            Prj.Prj.UpgradeController.SetReqUpgradeState();
+            Prj.Prj.UpgradeController.SetEnableUpgradeState();
             Prj.Prj.SendProtocolManager.SendUpdgradeRequest();
             _Timer1000ms.Stop();
             _Timer1000ms.Start();
@@ -134,13 +130,10 @@ namespace XPCar.Client
         private void Timer1000ms_Tick(object state)
         {
             _Timer1000ms.Cnt++;
-            //Action async_cnt = delegate ()
-            //{
-            //    lblUpgradeProgress.Text = _Timer1000ms.Cnt.ToString();
-            //};
-            //this.BeginInvoke(async_cnt);
+
             if (Prj.Prj.UpgradeController.IsRequestUpgrade())
             {
+                Prj.Prj.UpgradeController.SetDisableUpgradeState();
                 _TimerError.Start();
                 if (tbUpgradeState.Text == "准备就绪")
                 {
@@ -149,7 +142,6 @@ namespace XPCar.Client
                     _Timer1000ms.Stop();
                     if (!string.IsNullOrEmpty(path))
                         UpgradingBin(path);
-                    Prj.Prj.UpgradeController.Reset();
                     Thread.Sleep(200);
                 }
             }
@@ -195,7 +187,7 @@ namespace XPCar.Client
                     fs.Close();
             }
         }
-        private void HandleUpgradeText(string text)
+        private void UpgradeText(string text)
         {
             Action async = delegate ()
             {
@@ -211,11 +203,9 @@ namespace XPCar.Client
             {
                 if (text != "升级成功" && text != "升级失败")
                 {
-                    if (UpgradeText != null)
-                    {
-                        UpgradeText("发生错误");
-                        Prj.Prj.TimerManager.Start();
-                    }
+                    text = "发生错误";
+                    UpgradeText(text);
+                    Prj.Prj.TimerManager.Start();
                 }
                 _TimerError.Stop();
             }

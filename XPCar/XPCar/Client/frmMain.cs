@@ -271,12 +271,9 @@ namespace XPCar
 
                         _MainController.ConnPort();
                     }
-                    else
+                    if (_MainController.IsConnected() == false)
                     {
-                        if (_MainController.IsConnected() == false)
-                        {
-                            MessageBox.Show("打开设备失败！");
-                        }
+                        MessageBox.Show("打开设备失败！");
                     }
                 }
             }
@@ -324,6 +321,8 @@ namespace XPCar
         {
             try
             {
+                Prj.Prj.SendProtocolManager.SetDisalbeTimingSend(true);
+                Thread.Sleep(10);
                 if (!Prj.Prj.MainController.IsSysStart())
                 {
                     Prj.Prj.MainController.SysStart();
@@ -349,6 +348,8 @@ namespace XPCar
                     };
                     this.BeginInvoke(async);
                 }
+                Thread.Sleep(10);
+                Prj.Prj.SendProtocolManager.SetDisalbeTimingSend(false);
             }
             catch(Exception ex)
             {
@@ -440,8 +441,8 @@ namespace XPCar
         {
             Action async = delegate ()
             {
-                if (this.lblChargeState.Text != info.ChargeState)
-                    this.lblChargeState.Text = info.ChargeState;
+                this.lblChargeState.Text = info.ChargeState;
+                this.grpbState.Refresh();
             };
             this.BeginInvoke(async);
         }
@@ -454,6 +455,7 @@ namespace XPCar
                 else
                     this.lblAlarm.ForeColor = Color.OrangeRed;
                 this.lblAlarm.Text = text;
+                this.grpbAlarm.Refresh();
             };
             this.BeginInvoke(async);
         }

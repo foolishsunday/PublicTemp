@@ -33,16 +33,40 @@ namespace XPCar.Prj.Controller
             _Data.Columns.Add(KeyConst.HeaderText.EndDate);
 
         }
-        private List<ConsistMsg> GetDbData(string msgName)
+        private List<ConsistMsg> GetStatData(string msgName)
         {
             DbService db = new DbService();
             List<ConsistMsg> lists = db.QueryConsistMsg(msgName);
             return lists;
         }
+        private List<ConsistMsg> GetMutiPckgStatData(string msgName)
+        {
+            DbService db = new DbService();
+            List<ConsistMsg> lists = db.QueryMutiPckgConsistMsg(msgName);
+            return lists;
+        }
+        private bool IsMutiPackageMsg(string msgName)
+        {
+            if (msgName == KeyConst.CanMsgId.BRM
+              || msgName == KeyConst.CanMsgId.BCP
+              || msgName == KeyConst.CanMsgId.BCS
+              || msgName == KeyConst.CanMsgId.BMV
+              || msgName == KeyConst.CanMsgId.BSP)
+                return true;
+            else return false;
+        }
         public StatisticsData Measure(string msgName)
         {
             StatisticsData sd = new StatisticsData();
-            List<ConsistMsg> lists = GetDbData(msgName);
+            List<ConsistMsg> lists = new List<ConsistMsg>();
+            if (!IsMutiPackageMsg(msgName))
+            {
+                lists = GetStatData(msgName);
+            }
+            else
+            {
+                lists = GetMutiPckgStatData(msgName);
+            }
             if (lists == null || lists.Count == 0)
             {
                 sd = new StatisticsData(0, 0, 0, 0, "0", "0");

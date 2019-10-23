@@ -53,11 +53,11 @@ namespace XPCar.Client.Statistics
         }
         private void HandleStatisticsData(DataTable dt)
         {
-            Action async = delegate ()
-            {
-                dgvStatistics.DataSource = dt;
-            };
-            this.BeginInvoke(async);
+            //Action async = delegate ()
+            //{
+            //    dgvStatistics.DataSource = dt;
+            //};
+            //this.BeginInvoke(async);
         }
 
         private void dgvStatistics_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)

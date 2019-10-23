@@ -38,6 +38,8 @@ namespace XPCar.Client
         {
             try
             {
+                Prj.Prj.SendProtocolManager.SetDisalbeTimingSend(true);
+                Thread.Sleep(10);
                 if (Prj.Prj.MainController.IsCatchOpen())
                 {
                     Prj.Prj.MainController.CloseCatch();
@@ -48,10 +50,12 @@ namespace XPCar.Client
                 {
                     Prj.Prj.MainController.OpenCatch();
                     Prj.Prj.SendProtocolManager.SendTimeSyncSet();
-                    Thread.Sleep(100);
+                    Thread.Sleep(20);
                     Prj.Prj.SendProtocolManager.SendCanOpen();
                     btnCanCatch.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
                 }
+                Thread.Sleep(10);
+                Prj.Prj.SendProtocolManager.SetDisalbeTimingSend(false);
             }
             catch (Exception ex)
             {
@@ -97,8 +101,11 @@ namespace XPCar.Client
                     SaveFileDialog sfd = new SaveFileDialog();  //选择路径
                     sfd.Filter = "csv文件(*.csv)|*.csv|所有文件(*.*)|*.*";
                     sfd.OverwritePrompt = false;
-                    DialogResult rs = sfd.ShowDialog();
 
+                    sfd.FileName = Prj.Prj.ConsistController.SelectedMsgName;
+
+                    DialogResult rs = sfd.ShowDialog();
+               
                     if (rs != DialogResult.OK)
                     {
                         return;

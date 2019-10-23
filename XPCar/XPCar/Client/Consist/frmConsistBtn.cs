@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace XPCar.Client
 {
@@ -24,6 +25,7 @@ namespace XPCar.Client
         private void BtnConsistTest_Click(object sender, EventArgs e)
         {
             _frmCanBtn.PressClearButton();
+            Thread.Sleep(20);
             _frmConsist.PressConsistTest();
         }
 

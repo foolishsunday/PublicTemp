@@ -24,9 +24,12 @@ namespace XPCar.Protocol.Decode.Msg
                 if (flowId != KeyConst.CanMsgId.MUTI_PACKAGE_TEXT)
                 {
                     model = machine.DecodeMsgData(symbol, content);
-      
+                    if (flowId == KeyConst.CanMsgId.MUTI_PACKAGE_HEAD)  //是否多包的首包
+                    {
+                        model.ConsistMsg.IsLastPackage = 1;//此处IsLastPackage当作IsFirstPackage来用
+                    }
                 }
-                else //多包 翻译
+                else //多包 正文
                 {
                     int index = GetMuitPckgIndex(content);
 

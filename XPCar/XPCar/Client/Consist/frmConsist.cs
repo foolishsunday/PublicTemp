@@ -168,26 +168,39 @@ namespace XPCar.Client
         {
             try
             {
-                //Prj.Prj.TimerManager.Stop();
+                Prj.Prj.SendProtocolManager.SetDisalbeTimingSend(true);
+                Thread.Sleep(10);
                 Prj.Prj.SendProtocolManager.SendConsistStart(_ConsistController.ItemIndex);
-                _ConsistController.ConsistStarted = true;
-                _ConsistController.SelectedMsgName = _ConsistController.ClickMsgName;
+                Thread.Sleep(10);
 
-                Thread.Sleep(50);
+                _ConsistController.ConsistStarted = true;
+                if (_ConsistController.IsSelectedNone())
+                {
+                    _ConsistController.SelectedMsgName = "";
+                }
+                else
+                {
+                    _ConsistController.SelectedMsgName = _ConsistController.ClickMsgName;
+                }
+
                 if (PressStartBtn != null)
                     PressStartBtn(_ConsistController.ItemIndex);
 
-                for (int i = 0; i < dgvConsist.Rows.Count; i++)
+                if (!IsNormalTest())
                 {
-                    if (dgvConsist.Rows[i].Cells[1].Value.ToString() == _ConsistController.ClickMsgName)
+                    for (int i = 0; i < dgvConsist.Rows.Count; i++)
                     {
-                        this.dgvConsist.Rows[i].DefaultCellStyle.BackColor = Color.SteelBlue;
-                        Prj.Prj.RepositoryManager.WakeupCommit(CommitState.ConsistTestStart);
-                        Prj.Prj.RepositoryManager.SetConsistTimeMode(_ConsistController.SelectedMsgName);
-                        return;
+                        if (dgvConsist.Rows[i].Cells[1].Value.ToString() == _ConsistController.ClickMsgName)
+                        {
+                            this.dgvConsist.Rows[i].DefaultCellStyle.BackColor = Color.SteelBlue;
+                            Prj.Prj.RepositoryManager.WakeupCommit(2);
+                            Prj.Prj.RepositoryManager.SetConsistTimeMode(_ConsistController.SelectedMsgName);
+                            Prj.Prj.SendProtocolManager.SetDisalbeTimingSend(false);
+                            return;
+                        }
                     }
                 }
-                //Prj.Prj.TimerManager.Start();
+                Prj.Prj.SendProtocolManager.SetDisalbeTimingSend(false);
             }
             catch (Exception ex)
             {
@@ -273,6 +286,7 @@ namespace XPCar.Client
                 ShowAlarm("输出报告失败！请联系管理员处理！");
             }
         }
+        //查看勾选项的结果
         private void ViewReport()
         {
             if (_frmConsistResult != null)
@@ -283,6 +297,19 @@ namespace XPCar.Client
             if (string.IsNullOrEmpty(_ConsistController.ClickMsgName)) return;
 
             _frmConsistResult = new frmConsistResult(_ConsistController.ClickMsgName.Replace(".", ""));
+            _frmConsistResult.Show();
+        }
+        //查看确认测试项的结果
+        private void ViewSelectedReport()
+        {
+            if (_frmConsistResult != null)
+            {
+                _frmConsistResult.Close();
+                _frmConsistResult.Dispose();
+            }
+            if (string.IsNullOrEmpty(_ConsistController.SelectedMsgName)) return;
+
+            _frmConsistResult = new frmConsistResult(_ConsistController.SelectedMsgName.Replace(".", ""));
             _frmConsistResult.Show();
         }
         private void HandleUpdateConsistResult(string msgName, Function.ConsistResult result)
@@ -357,14 +384,14 @@ namespace XPCar.Client
             {
                 if (IsNormalTest())   //从一致性测试，恢复为正常测试，无须显示一致性测试结果
                     return;
-                MyWinDelegate del = new MyWinDelegate(ViewReport);
+                MyWinDelegate del = new MyWinDelegate(ViewSelectedReport);
                 this.BeginInvoke(del);
                 //ViewReport();
             }
         }
         private bool IsNormalTest()
         {
-            if (_ConsistController.ItemIndex < 0)
+            if (string.IsNullOrEmpty(_ConsistController.SelectedMsgName))
                 return true;
             else
                 return false;

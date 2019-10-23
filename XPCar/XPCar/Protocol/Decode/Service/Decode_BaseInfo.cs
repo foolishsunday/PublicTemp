@@ -11,11 +11,18 @@ namespace XPCar.Protocol.Decode.Service
     {
         public override void DecodePackage(EachFrameModel package)
         {
-            List<byte> buf = package.Buffer;
-            //string[] arr = Function.SplitMsgData(content);
-            BaseInfo info = DecodeBaseInfo(buf);
-            Prj.Prj.RcvdProtocolManager.DoUpdateBaseInfo(info);
-            Prj.Prj.WaveController.SetWaveBaseInfo(info);
+            try
+            {
+                List<byte> buf = package.Buffer;
+                //string[] arr = Function.SplitMsgData(content);
+                BaseInfo info = DecodeBaseInfo(buf);
+                Prj.Prj.RcvdProtocolManager.DoUpdateBaseInfo(info);
+                Prj.Prj.WaveController.SetWaveBaseInfo(info);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
         }
         private BaseInfo DecodeBaseInfo(List<byte> buf)
         {

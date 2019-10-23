@@ -38,7 +38,7 @@
             // 
             // tbcBMS
             // 
-            this.tbcBMS.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tbcBMS.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tbcBMS.Controls.Add(this.tbpHandshake);
             this.tbcBMS.Controls.Add(this.tbpChargePara);
             this.tbcBMS.Controls.Add(this.tbpCharging);
