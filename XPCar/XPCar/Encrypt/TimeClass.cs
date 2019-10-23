@@ -63,9 +63,9 @@ namespace XPCar.Encrypt
         public static void WriteSetting(string Section, string Key, string Setting)  // name = key  value=setting  Section= path
         {
             string text1 = Section;
-#if DC_TEST_9980AP
+#if ST_9980AP_DC
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test"); // .LocalMachine.CreateSubKey("Software\\mytest");
-#elif DC_TEST_9980A
+#elif ST_9980A_DC
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test_9980A");
 #elif AC_TEST
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\AC_Test_9980AP");
@@ -98,9 +98,9 @@ namespace XPCar.Encrypt
                 Default = "-1";
             }
             string text2 = Section;
-#if DC_TEST_9980AP
+#if ST_9980AP_DC
             RegistryKey key1 = Registry.CurrentUser.OpenSubKey("Software\\SaiterTest\\Test");
-#elif DC_TEST_9980A
+#elif ST_9980A_DC
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test_9980A"); // .LocalMachine.CreateSubKey("Software\\mytest");
 #elif AC_TEST
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\AC_Test_9980AP");

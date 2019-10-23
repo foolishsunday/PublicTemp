@@ -22,10 +22,10 @@ namespace XPCar.Prj
 {
     public static class Prj
     {
-#if DC_TEST_9980AP
+#if ST_9980AP_DC
         public static string ConfigFilePath = "Aplus.exe.config";
-#elif DC_TEST_9980A
-                public static string ConfigFilePath = "ST-9980A.exe.config";
+#elif ST_9980A_DC
+        public static string ConfigFilePath = "ST-9980A.exe.config";
 #elif AC_TEST
         public static string ConfigFilePath = "ST-9980AP.exe.config";
 #endif

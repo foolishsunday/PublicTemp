@@ -99,9 +99,9 @@ namespace XPCar
       
             _MainController.Init();
 
-#if DC_TEST_9980AP
+#if ST_9980AP_DC
             this.Text = "充电桩测试系统ST-9980A+ " + _MainController.Config.Title;
-#elif DC_TEST_9980A
+#elif ST_9980A_DC
             this.tbpInterop.Parent = null;
             this.Text = "充电桩测试系统ST-9980A " + _MainController.Config.Title;
 #endif
