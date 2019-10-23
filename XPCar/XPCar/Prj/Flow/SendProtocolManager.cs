@@ -21,7 +21,7 @@ namespace XPCar.Prj.Flow
         public void Init(SerialPortIO portIO)
         {
             this._PortIO = portIO;
-            Prj.TimerManager.SendGetCmd += this.HandleSendGetCmd;
+
         }
         #region 系统及报文Cmd
         public void SendAlarmGet()
@@ -195,7 +195,7 @@ namespace XPCar.Prj.Flow
             }
 
         }
-        private void HandleSendGetCmd(TimeToSend.Page state)
+        public void HandleSendGetCmd(TimeToSend.Page state)
         {
             if (_DisableTimingSend)//有按钮按下，暂时不发送
                 return;
