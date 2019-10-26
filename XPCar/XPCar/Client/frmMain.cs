@@ -51,7 +51,7 @@ namespace XPCar
         private frmStatistics _frmStatistics;
         private frmConsistConfig _frmConsistStd;
         private frmBMS _frmBMS;
-#if AC_TEST
+#if ST_9980AP_AC
         private frmAC _frmAC;
 #endif
         private void FrmMain_Load(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace XPCar
             InitButton();
             InitWave();
             InitStatistics();
-#if AC_TEST
+#if ST_9980AP_AC
             InitAC();
             InitFrmSize();
 #else
@@ -165,14 +165,14 @@ namespace XPCar
         }
         private void InitSendTimer()
         {
-#if AC_TEST
+#if ST_9980AP_AC
             Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.ACGet);
 #else
             Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.BaseInfo);
 #endif
             Prj.Prj.TimerManager.Start();
         }
-#if AC_TEST
+#if ST_9980AP_AC
         private void InitAC()
         {
             _frmAC = new frmAC();
@@ -183,6 +183,8 @@ namespace XPCar
             tsslbCSV.Visible = false;
             tsslCalc.Visible = false;
             tsmiBoard.Visible = false;
+            tsmiStdSetting.Enabled = false;
+            tsmiStdSetting.Visible = false;
             //tsmiHome.Visible = false;
             //tsmiTestItem.Visible = true;
 
@@ -568,14 +570,14 @@ namespace XPCar
 
         private void TsmiSingle_Click(object sender, EventArgs e)
         {
-#if AC_TEST
+#if ST_9980AP_AC
             _frmAC.SingleOrDualForm(1);
 #endif
         }
 
         private void TsmiDual_Click(object sender, EventArgs e)
         {
-#if AC_TEST
+#if ST_9980AP_AC
             _frmAC.SingleOrDualForm(2);
 #endif
         }
