@@ -21,9 +21,7 @@ namespace XPCar.Consist.Summary
                 chm.GetCHM(db);
                 if (chm.IsNullData())
                 {
-                    result.AppendNoMsg(CHM);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CHM);
                 }
                 Measure measure = new Measure(chm.Data,CHM);
                 measure.MeasureCommon(consistId);

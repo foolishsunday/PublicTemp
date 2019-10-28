@@ -20,16 +20,12 @@ namespace XPCar.Consist.Summary
                 cro.GetCRO_SPN2830_00(db);
                 if (cro.IsNullData())
                 {
-                    result.AppendNoMsg("SPN2830=00的CRO");
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport("SPN2830=00的CRO");
                 }
                 cro.GetCRO_SPN2830_AA(db);
                 if (cro.IsNullData())
                 {
-                    result.AppendNoMsg("SPN2830=AA的CRO");
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport("SPN2830=AA的CRO");
                 }
 
                 Access_CRO croTotal = new Access_CRO();

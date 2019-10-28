@@ -22,33 +22,30 @@ namespace XPCar.Consist.Summary
                 cst.GetCST(db);
                 if (cst.IsNullData())
                 {
-                    result.AppendNoMsg(CST);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CST);
                 }
+
+                MeasureTimeout mt = new MeasureTimeout();
+                mt.MeasureFirstToLastWithinSec(cst.Data, cst.Data, 10000);
+                mt.AppendText("自首次发送CST报文起", "内，充电机按周期发送该报文");
+                result.AppendTestResult(mt.ExportTestResult());
 
                 Measure measure = new Measure(cst.Data, CST);
                 measure.MeasureCommon(consistId);
                 result.AppendTestResult(measure.ExportTestResult());
 
                 Access_CEM cem = new Access_CEM();
-                cem.GetCEM_SPN3927_01(db);
+                cem.GetCEM(db);
                 if (cem.IsNullData())
                 {
-                    result.AppendNoMsg("SPN3927=01的CEM");
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CEM);
                 }
 
-                MeasureTimeout mt = new MeasureTimeout();
-                mt.MeasureFirstMsgToFirstMsg(cst.Data, cem.Data, 10000);
-                mt.AppendText("自首次发送CST报文起超过", "，充电机发送SPN3926=01的CEM报文");
+                mt.MeasureFirstToFirstWithoutSec(cst.Data, cem.Data, 10000);
+                mt.AppendText("自首次发送CST报文起超过", "，充电机发送CEM报文");
                 result.AppendTestResult(mt.ExportTestResult());
 
-                Access_CEM cemTotal = new Access_CEM();
-                cemTotal.GetCEM(db);
-
-                measure = new Measure(cemTotal.Data, CEM);
+                measure = new Measure(cem.Data, CEM);
                 measure.MeasureCommon(consistId);
                 result.AppendTestResult(measure.ExportTestResult());
 

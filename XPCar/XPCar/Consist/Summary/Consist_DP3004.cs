@@ -21,9 +21,7 @@ namespace XPCar.Consist.Summary
                 ccs.GetCCS(db);
                 if (ccs.IsNullData())
                 {
-                    result.AppendNoMsg(CCS);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CCS);
                 }
                 Measure measure = new Measure(ccs.Data, CCS);
                 measure.MeasureCommon(consistId);

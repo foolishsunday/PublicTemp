@@ -21,9 +21,7 @@ namespace XPCar.Consist.Summary
                 csd.GetCSD(db);
                 if (csd.IsNullData())
                 {
-                    result.AppendNoMsg(CSD);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CSD);
                 }
 
                 Measure measure = new Measure(csd.Data,CSD);

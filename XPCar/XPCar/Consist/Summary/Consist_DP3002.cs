@@ -28,24 +28,18 @@ namespace XPCar.Consist.Summary
 
                 if (bmv.IsNullData())
                 {
-                    result.AppendNoMsg(BMV);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(BMV);
                 }
                 Measure measure = new Measure(bmv.Data, BMV);
 
                 if (bmt.IsNullData())
                 {
-                    result.AppendNoMsg(BMT);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(BMT);
                 }
 
                 if (bsp.IsNullData())
                 {
-                    result.AppendNoMsg(BSP);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(BSP);
                 }
                 result.AppendText("充电机使用传输功能接收BMV报文、BMT报文、BSP报文", true);
                 report = result.ExportTestReport();

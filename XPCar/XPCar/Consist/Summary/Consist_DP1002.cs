@@ -20,9 +20,7 @@ namespace XPCar.Consist.Summary
                 chm.GetCHM(db);
                 if (chm.IsNullData())
                 {
-                    result.AppendNoMsg(CHM);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CHM);
                 }
                 Measure measure = new Measure(chm.Data, CHM);
                 measure.MeasureCommon(consistId);
@@ -32,9 +30,7 @@ namespace XPCar.Consist.Summary
                 crm.GetCRM(db);
                 if (crm.IsNullData())
                 {
-                    result.AppendNoMsg(CRM);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CRM);
                 }
                 measure = new Measure(crm.Data, CRM);
                 measure.MeasureCommon(consistId);

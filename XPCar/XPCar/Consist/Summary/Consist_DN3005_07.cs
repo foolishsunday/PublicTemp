@@ -23,40 +23,36 @@ namespace XPCar.Consist.Summary
                 bcs.GetBCS(db);
                 if (bcs.IsNullData())
                 {
-                    result.AppendNoMsg(BCS);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(BCS);
                 }
 
                 Access_CCS ccs = new Access_CCS();
                 ccs.GetCCS(db);
                 if (ccs.IsNullData())
                 {
-                    result.AppendNoMsg(CCS);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CCS);
                 }
+
+                MeasureTimeout mt = new MeasureTimeout();
+                mt.MeasureLastToLastWithinSec(bcs.Data, ccs.Data, 5000);
+                mt.AppendText("自上一次接收到BCS报文起", "内，充电机按周期发送CCS报文");
+                result.AppendTestResult(mt.ExportTestResult());
 
                 Measure measure = new Measure(ccs.Data, CCS);
                 measure.MeasureCommon(consistId);
                 result.AppendTestResult(measure.ExportTestResult());
 
-                Access_CEM cem = new Access_CEM();
-                cem.GetCEM_SPN3924_01(db);
-                if (cem.IsNullData())
-                {
-                    result.AppendNoMsg("SPN3924=01的CEM");
-                    report = result.ExportTestReport();
-                    return report;
-                }
-
-                MeasureTimeout mt = new MeasureTimeout();
-                mt.MeasureFirstMsgToFirstMsg(bcs.Data, cem.Data, 5000);
-                mt.AppendText("自首次发送BCS报文起超过", "，充电机发送SPN3924=01的CEM报文");
-                result.AppendTestResult(mt.ExportTestResult());
-
                 Access_CEM cemTotal = new Access_CEM();
                 cemTotal.GetCEM(db);
+
+                if (cemTotal.IsNullData())
+                {
+                    return report = result.ExportNullReport(CEM);
+                }
+
+                mt.MeasureLastToFirstWithoutSec(bcs.Data, cemTotal.Data, 5000);
+                mt.AppendText("自上一次接收到BCS报文起超过", "，充电机发送CEM报文");
+                result.AppendTestResult(mt.ExportTestResult());
 
                 measure = new Measure(cemTotal.Data, CEM);
                 measure.MeasureCommon(consistId);

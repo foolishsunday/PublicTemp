@@ -21,26 +21,18 @@ namespace XPCar.Consist.Summary
                 bro.GetBRO_SPN2829_00(db);
                 if (bro.IsNullData())
                 {
-                    result.AppendNoMsg(BRO);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(BRO);
                 }
                 Access_Any any = new Access_Any();
                 any.GetCXX_Msg(db);
                 if (any.IsNullData())
                 {
-                    result.AppendText("自首次接收到SPN2829=00的BRO报文起0s内，充电机停止了通讯", true);
+                    return report = result.ExportNullReport("任何");
                 }
-                else
-                {
-                    MeasureTimeout mt = new MeasureTimeout();
-                    mt.MeasureFirstMsgToLastMsgWithinSec(bro.Data, any.Data, 1000);
-                    mt.AppendText("自首次接收到SPN2829=00的BRO报文起，", "内，充电机停止了通讯");
-                    result.AppendTestResult(mt.ExportTestResult());
-                }
-                //Measure measure = new Measure(cem.Data, CEM);
-                //measure.MeasureCommon(consistId);
-                //result.AppendTestResult(measure.ExportTestResult());
+                MeasureTimeout mt = new MeasureTimeout();
+                mt.MeasureFirstToLastWithinSec(bro.Data, any.Data, 1000);
+                mt.AppendText("自首次接收到SPN2829=00的BRO报文起，", "内，充电机停止了通讯");
+                result.AppendTestResult(mt.ExportTestResult());
 
                 report = result.ExportTestReport();
 

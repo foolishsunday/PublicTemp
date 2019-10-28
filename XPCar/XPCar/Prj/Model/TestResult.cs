@@ -66,5 +66,10 @@ namespace XPCar.Prj.Model
             }
             return report;
         }
+        public TestItemsReport ExportNullReport(string msgName)
+        {
+            AppendNoMsg(msgName);
+            return ExportTestReport();
+        }
     }
 }

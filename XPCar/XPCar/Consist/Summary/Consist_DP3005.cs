@@ -21,9 +21,7 @@ namespace XPCar.Consist.Summary
                 cst.GetCST(db);
                 if (cst.IsNullData())
                 {
-                    result.AppendNoMsg(CST);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CST);
                 }
                 Measure measure = new Measure(cst.Data, CST);
                 measure.MeasureCommon(consistId);

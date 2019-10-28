@@ -20,9 +20,7 @@ namespace XPCar.Consist.Summary
                 crm.GetCRM_SPN2560_AA(db);
                 if (crm.IsNullData())
                 {
-                    result.AppendNoMsg("SPN2560=AA的CRM");
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport("SPN2560=AA的CRM");
                 }
 
                 Access_CRM crmTotal = new Access_CRM();

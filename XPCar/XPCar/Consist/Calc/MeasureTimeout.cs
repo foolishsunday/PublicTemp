@@ -9,11 +9,11 @@ namespace XPCar.Consist.Calc
 {
     public class MeasureTimeout: IMeasureResult
     {
-        private bool _ResultTimeout;
+        private bool _IsQualified;
         private string _ResultText;
         public MeasureTimeout()
         {
-            _ResultTimeout = true;
+            _IsQualified = true;
         }
         public string ResultText(string consistId)
         {
@@ -21,37 +21,57 @@ namespace XPCar.Consist.Calc
         }
         public bool IsResultOk()
         {
-            return _ResultTimeout;
+            return _IsQualified;
         }
      
-        public long MeasureFirstMsgToFirstMsg(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
+        public long MeasureFirstToFirstWithoutSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
         {
             string earlier = earlierList[0].CreateTimestamp;
             string later = laterList[0].CreateTimestamp;
             long span = Function.CalcIntervalByTwoPara(later, earlier);
-            if (span >= ms && span <= TimeoutOffset(ms))
-                _ResultTimeout = true;
+            if (span >= ms)
+                _IsQualified = true;
             else
-                _ResultTimeout = false;
+                _IsQualified = false;
             _ResultText = span.ToString() + "ms";
             return span;
-
         }
-
-        public long MeasureFirstMsgToLastMsgWithinSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
+        public long MeasureFirstToLastWithinSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
         {
             string earlier = earlierList[0].CreateTimestamp;
             string later = laterList[laterList.Count - 1].CreateTimestamp;
             long span = Function.CalcIntervalByTwoPara(later, earlier);
-            if (span <= TimeoutOffset(ms))
-                _ResultTimeout = true;
+            if (span >= 0 && span <= TimeoutOffset(ms))
+                _IsQualified = true;
             else
-                _ResultTimeout = false;
+                _IsQualified = false;
             _ResultText = span.ToString() + "ms";
             return span;
-
         }
-        
+        public long MeasureLastToLastWithinSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
+        {
+            string earlier = earlierList[earlierList.Count - 1].CreateTimestamp;
+            string later = laterList[laterList.Count - 1].CreateTimestamp;
+            long span = Function.CalcIntervalByTwoPara(later, earlier);
+            if (span >= 0 && span <= TimeoutOffset(ms))
+                _IsQualified = true;
+            else
+                _IsQualified = false;
+            _ResultText = span.ToString() + "ms";
+            return span;
+        }
+        public long MeasureLastToFirstWithoutSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
+        {
+            string earlier = earlierList[earlierList.Count - 1].CreateTimestamp;
+            string later = laterList[0].CreateTimestamp;
+            long span = Function.CalcIntervalByTwoPara(later, earlier);
+            if (span >= ms)
+                _IsQualified = true;
+            else
+                _IsQualified = false;
+            _ResultText = span.ToString() + "ms";
+            return span;
+        }
         public long TimeoutOffset(long timeout)
         {
             long std = 0;
@@ -71,7 +91,7 @@ namespace XPCar.Consist.Calc
         {
             string text = text1 + ResultText(null) + text2 + KeyConst.Punctuation.Space;
             _ResultText = text;
-            if (_ResultTimeout)
+            if (_IsQualified)
                 text += KeyConst.Consist.Result.Qualified + KeyConst.Punctuation.Space;
             else
                 text += KeyConst.Consist.Result.Unqualified + KeyConst.Punctuation.Space;
@@ -81,7 +101,7 @@ namespace XPCar.Consist.Calc
         public TestResult ExportTestResult()
         {
             TestResult tr = new TestResult(true);
-            tr.IsSummaryOk = _ResultTimeout;
+            tr.IsSummaryOk = _IsQualified;
             tr.TestText += _ResultText + Environment.NewLine;
             return tr;
         }

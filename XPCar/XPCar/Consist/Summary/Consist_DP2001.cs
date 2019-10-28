@@ -10,7 +10,7 @@ namespace XPCar.Consist.Summary
     {
         //private string BCP = "BCP";
         private string CML = "CML";
-        private string CTS = "CTS";
+        //private string CTS = "CTS";
         public override TestItemsReport GenerateReport(DbService db, string consistId)
         {
             TestItemsReport report = new TestItemsReport();
@@ -22,25 +22,21 @@ namespace XPCar.Consist.Summary
                 cml.GetCML(db);
                 if (cml.IsNullData())
                 {
-                    result.AppendNoMsg(CML);
-                    report = result.ExportTestReport();
-                    return report;
+                    return report = result.ExportNullReport(CML);
                 }
                 Measure measure = new Measure(cml.Data, CML);
                 measure.MeasureCommon(consistId);
                 result.AppendTestResult(measure.ExportTestResult());
 
-                Access_CTS cts = new Access_CTS();
-                cts.GetCTS(db);
-                if (cts.IsNullData())
-                {
-                    result.AppendNoMsg(CTS);
-                    report = result.ExportTestReport();
-                    return report;
-                }
-                measure = new Measure(cts.Data, CTS);
-                measure.MeasureCommon(consistId);
-                result.AppendTestResult(measure.ExportTestResult());
+                //Access_CTS cts = new Access_CTS();
+                //cts.GetCTS(db);
+                //if (cts.IsNullData())
+                //{
+                //    return report = result.ExportNullReport(CTS);
+                //}
+                //measure = new Measure(cts.Data, CTS);
+                //measure.MeasureCommon(consistId);
+                //result.AppendTestResult(measure.ExportTestResult());
 
                 report = result.ExportTestReport();
 
