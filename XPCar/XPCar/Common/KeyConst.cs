@@ -484,5 +484,11 @@ namespace XPCar.Common
             public const int CurveCnt = 23;
             public const int LineCnt = 5;
         }
+        public class WinLabel
+        {
+            public const string ST9980AP = "充电桩测试系统ST-9980AP";
+            public const string ST9980A = "充电桩测试系统ST-9980A";
+            public const string ST9980AP_AC = "充电桩交流测试系统";
+        }
     }
 }

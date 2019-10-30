@@ -70,8 +70,13 @@ namespace XPCar
             InitSendTimer();
             InitBottom();
             InitButton();
+#if ST_9980A_DC
+            Init9980A();
+#else
             InitWave();
             InitStatistics();
+#endif
+
 #if ST_9980AP_AC
             InitAC();
             InitFrmSize();
@@ -100,10 +105,12 @@ namespace XPCar
             _MainController.Init();
 
 #if ST_9980AP_DC
-            this.Text = "充电桩测试系统ST-9980A+ " + _MainController.Config.Title;
+            this.Text = KeyConst.WinLabel.ST9980AP + KeyConst.Punctuation.Space + _MainController.Config.Title;
 #elif ST_9980A_DC
             this.tbpInterop.Parent = null;
-            this.Text = "充电桩测试系统ST-9980A " + _MainController.Config.Title;
+            this.Text = KeyConst.WinLabel.ST9980A + KeyConst.Punctuation.Space + _MainController.Config.Title;
+#elif ST_9980AP_AC
+            this.Text = KeyConst.WinLabel.ST9980AP_AC + KeyConst.Punctuation.Space + _MainController.Config.Title;
 #endif
 
             Prj.Prj.RepositoryManager.Reset();
@@ -217,6 +224,11 @@ namespace XPCar
             _frmStatistics = new frmStatistics();
             _frmStatistics.Dock = DockStyle.Fill;
             tbpStatistics.Controls.Add(_frmStatistics);
+        }
+        private void Init9980A()
+        {
+            this.tbpWaveForm.Parent = null;
+            this.tbpStatistics.Parent = null;
         }
 #endregion 初始化
 

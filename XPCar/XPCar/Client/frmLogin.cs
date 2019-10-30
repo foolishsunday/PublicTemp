@@ -21,6 +21,14 @@ namespace XPCar.Client
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+#if ST_9980AP_DC
+            lblLoginTitle.Text = KeyConst.WinLabel.ST9980AP;
+#elif ST_9980A_DC
+            lblLoginTitle.Text = KeyConst.WinLabel.ST9980A;
+#elif ST_9980AP_AC
+            lblLoginTitle.Text = KeyConst.WinLabel.ST9980AP_AC;
+#endif
+
             tbMachineCode.Text = Encrypt.DeviceHelper.GetMachineCode();
             if (_Warning != "" && _Warning != "软件已注册！")
             {

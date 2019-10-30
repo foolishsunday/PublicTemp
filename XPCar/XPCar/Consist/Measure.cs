@@ -32,8 +32,6 @@ namespace XPCar.Consist
             IMeasureResult im = new MeasureFormat(_ConsistData, _MsgName);
             _Report.TestText += im.ResultText(consistId);
             _Report.IsSummaryOk &= im.IsResultOk();
-            if (_Report.IsSummaryOk == false)
-                return;
 
             //周期
             im = new MeasureInterval(_ConsistData, _MsgName);

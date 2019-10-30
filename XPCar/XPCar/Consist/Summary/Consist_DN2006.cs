@@ -19,17 +19,15 @@ namespace XPCar.Consist.Summary
             TestResult result = new TestResult(true);
             try
             {
-                //Access_CML cml = new Access_CML();
-                //cml.GetCML(db);
-                //if (cml.IsNullData())
-                //{
-                //    return report = result.ExportNullReport(CML);
-                //}
-                //Measure measure = new Measure(cml.Data, CML);
-                //measure.MeasureCommon(consistId);
-                //result.AppendTestResult(measure.ExportTestResult());
+                Access_CEM cemTotal = new Access_CEM();
+                cemTotal.GetCEM(db);
+                if (cemTotal.IsNullData())
+                {
+                    return report = result.ExportNullReport(CEM);
+                }
+
                 Access_CML cml = new Access_CML();
-                cml.GetCML(db);
+                cml.GetBeforeMsg(db, cemTotal.Data);
                 if (cml.IsNullData())
                 {
                     return report = result.ExportNullReport(CML);
@@ -42,22 +40,6 @@ namespace XPCar.Consist.Summary
                 Measure measure = new Measure(cml.Data, CML);
                 measure.MeasureCommon(consistId);
                 result.AppendTestResult(measure.ExportTestResult());
-                //Access_CEM cem = new Access_CEM();
-                //cem.GetCEM_SPN3923_01(db);
-                //if (cem.IsNullData())
-                //{
-                //    return report = result.ExportNullReport("SPN3923=01的CEM");
-                //}
-                //mt.MeasureFirstMsgToFirstMsg(cml.Data, cem.Data, 5000);
-                //mt.AppendText("自首次发送CML报文起超过", "，充电机发送SPN3923=01的CEM报文");
-                //result.AppendTestResult(mt.ExportTestResult());
-
-                Access_CEM cemTotal = new Access_CEM();
-                cemTotal.GetCEM(db);
-                if (cemTotal.IsNullData())
-                {
-                    return report = result.ExportNullReport(CEM);
-                }
 
                 mt.MeasureFirstToFirstWithoutSec(cml.Data, cemTotal.Data, 5000);
                 mt.AppendText("自首次发送CML报文起超过", "，充电机发送CEM报文");

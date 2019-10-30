@@ -20,10 +20,10 @@ namespace Uninstall
             if (dr == DialogResult.OK)
             {
                 string root = System.Environment.SystemDirectory;
-#if DC_TEST_9980AP
+#if ST_9980AP_DC
                 //ST-9980A+
                 System.Diagnostics.Process.Start(root + "\\msiexec.exe", "/x {8FAC54EA-6926-4AAF-8B87-D55CD71C5178} /qr");
-#elif DC_TEST_9980A
+#elif ST_9980A_DC
                  System.Diagnostics.Process.Start(root + "\\msiexec.exe", "/x {4C2B4A1E-044D-466D-B4DD-B7C9C22D00B6} /qr");
 #endif
             }

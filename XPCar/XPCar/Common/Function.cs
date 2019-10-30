@@ -442,7 +442,7 @@ namespace XPCar.Common
                             next = StampToDatetime(lists[i].CreateTimestamp);
                             TimeSpan span = next.Subtract(pre);
                             long interval = (long)span.TotalMilliseconds;
-                            if (interval <= 1000)
+                            if (interval <= 1000)//去除大于1s的周期
                                 intervalList.Add(interval);
                         }
                     }

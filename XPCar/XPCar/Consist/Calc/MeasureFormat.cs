@@ -114,7 +114,13 @@ namespace XPCar.Consist.Calc
                     ret = "SPN2830=" + spn + KeyConst.Punctuation.Space;
                     ret += SpnEqualStr(spn, "00");
                 }
-                else if(consistId == "DN2010" || consistId=="DN3001" || consistId == "DN3002" || consistId == "DN3003" || consistId == "DN3004")
+                else if (consistId == "DP2003")
+                {
+                    string conclusion = SpnEqualParas();
+
+                    ret = "SPN2829=00或SPN2829=AA" + KeyConst.Punctuation.Space + conclusion;
+                }
+                else if (consistId == "DN2010" || consistId == "DN3001" || consistId == "DN3002" || consistId == "DN3003" || consistId == "DN3004")
                 {
                     spn = first.SPN2830;
                     ret = "SPN2830=" + spn + KeyConst.Punctuation.Space;
@@ -134,15 +140,26 @@ namespace XPCar.Consist.Calc
         }
         private string SetFormatUnqualified()
         {
-            _IsResultOk = true;
-            return KeyConst.Consist.Result.Qualified;
+            _IsResultOk = false;
+            return KeyConst.Consist.Result.Unqualified;
         }
         private string SpnEqualStr(string spn, string qulifiedStr)
         {
             if (spn == qulifiedStr)
-                return SetFormatUnqualified();
+                return SetFormatQualified();
             else
                 return SetFormatUnqualified();
+        }
+        private string SpnEqualParas()
+        {
+            for (int i = 0; i < _Data.Count; i++)
+            {
+                if (_Data[i].SPN2830 != "AA" && _Data[i].SPN2830 != "00")
+                {
+                    return SetFormatUnqualified();
+                }
+            }
+            return SetFormatQualified();
         }
     }
 }

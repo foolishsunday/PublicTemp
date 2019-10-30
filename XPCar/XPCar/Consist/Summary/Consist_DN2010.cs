@@ -19,21 +19,15 @@ namespace XPCar.Consist.Summary
             TestResult result = new TestResult(true);
             try
             {
-                //Access_CRO cro = new Access_CRO();
-                //cro.GetCRO_SPN2830_AA(db);
-                //if (cro.IsNullData())
-                //{
-                //    return report = result.ExportNullReport("SPN2830=AA的CRO");
-                //}
+                Access_CEM cem = new Access_CEM();
+                cem.GetCEM(db);
+                if (cem.IsNullData())
+                {
+                    return report = result.ExportNullReport(CEM);
+                }
 
-                //Access_CRO croTotal = new Access_CRO();
-                //croTotal.GetCRO(db);
-
-                //Measure measure = new Measure(croTotal.Data, CRO);
-                //measure.MeasureCommon(consistId);
-                //result.AppendTestResult(measure.ExportTestResult());
                 Access_CRO cro = new Access_CRO();
-                cro.GetCRO(db);
+                cro.GetBeforeMsgSPN2830_AA(db, cem.Data);
                 if (cro.IsNullData())
                 {
                     return report = result.ExportNullReport(CRO);
@@ -48,29 +42,7 @@ namespace XPCar.Consist.Summary
                 result.AppendTestResult(measure.ExportTestResult());
 
                 /****************************************************/
-                //Access_CEM cem = new Access_CEM();
-                //cem.GetCEM_SPN3925_01(db);
-                //if (cem.IsNullData())
-                //{
-                //    return report = result.ExportNullReport("SPN3925=01的CEM");
-                //}
 
-                //mt.MeasureFirstMsgToFirstMsg(cro.Data, cem.Data, 1000);
-                //mt.AppendText("自首次发送SPN2830=AA的CRO报文起超过", "，充电机发送SPN3925=01的CEM报文");
-                //result.AppendTestResult(mt.ExportTestResult());
-
-                //Access_CEM cemTotal = new Access_CEM();
-                //cemTotal.GetCEM(db);
-
-                //measure = new Measure(cemTotal.Data, CEM);
-                //measure.MeasureCommon(consistId);
-                //result.AppendTestResult(measure.ExportTestResult());
-                Access_CEM cem = new Access_CEM();
-                cem.GetCEM(db);
-                if (cem.IsNullData())
-                {
-                    return report = result.ExportNullReport(CEM);
-                }
 
                 mt.MeasureFirstToFirstWithoutSec(cro.Data, cem.Data, 1000);
                 mt.AppendText("自首次发送CRO报文起超过", "，充电机发送CEM报文");

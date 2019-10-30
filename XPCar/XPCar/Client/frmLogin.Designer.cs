@@ -35,7 +35,7 @@
             this.btnResgister = new System.Windows.Forms.Button();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.lblRegState = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblLoginTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,17 +110,17 @@
             this.lblRegState.TabIndex = 9;
             this.lblRegState.Text = "注册状态";
             // 
-            // label3
+            // lblLoginTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("黑体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(223, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 29);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "充电桩测试系统";
+            this.lblLoginTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoginTitle.Font = new System.Drawing.Font("黑体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblLoginTitle.ForeColor = System.Drawing.Color.Transparent;
+            this.lblLoginTitle.Location = new System.Drawing.Point(1, 70);
+            this.lblLoginTitle.Name = "lblLoginTitle";
+            this.lblLoginTitle.Size = new System.Drawing.Size(630, 29);
+            this.lblLoginTitle.TabIndex = 11;
+            this.lblLoginTitle.Text = "充电桩测试系统";
+            this.lblLoginTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmLogin
             // 
@@ -130,7 +130,7 @@
             this.BackgroundImage = global::XPCar.Properties.Resources.Background_Science;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(636, 324);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblLoginTitle);
             this.Controls.Add(this.lblRegState);
             this.Controls.Add(this.pcbLogo);
             this.Controls.Add(this.btnResgister);
@@ -158,6 +158,6 @@
         private System.Windows.Forms.Button btnResgister;
         private System.Windows.Forms.PictureBox pcbLogo;
         private System.Windows.Forms.Label lblRegState;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblLoginTitle;
     }
 }

@@ -16,20 +16,24 @@ namespace XPCar.Consist.Summary
             TestResult result = new TestResult(true);
             try
             {
-                Access_CRO cro = new Access_CRO();
-                cro.GetCRO_SPN2830_00(db);
-                if (cro.IsNullData())
-                {
-                    return report = result.ExportNullReport("SPN2830=00的CRO");
-                }
-                cro.GetCRO_SPN2830_AA(db);
-                if (cro.IsNullData())
-                {
-                    return report = result.ExportNullReport("SPN2830=AA的CRO");
-                }
+                //Access_CRO cro = new Access_CRO();
+                //cro.GetCRO_SPN2830_00(db);
+                //if (cro.IsNullData())
+                //{
+                //    return report = result.ExportNullReport("SPN2830=00的CRO");
+                //}
+                //cro.GetCRO_SPN2830_AA(db);
+                //if (cro.IsNullData())
+                //{
+                //    return report = result.ExportNullReport("SPN2830=AA的CRO");
+                //}
 
                 Access_CRO croTotal = new Access_CRO();
                 croTotal.GetCRO(db);
+                if (croTotal.IsNullData())
+                {
+                    return report = result.ExportNullReport(CRO);
+                }
 
                 Measure measure = new Measure(croTotal.Data, CRO);
                 measure.MeasureCommon(consistId);

@@ -335,22 +335,41 @@ namespace XPCar.Database
             }
             return consist;
         }
-        //public List<ConsistMsg> QueryConsistMsg()
-        //{
-        //    List<ConsistMsg> consist = new List<ConsistMsg>();
-        //    try
-        //    {
-        //        using (var db = DbContext.GetInstance())
-        //        {
-        //            consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
-        //    }
-        //    return consist;
-        //}
+        public List<ConsistMsg> QueryConsistBeforeMsg(string msgName, int objNo)
+        {
+            List<ConsistMsg> consist = new List<ConsistMsg>();
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg where MsgName=@MsgName and ObjectNo<@ObjectNo", new { MsgName = msgName, ObjectNo = objNo });
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+            return consist;
+        }
+        public List<ConsistMsg> QueryConsistBeforeMsgBySpn(string msgName, int objNo, string spn, string spnVal)
+        {
+            string text = string.Format("{0} = '{1}' and ObjectNo < '{2}'", spn, spnVal, objNo);
+
+            List<ConsistMsg> consist = new List<ConsistMsg>();
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    var lists = db.Queryable<ConsistMsg>().Where(it => it.MsgName == msgName).Where(text).ToList();
+                    return lists;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+            return consist;
+        }
         public List<ConsistMsg> QueryConsistMsgExceptUndefined()
         {
             List<ConsistMsg> consist = new List<ConsistMsg>();

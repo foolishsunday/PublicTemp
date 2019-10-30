@@ -29,7 +29,19 @@ namespace XPCar.Consist.Calc
             string earlier = earlierList[0].CreateTimestamp;
             string later = laterList[0].CreateTimestamp;
             long span = Function.CalcIntervalByTwoPara(later, earlier);
-            if (span >= ms)
+            if (span >= ms && span <= TimeoutOffset(ms))
+                _IsQualified = true;
+            else
+                _IsQualified = false;
+            _ResultText = span.ToString() + "ms";
+            return span;
+        }
+        public long MeasureFirstToFirstWithinSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
+        {
+            string earlier = earlierList[0].CreateTimestamp;
+            string later = laterList[0].CreateTimestamp;
+            long span = Function.CalcIntervalByTwoPara(later, earlier);
+            if (span >= 0 && span <= TimeoutOffset(ms))
                 _IsQualified = true;
             else
                 _IsQualified = false;
@@ -65,7 +77,7 @@ namespace XPCar.Consist.Calc
             string earlier = earlierList[earlierList.Count - 1].CreateTimestamp;
             string later = laterList[0].CreateTimestamp;
             long span = Function.CalcIntervalByTwoPara(later, earlier);
-            if (span >= ms)
+            if (span >= ms && span <= TimeoutOffset(ms))
                 _IsQualified = true;
             else
                 _IsQualified = false;
@@ -75,15 +87,15 @@ namespace XPCar.Consist.Calc
         public long TimeoutOffset(long timeout)
         {
             long std = 0;
-            double offset1s = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std1s) / 1000F;
-            double offset5s = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std5s) / 1000F;
-            double offset10s = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std10s) / 1000F;
+            double offset1s = Prj.Prj.MainController.Config.StandardSet.Std1s;
+            double offset5s = Prj.Prj.MainController.Config.StandardSet.Std5s;
+            double offset10s = Prj.Prj.MainController.Config.StandardSet.Std10s;
             if (timeout == 1000)
-                std = (long)(timeout * (1 + offset1s));
+                std = (long)(timeout + offset1s);
             else if (timeout == 5000)
-                std = (long)(timeout * (1 + offset5s));
+                std = (long)(timeout + offset5s);
             else if (timeout >= 10000)
-                std = (long)(timeout * (1 + offset10s));
+                std = timeout + (long)offset10s;
             return std;
         }
 

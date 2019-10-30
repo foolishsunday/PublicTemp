@@ -39,7 +39,7 @@ namespace XPCar.Consist.Calc
                 }
                 else
                 {
-                    _Intervals = Function.CalcInterval(_Data);//一个完整多包里，包与包之间的间隔
+                    _Intervals = Function.CalcInterval(_Data);
 
                     text += GetMinPeriodTestText(consistId);
                     text += GetMaxPeriodTestText(consistId);
@@ -254,77 +254,48 @@ namespace XPCar.Consist.Calc
         private long[] StandarNormalInterval(string consistId)
         {
             double offset = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std50ms) / 100F;
-            double offset10ms = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std10ms) / 100F;
+            double offset10ms = Prj.Prj.MainController.Config.StandardSet.Std10ms;
             long[] lens = new long[5];
             switch (_MsgName)
             {
                 case KeyConst.CanMsgId.BHM:
-                case KeyConst.CanMsgId.BEM:
-                case KeyConst.CanMsgId.BRO:
-                case KeyConst.CanMsgId.BSM:
-                case KeyConst.CanMsgId.BSD:
                 case KeyConst.CanMsgId.CHM:
                 case KeyConst.CanMsgId.CRM:
-                case KeyConst.CanMsgId.CEM:
-                case KeyConst.CanMsgId.CRO:
-                case KeyConst.CanMsgId.CSD:
+                case KeyConst.CanMsgId.BRM://
                 case KeyConst.CanMsgId.CML:
-  
+                case KeyConst.CanMsgId.BRO:
+                case KeyConst.CanMsgId.CRO:
+                case KeyConst.CanMsgId.BCS://
+                case KeyConst.CanMsgId.BSM://
+                case KeyConst.CanMsgId.BSD:
+                case KeyConst.CanMsgId.CSD:
+                case KeyConst.CanMsgId.BEM:
+                case KeyConst.CanMsgId.CEM:
                     lens[0] = (long)(250 * (1 - offset));
                     lens[1] = (long)(250 * (1 + offset));
-                    //lens[0] = 250 - KeyConst.Consist.TimeError.Std250ms_PositiveNegative;
-                    //lens[1] = 250 + KeyConst.Consist.TimeError.Std250ms_PositiveNegative;
-                    return lens;
-                case KeyConst.CanMsgId.BRM:
-                case KeyConst.CanMsgId.BCS:
 
-                    lens[0] = (long)(250 * (1 - offset));
-                    lens[1] = (long)(250 * (1 + offset));
-                    lens[2] = (long)(10 * (1 - offset10ms));
-                    lens[3] = (long)(10 * (1 + offset10ms));
-                    //lens[0] = 250 - KeyConst.Consist.TimeError.Std250ms_PositiveNegative;
-                    //lens[1] = 250 + KeyConst.Consist.TimeError.Std250ms_PositiveNegative;
-                    //lens[2] = 10 - KeyConst.Consist.TimeError.Std10ms_PositiveNegative3ms;
-                    //lens[3] = 10 + KeyConst.Consist.TimeError.Std10ms_PositiveNegative3ms;
-                    if (_MsgName == KeyConst.CanMsgId.BRM)
-                    {
-                        lens[4] = 250;
-                    }
-                    else
-                    {
-                        lens[4] = 500;
-                    }
                     return lens;
-                case KeyConst.CanMsgId.BCP:
-                    lens[0] = (long)(500 * (1 - offset));
-                    lens[1] = (long)(500 * (1 + offset));
-                    lens[2] = (long)(10 * (1 - offset10ms));
-                    lens[3] = (long)(10 * (1 + offset10ms));
-                    //lens[0] = 500 - KeyConst.Consist.TimeError.Std250ms_PositiveNegative;
-                    //lens[1] = 500 + KeyConst.Consist.TimeError.Std250ms_PositiveNegative;
-                    //lens[2] = 10 - KeyConst.Consist.TimeError.Std10ms_PositiveNegative3ms;
-                    //lens[3] = 10 + KeyConst.Consist.TimeError.Std10ms_PositiveNegative3ms;
-                    lens[4] = 500;
-                    return lens;
+                //case KeyConst.CanMsgId.BCP:
+                //    lens[0] = (long)(500 * (1 - offset));
+                //    lens[1] = (long)(500 * (1 + offset));
+                //    lens[2] = (long)(10 - offset10ms);
+                //    lens[3] = (long)(10 + offset10ms);
+                //    lens[4] = 500;
+                //    return lens;
+                case KeyConst.CanMsgId.BCP://
                 case KeyConst.CanMsgId.CTS:
                     lens[0] = (long)(500 * (1 - offset));
                     lens[1] = (long)(500 * (1 + offset));
-                    //lens[0] = 500 - KeyConst.Consist.TimeError.Std250ms_PositiveNegative;
-                    //lens[1] = 500 + KeyConst.Consist.TimeError.Std250ms_PositiveNegative;
                     return lens;
                 case KeyConst.CanMsgId.BCL:
                 case KeyConst.CanMsgId.CCS:
                     lens[0] = (long)(50 * (1 - offset));
                     lens[1] = (long)(50 * (1 + offset));
-                    //lens[0] = 50 - 5;
-                    //lens[1] = 50 + 5;
                     return lens;
                 case KeyConst.CanMsgId.BST:
                 case KeyConst.CanMsgId.CST:
-                    lens[0] = (long)(10 * (1 - offset));
-                    lens[1] = (long)(10 * (1 + offset));
-                    //lens[0] = 10 - KeyConst.Consist.TimeError.Std10ms_PositiveNegative3ms;
-                    //lens[1] = 10 + KeyConst.Consist.TimeError.Std10ms_PositiveNegative3ms;
+                    lens[0] = (long)(10 - offset10ms);
+                    lens[1] = (long)(10 + offset10ms);
                     return lens;
 
                 default:

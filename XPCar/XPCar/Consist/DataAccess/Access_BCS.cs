@@ -1,6 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using XPCar.Common;
 using XPCar.Database;
+using XPCar.Prj.Model;
 
 namespace XPCar.Consist.DataAccess
 {
@@ -11,14 +12,9 @@ namespace XPCar.Consist.DataAccess
         {
             this._Data = db.QueryConsistMsg(BCS);
         }
-        //public void GetBCSAfterDatetime(DbService db, string datetime)
-        //{
-        //    string now = DateTime.Now.ToString(KeyConst.TextFormat.Date);
-        //    this._Data = db.QueryConsistMsg_BetweenDatetime(BCS, datetime, now);
-        //}
-        //public void GetBCSafterObjectNo(DbService db, int objectNo)
-        //{
-        //    this._Data = db.QueryConsistMsg_ByObjectNo(BCS, objectNo);
-        //}
+        public void GetBeforeMsg(DbService db, List<ConsistMsg> msg)
+        {
+            this._Data = db.QueryConsistBeforeMsg(BCS, msg[0].ObjectNo);
+        }
     }
 }

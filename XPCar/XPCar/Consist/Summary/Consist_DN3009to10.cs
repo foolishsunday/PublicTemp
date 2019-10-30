@@ -18,8 +18,16 @@ namespace XPCar.Consist.Summary
             TestResult result = new TestResult(true);
             try
             {
+                //CEM
+                Access_CEM cem = new Access_CEM();
+                cem.GetCEM(db);
+                if (cem.IsNullData())
+                {
+                    return report = result.ExportNullReport(CEM);
+                }
+
                 Access_CST cst = new Access_CST();
-                cst.GetCST(db);
+                cst.GetBeforeMsg(db, cem.Data);
                 if (cst.IsNullData())
                 {
                     return report = result.ExportNullReport(CST);
@@ -34,13 +42,6 @@ namespace XPCar.Consist.Summary
                 measure.MeasureCommon(consistId);
                 result.AppendTestResult(measure.ExportTestResult());
 
-                //CEM
-                Access_CEM cem = new Access_CEM();
-                cem.GetCEM(db);
-                if (cem.IsNullData())
-                {
-                    return report = result.ExportNullReport(CEM);
-                }
 
                 mt.MeasureFirstToFirstWithoutSec(cst.Data, cem.Data, 5000);
                 mt.AppendText("自首次发送CST报文起超过", "，充电机发送CEM报文");

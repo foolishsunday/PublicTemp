@@ -19,16 +19,24 @@ namespace XPCar.Consist.Summary
             TestResult result = new TestResult(true);
             try
             {
+                //CEM
+                Access_CEM cemTotal = new Access_CEM();
+                cemTotal.GetCEM(db);
+                if (cemTotal.IsNullData())
+                {
+                    return report = result.ExportNullReport(CEM);
+                }
+
                 //CCS
                 Access_BCL bcl = new Access_BCL();
-                bcl.GetBCL(db);
+                bcl.GetBeforeMsg(db, cemTotal.Data);
                 if (bcl.IsNullData())
                 {
                     return report = result.ExportNullReport(BCL);
                 }
 
                 Access_CCS ccs = new Access_CCS();
-                ccs.GetCCS(db);
+                ccs.GetBeforeMsg(db, cemTotal.Data);
                 if (ccs.IsNullData())
                 {
                     return report = result.ExportNullReport(CCS);
@@ -42,14 +50,6 @@ namespace XPCar.Consist.Summary
                 Measure measure = new Measure(ccs.Data, CCS);
                 measure.MeasureCommon(consistId);
                 result.AppendTestResult(measure.ExportTestResult());
-
-                //CEM
-                Access_CEM cemTotal = new Access_CEM();
-                cemTotal.GetCEM(db);
-                if (cemTotal.IsNullData())
-                {
-                    return report = result.ExportNullReport(CEM);
-                }
 
                 mt.MeasureLastToFirstWithoutSec(bcl.Data, cemTotal.Data, 1000);
                 mt.AppendText("自上一次接收到BCL报文起超过", "，充电机发送CEM报文");
