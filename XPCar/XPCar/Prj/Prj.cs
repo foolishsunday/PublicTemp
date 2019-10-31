@@ -82,6 +82,7 @@ namespace XPCar.Prj
                 UpgradeController = new UpgradeController();
 
                 ValueManager = new ValueManager();//add for 时间增量
+                ValueManager.EnableTranslate = true;
 
                 WaveController = new WaveController();
 

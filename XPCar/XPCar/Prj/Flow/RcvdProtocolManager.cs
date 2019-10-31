@@ -34,7 +34,7 @@ namespace XPCar.Prj.Flow
         private DataCollection _OnlineDecodeBuf;
       
 
-        private static Queue<RawData> _TaskQueue;
+        //private static Queue<RawData> _TaskQueue;
         //private static Queue<long> _TaskNum;
         public RcvdProtocolManager()
         {
@@ -44,7 +44,7 @@ namespace XPCar.Prj.Flow
             _EventWaitDecode = new AutoResetEvent(false);
             _ThreadDecode = new Thread(FunctionWorkDecode);
 
-            _TaskQueue = new Queue<RawData>();
+            //_TaskQueue = new Queue<RawData>();
             _RawCollect = new DataCollection();
             _WaitDecodeBuf = new DataCollection();
             _OnlineDecodeBuf = new DataCollection();

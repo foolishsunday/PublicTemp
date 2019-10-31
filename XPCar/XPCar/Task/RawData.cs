@@ -9,12 +9,12 @@ namespace XPCar.Task
     {
         public RawData()
         { }
-        public RawData(TaskCommon.TaskName taskName,byte[] buf)
-        {
-            this.TaskName = taskName;
-            this.Buffer = buf;
-        }
-        public TaskCommon.TaskName TaskName { get; set; }
+        //public RawData(TaskCommon.TaskName taskName,byte[] buf)
+        //{
+        //    this.TaskName = taskName;
+        //    this.Buffer = buf;
+        //}
+        //public TaskCommon.TaskName TaskName { get; set; }
         public byte[] Buffer { get; set; }
     }
 }

@@ -528,7 +528,8 @@ namespace XPCar.Client.ACTest
                 List<TestAC> report = db.QueryModel<TestAC>();
 
                 string dotPath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @".\Config\ACTemplate.dot";
-                WordManager word = new WordManager(path, dotPath);
+                //WordManager word = new WordManager(path, dotPath);
+                AsposeWordManager word = new AsposeWordManager(path, dotPath);
                 word.SaveTestAC(report);
                 ShowMessageBox("输出报告成功！");
             }

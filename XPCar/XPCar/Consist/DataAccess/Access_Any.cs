@@ -14,5 +14,9 @@ namespace XPCar.Consist.DataAccess
         {
             this._Data = db.QueryConsistMsg_CXX_Msg();
         }
+        public void GetCxxExceptCEM(DbService db)
+        {
+            this._Data = db.QueryConsistMsg_CXX_ExceptPara("CEM");
+        }
     }
 }

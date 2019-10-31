@@ -137,7 +137,7 @@ namespace XPCar.Prj.Flow
             {
                 RawData package = new RawData();
 
-                package.TaskName = TaskName.WritePort;
+                //package.TaskName = TaskName.WritePort;
                 package.Buffer = content;
                 DoWriteTask(package);
             }
@@ -172,7 +172,7 @@ namespace XPCar.Prj.Flow
             {
                 RawData package = new RawData();
 
-                package.TaskName = TaskName.WritePort;
+                //package.TaskName = TaskName.WritePort;
                 package.Buffer = protocol.Encode();
 
                 DoWriteTask(package);

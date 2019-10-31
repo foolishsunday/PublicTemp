@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.grpbCanBtn = new System.Windows.Forms.GroupBox();
+            this.cbTranslate = new System.Windows.Forms.CheckBox();
             this.btnSaveCSV = new System.Windows.Forms.Button();
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.btnClearCan = new System.Windows.Forms.Button();
             this.btnCanCatch = new System.Windows.Forms.Button();
             this.btnCanPause = new System.Windows.Forms.Button();
-            this.cbTranslate = new System.Windows.Forms.CheckBox();
             this.grpbCanBtn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,19 @@
             this.grpbCanBtn.Size = new System.Drawing.Size(530, 46);
             this.grpbCanBtn.TabIndex = 16;
             this.grpbCanBtn.TabStop = false;
+            // 
+            // cbTranslate
+            // 
+            this.cbTranslate.AutoSize = true;
+            this.cbTranslate.Checked = true;
+            this.cbTranslate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbTranslate.Location = new System.Drawing.Point(479, 18);
+            this.cbTranslate.Name = "cbTranslate";
+            this.cbTranslate.Size = new System.Drawing.Size(48, 16);
+            this.cbTranslate.TabIndex = 13;
+            this.cbTranslate.Text = "翻译";
+            this.cbTranslate.UseVisualStyleBackColor = true;
+            this.cbTranslate.CheckedChanged += new System.EventHandler(this.cbTranslate_CheckedChanged);
             // 
             // btnSaveCSV
             // 
@@ -114,17 +127,6 @@
             this.btnCanPause.Text = "暂停显示";
             this.btnCanPause.UseVisualStyleBackColor = true;
             this.btnCanPause.Click += new System.EventHandler(this.BtnCanPause_Click);
-            // 
-            // cbTranslate
-            // 
-            this.cbTranslate.AutoSize = true;
-            this.cbTranslate.Location = new System.Drawing.Point(479, 18);
-            this.cbTranslate.Name = "cbTranslate";
-            this.cbTranslate.Size = new System.Drawing.Size(48, 16);
-            this.cbTranslate.TabIndex = 13;
-            this.cbTranslate.Text = "翻译";
-            this.cbTranslate.UseVisualStyleBackColor = true;
-            this.cbTranslate.CheckedChanged += new System.EventHandler(this.cbTranslate_CheckedChanged);
             // 
             // frmCanBtn
             // 

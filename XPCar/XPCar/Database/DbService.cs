@@ -402,6 +402,23 @@ namespace XPCar.Database
             }
             return consist;
         }
+        public List<ConsistMsg> QueryConsistMsg_CXX_ExceptPara(string msgName)
+        {
+            List<ConsistMsg> consist = new List<ConsistMsg>();
+            string query = string.Format("select * from ConsistMsg where MsgName like 'C%' and MsgName != '{0}';", msgName);
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    consist = db.SqlQuery<ConsistMsg>(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+            return consist;
+        }
         public List<ConsistMsg> QueryConsistMsg(string symbol, string colName, string value)
         {
             //List<ConsistMsg> lists = new List<ConsistMsg>();
