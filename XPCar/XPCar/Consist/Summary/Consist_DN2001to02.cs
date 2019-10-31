@@ -28,8 +28,8 @@ namespace XPCar.Consist.Summary
 
 
                 Access_CRM crmSection = new Access_CRM();
-                crmSection.GetBeforeMsgSPN2560_AA(db, cemTotal.Data);
-                //crmSection.GetCRM(db);
+                //crmSection.GetBeforeMsgSPN2560_AA(db, cemTotal.Data);
+                crmSection.GetCRM_SPN2560_AA(db);
                 if (crmSection.IsNullData())
                 {
                     return report = result.ExportNullReport(CRM);

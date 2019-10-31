@@ -25,6 +25,7 @@ namespace XPCar.Prj.Controller
         private PrjConfig _Config;
         public WarningLight WarningLight;
         private MainStatus _MainStatus;
+        public OffsetConfig OffsetConfig;
         public MainController(string configFilePath)
         {
             if (configFilePath == null) throw new NullReferenceException("参数为空：configFilePath");
@@ -35,6 +36,7 @@ namespace XPCar.Prj.Controller
 
             _MainStatus = new MainStatus();
 
+            OffsetConfig = new OffsetConfig();
 
             Prj.PortIO.CommConnected += this.HandlePortConnected;
             Prj.PortIO.CommDisconnected += this.HandlePortDisconnected;

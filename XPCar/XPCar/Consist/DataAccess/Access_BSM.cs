@@ -11,14 +11,13 @@ namespace XPCar.Consist.DataAccess
         {
             this._Data = db.QueryConsistMsg(BSM);
         }
-        //public void GetBSMAfterDatetime(DbService db, string datetime)
-        //{
-        //    string now = DateTime.Now.ToString(KeyConst.TextFormat.Date);
-        //    this._Data = db.QueryConsistMsg_BetweenDatetime(BSM, datetime, now);
-        //}
-        //public void GetBSMafterObjectNo(DbService db, int objectNo)
-        //{
-        //    this._Data = db.QueryConsistMsg_ByObjectNo(BSM, objectNo);
-        //}
+        public void GetBSM_SPN3096_00(DbService db)
+        {
+            this._Data = db.QueryConsistMsg(BSM, "SPN3096", "00");
+        }
+        public void GetBSM_SPN3096_01(DbService db)
+        {
+            this._Data = db.QueryConsistMsg(BSM, "SPN3096", "01");
+        }
     }
 }

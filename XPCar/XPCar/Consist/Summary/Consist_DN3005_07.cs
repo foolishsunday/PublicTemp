@@ -28,14 +28,16 @@ namespace XPCar.Consist.Summary
                 }
 
                 Access_BCS bcs = new Access_BCS();
-                bcs.GetBeforeMsg(db, cemTotal.Data);
+                //bcs.GetBeforeMsg(db, cemTotal.Data);
+                bcs.GetBCS(db);
                 if (bcs.IsNullData())
                 {
                     return report = result.ExportNullReport(BCS);
                 }
 
                 Access_CCS ccs = new Access_CCS();
-                ccs.GetBeforeMsg(db, cemTotal.Data);
+                //ccs.GetBeforeMsg(db, cemTotal.Data);
+                ccs.GetCCS(db);
                 if (ccs.IsNullData())
                 {
                     return report = result.ExportNullReport(CCS);

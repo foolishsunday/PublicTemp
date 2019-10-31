@@ -82,11 +82,10 @@ namespace XPCar.Consist
                 case KeyConst.Consist.ItemId.DN3001:
                     return new Consist_DN3001();
                 case KeyConst.Consist.ItemId.DN3002:
-                    return new Consist_DN3002();
+                case KeyConst.Consist.ItemId.DN3004:
+                    return new Consist_DN3002_04();
                 case KeyConst.Consist.ItemId.DN3003:
                     return new Consist_DN3003();
-                case KeyConst.Consist.ItemId.DN3004:
-                    return new Consist_DN3004();
                 case KeyConst.Consist.ItemId.DN3005:
                 case KeyConst.Consist.ItemId.DN3007:
                     return new Consist_DN3005_07();

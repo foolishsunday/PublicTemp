@@ -20,11 +20,16 @@ namespace XPCar.Client.Consist
         }
         private void Init()
         {
-            tbStd1s.Text = Prj.Prj.MainController.Config.StandardSet.Std1s.ToString();
-            tbStd5s.Text = Prj.Prj.MainController.Config.StandardSet.Std5s.ToString();
-            tbStd10s.Text = Prj.Prj.MainController.Config.StandardSet.Std10s.ToString();
-            tbStd10ms.Text = Prj.Prj.MainController.Config.StandardSet.Std10ms.ToString();
-            tbStd50ms.Text = Prj.Prj.MainController.Config.StandardSet.Std50ms.ToString();
+            //tbStd1s.Text = Prj.Prj.MainController.Config.StandardSet.Std1s.ToString();
+            //tbStd5s.Text = Prj.Prj.MainController.Config.StandardSet.Std5s.ToString();
+            //tbStd10s.Text = Prj.Prj.MainController.Config.StandardSet.Std10s.ToString();
+            //tbStd10ms.Text = Prj.Prj.MainController.Config.StandardSet.Std10ms.ToString();
+            //tbStd50ms.Text = Prj.Prj.MainController.Config.StandardSet.Std50ms.ToString();
+            tbStd1s.Text = Prj.Prj.MainController.OffsetConfig.Std1s.ToString();
+            tbStd5s.Text = Prj.Prj.MainController.OffsetConfig.Std5s.ToString();
+            tbStd10s.Text = Prj.Prj.MainController.OffsetConfig.Std10s.ToString();
+            tbStd10ms.Text = Prj.Prj.MainController.OffsetConfig.Std10ms.ToString();
+            tbStd50ms.Text = Prj.Prj.MainController.OffsetConfig.Std50ms.ToString();
             lblConfirmOk.Visible = false;
 
         }
@@ -37,11 +42,16 @@ namespace XPCar.Client.Consist
             isLegal &= MatchCheck.IsInt(tbStd50ms.Text);
             if (isLegal)
             {
-                Prj.Prj.MainController.Config.StandardSet.Std1s = Convert.ToInt32(tbStd1s.Text);
-                Prj.Prj.MainController.Config.StandardSet.Std5s = Convert.ToInt32(tbStd5s.Text);
-                Prj.Prj.MainController.Config.StandardSet.Std10s = Convert.ToInt32(tbStd10s.Text);
-                Prj.Prj.MainController.Config.StandardSet.Std10ms = Convert.ToInt32(tbStd10ms.Text);
-                Prj.Prj.MainController.Config.StandardSet.Std50ms = Convert.ToInt32(tbStd50ms.Text);
+                //Prj.Prj.MainController.Config.StandardSet.Std1s = Convert.ToInt32(tbStd1s.Text);
+                //Prj.Prj.MainController.Config.StandardSet.Std5s = Convert.ToInt32(tbStd5s.Text);
+                //Prj.Prj.MainController.Config.StandardSet.Std10s = Convert.ToInt32(tbStd10s.Text);
+                //Prj.Prj.MainController.Config.StandardSet.Std10ms = Convert.ToInt32(tbStd10ms.Text);
+                //Prj.Prj.MainController.Config.StandardSet.Std50ms = Convert.ToInt32(tbStd50ms.Text);
+                Prj.Prj.MainController.OffsetConfig.Std1s = Convert.ToInt32(tbStd1s.Text);
+                Prj.Prj.MainController.OffsetConfig.Std5s = Convert.ToInt32(tbStd5s.Text);
+                Prj.Prj.MainController.OffsetConfig.Std10s = Convert.ToInt32(tbStd10s.Text);
+                Prj.Prj.MainController.OffsetConfig.Std10ms = Convert.ToInt32(tbStd10ms.Text);
+                Prj.Prj.MainController.OffsetConfig.Std50ms = Convert.ToInt32(tbStd50ms.Text);
                 Prj.Prj.MainController.Config.SaveConsistStd();
                 Action async = delegate ()
                 {

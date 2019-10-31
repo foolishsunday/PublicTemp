@@ -26,7 +26,8 @@ namespace XPCar.Consist.Summary
                 }
 
                 Access_CRO cro = new Access_CRO();
-                cro.GetBeforeMsg(db, cemTotal.Data);
+                //cro.GetBeforeMsg(db, cemTotal.Data);
+                cro.GetCRO_SPN2830_AA(db);
                 if (cro.IsNullData())
                 {
                     return report = result.ExportNullReport(CRO);

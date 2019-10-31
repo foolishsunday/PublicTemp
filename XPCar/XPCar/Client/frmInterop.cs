@@ -645,7 +645,8 @@ namespace XPCar.Client
                 List<TestInterop> report = db.QueryModel<TestInterop>();
 
                 string dotPath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @".\Config\InteropTemp.dot";
-                WordManager word = new WordManager(path, dotPath);
+                //WordManager word = new WordManager(path, dotPath);
+                AsposeWordManager word = new AsposeWordManager(path, dotPath);
                 word.SaveInterop(report);
                 ShowMessageBox("输出报告成功！");
             }

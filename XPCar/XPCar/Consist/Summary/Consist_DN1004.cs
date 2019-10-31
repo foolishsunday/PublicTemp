@@ -24,14 +24,10 @@ namespace XPCar.Consist.Summary
                     return report = result.ExportNullReport(CEM);
                 }
 
-                //Access_CRM crmTotal = new Access_CRM();
-                //crmTotal.GetCRM(db);
-                //if (crmTotal.IsNullData())
-                //{
-                //    return report = result.ExportNullReport(CRM);
-                //}
+
                 Access_CRM crmSection = new Access_CRM();
-                crmSection.GetBeforeMsg(db, cemTotal.Data);
+                //crmSection.GetBeforeMsg(db, cemTotal.Data);
+                crmSection.GetCRM_SPN2560_AA(db);
                 if (crmSection.IsNullData())
                 {
                     return report = result.ExportNullReport(CRM);

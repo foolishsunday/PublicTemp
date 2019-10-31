@@ -97,7 +97,7 @@ namespace XPCar.Prj.Flow
             while (true)
             {
 
-                if (_Stocker.List().Count > 100 || _TaskState.IsCanMsgCommitEnable())
+                if (_Stocker.List().Count > 250 || _TaskState.IsCanMsgCommitEnable())
                 {
                     lock (_Locker)
                     {
@@ -105,7 +105,7 @@ namespace XPCar.Prj.Flow
                     }
                 }
 
-                if (_Repository.List().Count > 100 || _TaskState.IsCanMsgCommitEnable())
+                if (_Repository.List().Count > 250 || _TaskState.IsCanMsgCommitEnable())
                 {
                     CommitToRespository();  //仓库提交DB
                     _TaskState.DisableCanMsgCommit();

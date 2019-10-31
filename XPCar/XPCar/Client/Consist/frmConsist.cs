@@ -275,8 +275,10 @@ namespace XPCar.Client
                 List<TestItemsReport> report = db.QueryModel<TestItemsReport>();
 
                 string dotPath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @".\Config\template.dot";
-                WordManager word = new WordManager(path, dotPath);
+                //WordManager word = new WordManager(path, dotPath);
+                AsposeWordManager word = new AsposeWordManager(path, dotPath);
                 word.Save(report);
+
                 _State = ThreadState.Idle;
                 ShowMessageBox("输出报告成功！");
             }

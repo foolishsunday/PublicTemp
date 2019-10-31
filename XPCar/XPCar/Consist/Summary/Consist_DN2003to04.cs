@@ -26,7 +26,8 @@ namespace XPCar.Consist.Summary
                 }
 
                 Access_CML cml = new Access_CML();
-                cml.GetBeforeMsg(db, cemTotal.Data);
+                //cml.GetBeforeMsg(db, cemTotal.Data);
+                cml.GetCML(db);
                 if (cml.IsNullData())
                 {
                     return report = result.ExportNullReport(CML);

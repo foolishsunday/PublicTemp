@@ -26,8 +26,8 @@ namespace XPCar.Consist.Summary
                 }
 
                 Access_CST cst = new Access_CST();
-                //cst.GetCST(db);
-                cst.GetBeforeMsg(db, cem.Data);
+                //cst.GetBeforeMsg(db, cem.Data);
+                cst.GetCST(db);
                 if (cst.IsNullData())
                 {
                     return report = result.ExportNullReport(CST);

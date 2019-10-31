@@ -253,8 +253,10 @@ namespace XPCar.Consist.Calc
         }
         private long[] StandarNormalInterval(string consistId)
         {
-            double offset = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std50ms) / 100F;
-            double offset10ms = Prj.Prj.MainController.Config.StandardSet.Std10ms;
+            //double offset = Convert.ToDouble(Prj.Prj.MainController.Config.StandardSet.Std50ms) / 100F;
+            //double offset10ms = Prj.Prj.MainController.Config.StandardSet.Std10ms;
+            double offset = Convert.ToDouble(Prj.Prj.MainController.OffsetConfig.Std50ms) / 100F;
+            double offset10ms = Prj.Prj.MainController.OffsetConfig.Std10ms;
             long[] lens = new long[5];
             switch (_MsgName)
             {
