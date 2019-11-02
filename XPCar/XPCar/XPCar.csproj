@@ -264,6 +264,7 @@
     <Compile Include="Consist\Calc\MeasureInterval.cs" />
     <Compile Include="Consist\Calc\MeasureLength.cs" />
     <Compile Include="Consist\Calc\MeasureTimeout.cs" />
+    <Compile Include="Consist\Calc\MeasureTimingSequence.cs" />
     <Compile Include="Consist\ConsistCommon.cs" />
     <Compile Include="Consist\ConsistFactoryManager.cs" />
     <Compile Include="Consist\DataAccess\Access_Any.cs" />
@@ -320,7 +321,8 @@
     <Compile Include="Consist\Summary\Consist_DP3003.cs" />
     <Compile Include="Consist\Summary\Consist_DP3004.cs" />
     <Compile Include="Consist\Summary\Consist_DP3005.cs" />
-    <Compile Include="Consist\Summary\Consist_DP3006to07.cs" />
+    <Compile Include="Consist\Summary\Consist_DP3006.cs" />
+    <Compile Include="Consist\Summary\Consist_DP3007.cs" />
     <Compile Include="Consist\Summary\Consist_DP4001.cs" />
     <Compile Include="Consist\Summary\Consist_DP4002.cs" />
     <Compile Include="Consist\Summary\Consist_Undefined.cs" />

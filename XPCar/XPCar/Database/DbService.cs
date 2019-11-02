@@ -303,14 +303,14 @@ namespace XPCar.Database
         //}
         public List<ConsistMsg> QueryMutiPckgConsistMsg(string msgName)
         {
-            string isLastPackage = "1";
+            string isFirstPackage = "1";
             List<ConsistMsg> consist = new List<ConsistMsg>();
             try
             {
                 using (var db = DbContext.GetInstance())
                 {
-                    consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg where MsgName=@MsgName and IsLastPackage=@IsLastPackage",
-                        new { MsgName = msgName, IsLastPackage = isLastPackage });
+                    consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg where MsgName=@MsgName and IsFirstPackage=@IsFirstPackage",
+                        new { MsgName = msgName, IsFirstPackage = isFirstPackage });
                 }
             }
             catch (Exception ex)
@@ -327,6 +327,22 @@ namespace XPCar.Database
                 using (var db = DbContext.GetInstance())
                 {
                     consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg where MsgName=@MsgName", new { MsgName = msgName });
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+            return consist;
+        }
+        public List<ConsistMsg> QueryConsistMutiEnd(string msgName)
+        {
+            List<ConsistMsg> consist = new List<ConsistMsg>();
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg where MsgName=@MsgName and IsPackageEnd = 1;", new { MsgName = msgName });
                 }
             }
             catch (Exception ex)
@@ -428,6 +444,25 @@ namespace XPCar.Database
                 using (var db = DbContext.GetInstance())
                 {
                     var lists = db.Queryable<ConsistMsg>().Where(it => it.MsgName == symbol).Where(text).ToList() ;
+                    return lists;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+
+            return null;
+        }
+        public List<ConsistMsg> QueryConsistMsgMutiSpnOr(string msgName,  string text)
+        {
+
+
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    var lists = db.Queryable<ConsistMsg>().Where(it => it.MsgName == msgName).Where(text).ToList();
                     return lists;
                 }
             }

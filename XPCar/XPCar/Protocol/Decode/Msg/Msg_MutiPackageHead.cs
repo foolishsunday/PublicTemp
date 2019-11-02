@@ -13,7 +13,8 @@ namespace XPCar.Protocol.Decode.Msg
         private string TestBCP = "动力蓄电池充电参数";
         private string TestBCS = "电池充电总状态";
         private string TestBMV = "单体动力蓄电池电压";
-        private string TestBSP= "动力蓄电池预留报文";
+        private string TestBSP = "动力蓄电池预留报文";
+        private string TestBMT = "动力蓄电池温度报文";
         private string TestUndefined = "Undefined CMD";
 
         private string TestEnd = "多包报文 首报文";
@@ -40,6 +41,9 @@ namespace XPCar.Protocol.Decode.Msg
                         break;
                     case KeyConst.CanMsgId.BSP:
                         text = TestBSP;
+                        break;
+                    case KeyConst.CanMsgId.BMT:
+                        text = TestBMT;
                         break;
                     default:
                         text = TestUndefined;

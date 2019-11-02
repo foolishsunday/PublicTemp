@@ -33,12 +33,17 @@ namespace XPCar.Prj.Model
         public string SPN3926 { get; set; }
         public string SPN3927 { get; set; }
         public string SPN3090 { get; set; }
+        public string SPN3091 { get; set; }
+        public string SPN3092 { get; set; }
+        public string SPN3093 { get; set; }
+        public string SPN3094 { get; set; }
         public string SPN3095 { get; set; }
         public string SPN3096 { get; set; }
         public string SPN3929 { get; set; }
         public int MutiLength { get; set; }
         public int PackageId { get; set; }
-        public int IsLastPackage { get; set; }//无用
+        public int IsFirstPackage { get; set; }
+        public int IsPackageEnd { get; set; }
         public int TextId { get; set; }
         //public int Package
     }

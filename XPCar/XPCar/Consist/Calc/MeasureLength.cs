@@ -39,11 +39,11 @@ namespace XPCar.Consist.Calc
                 case KeyConst.CanMsgId.CSD:
                 case KeyConst.CanMsgId.CML:
                 case KeyConst.CanMsgId.CRM:
+                case KeyConst.CanMsgId.CCS://27930旧国标CCS为7，补充说明里修改为8
                     std = 8;
                     break;
                 case KeyConst.CanMsgId.BSM:
                 case KeyConst.CanMsgId.BSD:
-                case KeyConst.CanMsgId.CCS:
                 case KeyConst.CanMsgId.CTS:
                     std = 7;
                     break;
@@ -66,7 +66,7 @@ namespace XPCar.Consist.Calc
                     break;
             }
 
-            //获取实际数据长度
+            //获取实际数据长度，多包与非多包计算方法不一样，多包以正文包数*7来计算，非多包以dlc为准
             if (_MsgName == KeyConst.CanMsgId.BRM || _MsgName == KeyConst.CanMsgId.BSP 
                 || _MsgName == KeyConst.CanMsgId.BCS || _MsgName == KeyConst.CanMsgId.BCP)
             {

@@ -36,17 +36,26 @@ namespace XPCar.Consist.Calc
             _ResultText = span.ToString() + "ms";
             return span;
         }
-        public long MeasureFirstToFirstWithinSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
+        public long MeasureAStopWhileRcvB(List<ConsistMsg> aList, List<ConsistMsg> bList)
         {
-            string earlier = earlierList[0].CreateTimestamp;
-            string later = laterList[0].CreateTimestamp;
+            string earlier = aList[aList.Count - 1].CreateTimestamp;
+            string later = bList[0].CreateTimestamp;
             long span = Function.CalcIntervalByTwoPara(later, earlier);
-            if (span >= 0 && span <= TimeoutOffset(ms))
+            if (span >= 0)
                 _IsQualified = true;
             else
                 _IsQualified = false;
-            _ResultText = span.ToString() + "ms";
             return span;
+        }
+        public string AppendStopResult(string left, string middle, string right)
+        {
+            if (_IsQualified)
+            {
+                _ResultText = left + right + KeyConst.Punctuation.Space + KeyConst.Consist.Result.Qualified;
+            }
+            else
+                _ResultText = left + middle + right + KeyConst.Punctuation.Space + KeyConst.Consist.Result.Unqualified;
+            return _ResultText;
         }
         public long MeasureFirstToLastWithinSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
         {
@@ -120,5 +129,18 @@ namespace XPCar.Consist.Calc
             tr.TestText += _ResultText + Environment.NewLine;
             return tr;
         }
+        //public void AppendResultBySpan(long span, string strQualified, string strUnqualified)
+        //{
+        //    if (span >= 0)
+        //    {
+        //        _IsQualified = true;
+        //        _ResultText = strQualified + KeyConst.Punctuation.Space + KeyConst.Consist.Result.Qualified;
+        //    }
+        //    else
+        //    {
+        //        _IsQualified = false;
+        //        _ResultText = strUnqualified + KeyConst.Punctuation.Space + KeyConst.Consist.Result.Unqualified;
+        //    }
+        //}
     }
 }

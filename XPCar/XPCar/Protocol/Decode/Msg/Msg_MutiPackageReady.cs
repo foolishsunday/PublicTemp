@@ -19,7 +19,10 @@ namespace XPCar.Protocol.Decode.Msg
                 if (IsReady(content))
                     text = this.TestReady;
                 else
+                {
+                    model.ConsistMsg.IsPackageEnd = 1;//最后一包
                     text = this.TestEnd;
+                }
                 model.MsgText = Function.AppendTextToMsgHead(symbol, text);
                 return model;
             }

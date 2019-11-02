@@ -17,6 +17,13 @@ namespace XPCar.Consist.Summary
             TestResult result = new TestResult(true);
             try
             {
+                Access_BSM bsm = new Access_BSM();
+                bsm.GetBSM_SPN_DP3004(db);
+                if (bsm.IsNullData())
+                {
+                    return report = result.ExportNullReport("SPN3092=10或SPN3093=10或SPN3094=10或SPN3095=10的BSM");
+                }
+
                 Access_CCS ccs = new Access_CCS();
                 ccs.GetCCS(db);
                 if (ccs.IsNullData())

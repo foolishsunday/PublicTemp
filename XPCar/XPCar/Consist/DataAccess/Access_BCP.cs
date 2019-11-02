@@ -11,5 +11,9 @@ namespace XPCar.Consist.DataAccess
         {
             this._Data = db.QueryConsistMsg(BCP);
         }
+        public void GetMutiEnd(DbService db)
+        {
+            this._Data = db.QueryConsistMutiEnd(BCP);
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace XPCar.Consist.Summary
 {
     public class Consist_DN2006 : ConsistCommon
     {
-        //private string BCP = "BCP";
+        private string BCP = "BCP";
         private string CML = "CML";
         private string CEM = "CEM";
         public override TestItemsReport GenerateReport(DbService db, string consistId)
@@ -19,6 +19,14 @@ namespace XPCar.Consist.Summary
             TestResult result = new TestResult(true);
             try
             {
+                Access_BCP bcp = new Access_BCP();
+                bcp.GetMutiEnd(db);
+                if (bcp.IsNullData())
+                {
+                    return report = result.ExportNullReport(BCP);
+                }
+                result.AppendResultCorrectText("充电机使用传输协议功能接收完成BCP报文");
+
                 Access_CEM cemTotal = new Access_CEM();
                 cemTotal.GetCEM(db);
                 if (cemTotal.IsNullData())
@@ -41,6 +49,10 @@ namespace XPCar.Consist.Summary
                 Measure measure = new Measure(cml.Data, CML);
                 measure.MeasureCommon(consistId);
                 result.AppendTestResult(measure.ExportTestResult());
+
+                //mt.MeasureFirstToLastWithinSec(cml.Data, bcp.Data, 5000);
+                //mt.AppendText("自首次发送CML报文起", "内，充电机使用传输协议功能接收BCP报文");
+                //result.AppendTestResult(mt.ExportTestResult());
 
                 mt.MeasureFirstToFirstWithoutSec(cml.Data, cemTotal.Data, 5000);
                 mt.AppendText("自首次发送CML报文起超过", "，充电机发送CEM报文");

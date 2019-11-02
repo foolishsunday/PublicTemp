@@ -61,13 +61,18 @@ CREATE TABLE ConsistMsg(
         SPN3925  TEXT    NULL,
         SPN3926  TEXT    NULL,
 		SPN3927  TEXT    NULL,
-        SPN3090  TEXT    NULL,
+		SPN3929  TEXT    NULL,
+		SPN3090  TEXT    NULL,
+		SPN3091  TEXT    NULL,
+		SPN3092  TEXT    NULL,
+		SPN3093  TEXT    NULL,
+		SPN3094  TEXT    NULL,
         SPN3095  TEXT    NULL,
 		SPN3096  TEXT    NULL,
-		SPN3929  TEXT    NULL,
 		MutiLength integer NULL,
 		PackageId integer NULL,
-		IsLastPackage integer NULL,
+		IsFirstPackage integer NULL,
+		IsPackageEnd integer NULL,
 		TextId integer NULL
 );
 

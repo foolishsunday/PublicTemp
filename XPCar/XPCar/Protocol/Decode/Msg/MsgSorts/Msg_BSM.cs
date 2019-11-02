@@ -22,7 +22,13 @@ namespace XPCar.Protocol.Decode.Msg.MsgSorts
         private string TestBatConn = "动力蓄电池组输出连接器连接状态";
 
         private string TestChargePermit = "充电允许";
-
+        private string vSPN3090 = "";
+        private string vSPN3091 = "";
+        private string vSPN3092 = "";
+        private string vSPN3093 = "";
+        private string vSPN3094 = "";
+        private string vSPN3095 = "";
+        private string vSPN3096 = "";
 
         public override CanMsgRich DecodeMsgData(string symbol, List<byte> content)
         {
@@ -57,30 +63,38 @@ namespace XPCar.Protocol.Decode.Msg.MsgSorts
                 string str1 = arr[i++];
 
                 string batV = DecodeBatV(str1);
+                model.ConsistMsg.SPN3090 = vSPN3090;
                 text += Function.TextAddColonSpace(TestBatV, batV);
+
                 //7.整车动力蓄电池荷电状态SOC
                 string soc = DecodeSoc(str1);
+                model.ConsistMsg.SPN3091 = vSPN3091;
                 text += Function.TextAddColonSpace(TestSoc, soc);
 
                 //8.动力蓄电池充电过电流
                 string chargeI = DecodeBatChargeI(str1);
+                model.ConsistMsg.SPN3092 = vSPN3092;
                 text += Function.TextAddColonSpace(TestBatChargeI, chargeI);
 
                 //9.动力蓄电池温度过高
                 string batTooHigh = DecodeBatTooHigh(str1);
+                model.ConsistMsg.SPN3093 = vSPN3093;
                 text += Function.TextAddColonSpace(TestBatTooHigh, batTooHigh);
 
                 str1 = arr[i++];
                 //10.动力蓄电池绝缘状态
                 string batInsulate = DecodeBatInsulate(str1);
+                model.ConsistMsg.SPN3094 = vSPN3094;
                 text += Function.TextAddColonSpace(TestBatInsulate, batInsulate);
 
                 //11.动力蓄电池组输出连接器连接状态
                 string conn = DecodeBatConn(str1);
+                model.ConsistMsg.SPN3095 = vSPN3095;
                 text += Function.TextAddColonSpace(TestBatConn, conn);
 
                 //12.充电允许
                 string permit = DecodeChargePermit(str1);
+                model.ConsistMsg.SPN3096 = vSPN3096;
                 text += Function.TextAddColonSpace(TestChargePermit, permit);
 
                 model.MsgText = Function.AppendTextToMsgHead(symbol, this.MsgHeadLine) + text;
@@ -122,6 +136,7 @@ namespace XPCar.Protocol.Decode.Msg.MsgSorts
         {
             int val = BaseConvert.HexStr2Int32(str);
             string result = BaseConvert.GetBitsFromHex(val, 0, 2);
+            vSPN3090 = result;
             string text = Function.MatchState(result, KeyConst.SPN.StateName.SPN3090);
             return text;
         }
@@ -129,6 +144,7 @@ namespace XPCar.Protocol.Decode.Msg.MsgSorts
         {
             int val = BaseConvert.HexStr2Int32(str);
             string result = BaseConvert.GetBitsFromHex(val, 2, 2);
+            vSPN3091 = result;
             string text = Function.MatchState(result, KeyConst.SPN.StateName.SPN3091);
             return text;
         }
@@ -136,6 +152,7 @@ namespace XPCar.Protocol.Decode.Msg.MsgSorts
         {
             int val = BaseConvert.HexStr2Int32(str);
             string result = BaseConvert.GetBitsFromHex(val, 4, 2);
+            vSPN3092 = result;
             string text = Function.MatchState(result, KeyConst.SPN.StateName.SPN3092);
             return text;
         }
@@ -143,6 +160,7 @@ namespace XPCar.Protocol.Decode.Msg.MsgSorts
         {
             int val = BaseConvert.HexStr2Int32(str);
             string result = BaseConvert.GetBitsFromHex(val, 6, 2);
+            vSPN3093 = result;
             string text = Function.MatchState(result, KeyConst.SPN.StateName.SPN3093);
             return text;
         }
@@ -150,6 +168,7 @@ namespace XPCar.Protocol.Decode.Msg.MsgSorts
         {
             int val = BaseConvert.HexStr2Int32(str);
             string result = BaseConvert.GetBitsFromHex(val, 0, 2);
+            vSPN3094 = result;
             string text = Function.MatchState(result, KeyConst.SPN.StateName.SPN3094);
             return text;
         }
@@ -157,6 +176,7 @@ namespace XPCar.Protocol.Decode.Msg.MsgSorts
         {
             int val = BaseConvert.HexStr2Int32(str);
             string result = BaseConvert.GetBitsFromHex(val, 2, 2);
+            vSPN3095 = result;
             string text = Function.MatchState(result, KeyConst.SPN.StateName.SPN3095);
             return text;
         }
@@ -164,6 +184,7 @@ namespace XPCar.Protocol.Decode.Msg.MsgSorts
         {
             int val = BaseConvert.HexStr2Int32(str);
             string result = BaseConvert.GetBitsFromHex(val, 4, 2);
+            vSPN3096 = result;
             string text = Function.MatchState(result, KeyConst.SPN.StateName.SPN3096);
             return text;
         }

@@ -10,9 +10,9 @@ namespace XPCar.Consist.Summary
 {
     public class Consist_DP3002 : ConsistCommon
     {
-        private string BMV = "BMV";
-        private string BMT = "BMT";
-        private string BSP = "BSP";
+        //private string BMV = "BMV";
+        //private string BMT = "BMT";
+        //private string BSP = "BSP";
         public override TestItemsReport GenerateReport(DbService db, string consistId)
         {
             TestItemsReport report = new TestItemsReport();
@@ -20,28 +20,33 @@ namespace XPCar.Consist.Summary
             try
             {
                 Access_BMV bmv = new Access_BMV();
-                bmv.GetBMV(db);
+                bmv.GetMutiEnd(db);
                 Access_BMT bmt = new Access_BMT();
-                bmt.GetBMT(db);
+                bmt.GetMutiEnd(db);
                 Access_BSP bsp = new Access_BSP();
-                bsp.GetBSP(db);
+                bsp.GetMutiEnd(db);
 
                 if (bmv.IsNullData())
                 {
-                    return report = result.ExportNullReport(BMV);
+                    result.AppendResultIncorrectText("充电机未使用传输功能接收BMV报文");
                 }
-                Measure measure = new Measure(bmv.Data, BMV);
+                else
+                    result.AppendResultCorrectText("充电机使用传输功能接收BMV报文");
 
                 if (bmt.IsNullData())
                 {
-                    return report = result.ExportNullReport(BMT);
+                    result.AppendResultIncorrectText("充电机未使用传输功能接收BMT报文");
                 }
+                else
+                    result.AppendResultCorrectText("充电机使用传输功能接收BMT报文");
 
                 if (bsp.IsNullData())
                 {
-                    return report = result.ExportNullReport(BSP);
+                    result.AppendResultCorrectText("充电机未使用传输功能接收BSP报文");
                 }
-                result.AppendText("充电机使用传输功能接收BMV报文、BMT报文、BSP报文", true);
+                else
+                    result.AppendResultCorrectText("充电机使用传输功能接收BSP报文");
+
                 report = result.ExportTestReport();
 
                 return report;

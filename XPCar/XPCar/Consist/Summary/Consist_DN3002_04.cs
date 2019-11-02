@@ -12,12 +12,21 @@ namespace XPCar.Consist.Summary
     {
         private string CRO = "CRO";
         private string CEM = "CEM";
+        private string BCS = "BCS";
         public override TestItemsReport GenerateReport(DbService db, string consistId)
         {
             TestItemsReport report = new TestItemsReport();
             TestResult result = new TestResult(true);
             try
             {
+                Access_BCS bcs = new Access_BCS();
+                bcs.GetBCS(db);
+                if (bcs.IsNullData())
+                {
+                    return report = result.ExportNullReport(BCS);
+                }
+                result.AppendResultCorrectText("充电机使用传输协议功能接收完成BCS报文");
+
                 Access_CEM cemTotal = new Access_CEM();
                 cemTotal.GetCEM(db);
                 if (cemTotal.IsNullData())

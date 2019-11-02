@@ -77,8 +77,9 @@ namespace XPCar.Consist
                 case KeyConst.Consist.ItemId.DP3005:
                     return new Consist_DP3005();
                 case KeyConst.Consist.ItemId.DP3006:
+                    return new Consist_DP3006();
                 case KeyConst.Consist.ItemId.DP3007:
-                    return new Consist_DP3006to07();
+                    return new Consist_DP3007();
                 case KeyConst.Consist.ItemId.DN3001:
                     return new Consist_DN3001();
                 case KeyConst.Consist.ItemId.DN3002:

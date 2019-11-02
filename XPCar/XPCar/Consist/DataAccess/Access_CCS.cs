@@ -12,6 +12,10 @@ namespace XPCar.Consist.DataAccess
         {
             this._Data = db.QueryConsistMsg(CCS);
         }
+        public void GetCCS_SPN3929_00(DbService db)
+        {
+            this._Data = db.QueryConsistMsg(CCS, "SPN3929", "00");
+        }
         public void GetBeforeMsg(DbService db, List<ConsistMsg> msg)
         {
             this._Data = db.QueryConsistBeforeMsg(CCS, msg[0].ObjectNo);

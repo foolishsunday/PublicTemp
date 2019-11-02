@@ -35,9 +35,15 @@ namespace XPCar.Prj.Model
             TestText += now.TestText;
             IsSummaryOk &= now.IsSummaryOk;
         }
-        public void AppendText(string text)
+        public void AppendResultCorrectText(string text)
         {
-            TestText += text + KeyConst.Punctuation.Space;
+            TestText += text + KeyConst.Punctuation.Space + KeyConst.Consist.Result.Qualified + Environment.NewLine;
+            IsSummaryOk &= true;
+        }
+        public void AppendResultIncorrectText(string text)
+        {
+            TestText += text + KeyConst.Punctuation.Space + KeyConst.Consist.Result.Unqualified + Environment.NewLine;
+            IsSummaryOk &= false;
         }
         public void AppendNoMsg(string msgName)
         {
