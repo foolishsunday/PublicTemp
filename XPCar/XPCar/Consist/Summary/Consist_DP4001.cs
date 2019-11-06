@@ -28,6 +28,8 @@ namespace XPCar.Consist.Summary
                 measure.MeasureCommon(consistId);
                 result.AppendTestResult(measure.ExportTestResult());
 
+                result.AppendResultCorrectText("充电机停止发送CSD，关闭辅助电源，充电结束");
+
                 report = result.ExportTestReport();
             }
             catch (Exception ex)

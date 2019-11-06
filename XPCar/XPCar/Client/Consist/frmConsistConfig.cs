@@ -30,6 +30,8 @@ namespace XPCar.Client.Consist
             tbStd10s.Text = Prj.Prj.MainController.OffsetConfig.Std10s.ToString();
             tbStd10ms.Text = Prj.Prj.MainController.OffsetConfig.Std10ms.ToString();
             tbStd50ms.Text = Prj.Prj.MainController.OffsetConfig.Std50ms.ToString();
+            tbStd10min.Text = Prj.Prj.MainController.OffsetConfig.Std10min.ToString();
+
             lblConfirmOk.Visible = false;
 
         }
@@ -52,6 +54,8 @@ namespace XPCar.Client.Consist
                 Prj.Prj.MainController.OffsetConfig.Std10s = Convert.ToInt32(tbStd10s.Text);
                 Prj.Prj.MainController.OffsetConfig.Std10ms = Convert.ToInt32(tbStd10ms.Text);
                 Prj.Prj.MainController.OffsetConfig.Std50ms = Convert.ToInt32(tbStd50ms.Text);
+                Prj.Prj.MainController.OffsetConfig.Std10min = Convert.ToInt32(tbStd10min.Text);
+
                 Prj.Prj.MainController.Config.SaveConsistStd();
                 Action async = delegate ()
                 {

@@ -16,5 +16,9 @@ namespace XPCar.Consist.DataAccess
         {
             this._Data = db.QueryConsistBeforeMsg(BCS, msg[0].ObjectNo);
         }
+        public void GetMutiReady(DbService db)
+        {
+            this._Data = db.QueryConsistMutiReady(BCS);
+        }
     }
 }

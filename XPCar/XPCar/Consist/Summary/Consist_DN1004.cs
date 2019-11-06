@@ -11,12 +11,21 @@ namespace XPCar.Consist.Summary
     {
         private string CRM = "CRM";
         private string CEM = "CEM";
+        private string BRM = "BRM";
         public override TestItemsReport GenerateReport(DbService db, string consistId)
         {
             TestItemsReport report = new TestItemsReport();
             TestResult result = new TestResult(true);
             try
             {
+                //Access_BRM brm = new Access_BRM();
+                //brm.GetMutiReady(db);
+                //if (brm.IsNullData())
+                //{
+                //    return report = result.ExportNullReport(BRM);
+                //}
+
+
                 Access_CEM cemTotal = new Access_CEM();
                 cemTotal.GetCEM(db);
                 if (cemTotal.IsNullData())
@@ -33,7 +42,18 @@ namespace XPCar.Consist.Summary
                     return report = result.ExportNullReport(CRM);
                 }
 
+                Access_BRM brm = new Access_BRM();
+                brm.GetAfterMsg(db, crmSection.Data);
+                if (brm.IsNullData())
+                {
+                    return report = result.ExportNullReport(BRM);
+                }
+
                 MeasureTimeout mt = new MeasureTimeout();
+                mt.MeasureFirstToLastWithinSec(crmSection.Data, brm.Data, 5000);
+                mt.AppendText("自首次发送CRM报文起", "内，充电机使用传输协议功能接收BRM报文");
+                result.AppendTestResult(mt.ExportTestResult());
+
                 mt.MeasureFirstToLastWithinSec(crmSection.Data, crmSection.Data, 5000);
                 mt.AppendText("自首次发送CRM报文起", "内，充电机按周期发送该报文");
                 result.AppendTestResult(mt.ExportTestResult());

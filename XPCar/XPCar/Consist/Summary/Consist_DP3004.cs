@@ -24,6 +24,15 @@ namespace XPCar.Consist.Summary
                     return report = result.ExportNullReport("SPN3092=10或SPN3093=10或SPN3094=10或SPN3095=10的BSM");
                 }
 
+                Access_CCS ccs01 = new Access_CCS();
+                ccs01.Get_SPN3929_01_AfterMsg(db, bsm.Data);
+                if (ccs01.IsNullData())
+                {
+                    result.AppendResultIncorrectText("充电机未保持上一状态,对不可信状态数据包不做处理,按BMS需求输出");
+                }
+                else
+                    result.AppendResultCorrectText("充电机保持上一状态,对不可信状态数据包不做处理,按BMS需求输出");
+
                 Access_CCS ccs = new Access_CCS();
                 ccs.GetCCS(db);
                 if (ccs.IsNullData())

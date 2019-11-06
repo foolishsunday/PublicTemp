@@ -490,5 +490,13 @@ namespace XPCar.Common
             public const string ST9980A = "充电桩测试系统ST-9980A";
             public const string ST9980AP_AC = "充电桩交流测试系统";
         }
+
+        //传输协议功能的状态：同意并准备接收，完成接收，拒绝接收
+        public enum TransitState
+        {
+            Ready,
+            Finish,
+            Reject
+        }
     }
 }

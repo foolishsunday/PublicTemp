@@ -271,4 +271,3 @@ D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.Client.BMS.frmBMS.resour
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.Client.Consist.frmConsistConfig.resources
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\bin\Debug\Aspose.Words.dll
 D:\Github\Work\ST-9980APlus\XPCar\XPCar\bin\Debug\Aspose.Words.xml
-D:\Github\Work\ST-9980APlus\XPCar\XPCar\obj\Debug\XPCar.csprojAssemblyReference.cache

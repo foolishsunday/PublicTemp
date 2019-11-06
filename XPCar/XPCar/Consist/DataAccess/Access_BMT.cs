@@ -14,5 +14,13 @@ namespace XPCar.Consist.DataAccess
         {
             this._Data = db.QueryConsistMutiEnd(BMT);
         }
+        public void GetMutiReady(DbService db)
+        {
+            this._Data = db.QueryConsistMutiReady(BMT);
+        }
+        public void GetMutiReadyOrReject(DbService db)
+        {
+            this._Data = db.QueryConsistMutiReadyOrReject(BMT);
+        }
     }
 }

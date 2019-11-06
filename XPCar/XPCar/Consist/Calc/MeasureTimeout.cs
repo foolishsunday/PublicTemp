@@ -23,7 +23,19 @@ namespace XPCar.Consist.Calc
         {
             return _IsQualified;
         }
-     
+        public long MeasureFirstToFirstWithinSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
+        {
+            string earlier = earlierList[0].CreateTimestamp;
+            string later = laterList[0].CreateTimestamp;
+            long span = Function.CalcIntervalByTwoPara(later, earlier);
+            if (span >= 0 && span <= ms)
+                _IsQualified = true;
+            else
+                _IsQualified = false;
+            _ResultText = span.ToString() + "ms";
+            return span;
+        }
+
         public long MeasureFirstToFirstWithoutSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
         {
             string earlier = earlierList[0].CreateTimestamp;
@@ -34,6 +46,21 @@ namespace XPCar.Consist.Calc
             else
                 _IsQualified = false;
             _ResultText = span.ToString() + "ms";
+            return span;
+        }
+        public long MeasureFirstToFirstSpecial(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
+        {
+            string earlier = earlierList[0].CreateTimestamp;
+            string later = laterList[0].CreateTimestamp;
+            long low = ms - Prj.Prj.MainController.OffsetConfig.Std10min * 1000;
+            long high = ms + Prj.Prj.MainController.OffsetConfig.Std10min * 1000;
+
+            long span = Function.CalcIntervalByTwoPara(later, earlier);
+            if (span >= low && span <= high)
+                _IsQualified = true;
+            else
+                _IsQualified = false;
+            _ResultText = Convert.ToInt32((span / 1000)).ToString() + "s";
             return span;
         }
         public long MeasureAStopWhileRcvB(List<ConsistMsg> aList, List<ConsistMsg> bList)

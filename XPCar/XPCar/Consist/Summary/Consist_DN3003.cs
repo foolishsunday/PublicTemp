@@ -20,14 +20,14 @@ namespace XPCar.Consist.Summary
             try
             {
                 Access_BCS bcs = new Access_BCS();
-                bcs.GetBCS(db);
+                bcs.GetMutiReady(db);
                 if (bcs.IsNullData())
                 {                   
-                    result.AppendResultIncorrectText("充电机没有使用传输协议功能接收BCS报文");
+                    result.AppendResultCorrectText("充电机没有使用传输协议功能");
                 }
                 else
                 {
-                    result.AppendResultCorrectText("充电机使用传输协议功能完成接收完成BCS报文");
+                    result.AppendResultIncorrectText("充电机使用了传输协议功能");
                 }
 
                 Access_CEM cemTotal = new Access_CEM();

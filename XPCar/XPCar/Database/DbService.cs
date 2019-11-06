@@ -351,6 +351,38 @@ namespace XPCar.Database
             }
             return consist;
         }
+        public List<ConsistMsg> QueryConsistMutiReady(string msgName)
+        {
+            List<ConsistMsg> consist = new List<ConsistMsg>();
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg where MsgName=@MsgName and IsPackageReady = 1;", new { MsgName = msgName });
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+            return consist;
+        }
+        public List<ConsistMsg> QueryConsistMutiReadyOrReject(string msgName)
+        {
+            List<ConsistMsg> consist = new List<ConsistMsg>();
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg where MsgName=@MsgName and (IsPackageReady = 1 or IsPackageReady = 2);", new { MsgName = msgName });
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+            return consist;
+        }
         public List<ConsistMsg> QueryConsistBeforeMsg(string msgName, int objNo)
         {
             List<ConsistMsg> consist = new List<ConsistMsg>();
@@ -359,6 +391,25 @@ namespace XPCar.Database
                 using (var db = DbContext.GetInstance())
                 {
                     consist = db.SqlQuery<ConsistMsg>("select * from ConsistMsg where MsgName=@MsgName and ObjectNo<@ObjectNo", new { MsgName = msgName, ObjectNo = objNo });
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+            return consist;
+        }
+        public List<ConsistMsg> QueryConsistAfterMsgBySpn(string msgName, string spn, string val, int objNo)
+        {
+            List<ConsistMsg> consist = new List<ConsistMsg>();
+            try
+            {
+                string condition = string.Format("{0} = '{1}'", spn, val);
+                using (var db = DbContext.GetInstance())
+                {
+
+                    var lists = db.Queryable<ConsistMsg>().Where(it => it.MsgName == msgName).Where(condition).Where(con => con.ObjectNo > objNo).ToList();
+                    return lists;
                 }
             }
             catch (Exception ex)
@@ -463,6 +514,44 @@ namespace XPCar.Database
                 using (var db = DbContext.GetInstance())
                 {
                     var lists = db.Queryable<ConsistMsg>().Where(it => it.MsgName == msgName).Where(text).ToList();
+                    return lists;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+
+            return null;
+        }
+        public List<ConsistMsg> QueryConsistAfter(string msgName, string spn, string val, int objNo)
+        {
+
+            try
+            {
+                string condition = string.Format("{0} = '{1}'", spn, val);
+
+                using (var db = DbContext.GetInstance())
+                {
+                    var lists = db.Queryable<ConsistMsg>().Where(it => it.MsgName == msgName).Where(condition).Where(con => con.ObjectNo > objNo).ToList();
+                    return lists;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+
+            return null;
+        }
+        public List<ConsistMsg> QueryConsistAfter(string msgName, int objNo)
+        {
+
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    var lists = db.Queryable<ConsistMsg>().Where(it => it.MsgName == msgName).Where(con => con.ObjectNo > objNo).ToList();
                     return lists;
                 }
             }

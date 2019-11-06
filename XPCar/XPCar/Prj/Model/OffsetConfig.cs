@@ -14,11 +14,13 @@ namespace XPCar.Prj.Model
             Std10s = 3000;
             Std10ms = 3;
             Std50ms = 10;
+            Std10min = 60;
         }
         public int Std1s { get; set; }
         public int Std5s { get; set; }
         public int Std10s { get; set; }
         public int Std10ms { get; set; }
         public int Std50ms { get; set; }
+        public int Std10min { get; set; }
     }
 }

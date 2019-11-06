@@ -1,5 +1,7 @@
-﻿using XPCar.Common;
+﻿using System.Collections.Generic;
+using XPCar.Common;
 using XPCar.Database;
+using XPCar.Prj.Model;
 
 namespace XPCar.Consist.DataAccess
 {
@@ -14,6 +16,14 @@ namespace XPCar.Consist.DataAccess
         public void GetMutiEnd(DbService db)
         {
             this._Data = db.QueryConsistMutiEnd(BRM);
+        }
+        public void GetMutiReady(DbService db)
+        {
+            this._Data = db.QueryConsistMutiReady(BRM);
+        }
+        public void GetAfterMsg(DbService db, List<ConsistMsg> msg)
+        {
+            this._Data = db.QueryConsistAfter(BRM, msg[0].ObjectNo);
         }
     }
 }

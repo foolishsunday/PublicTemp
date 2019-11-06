@@ -20,32 +20,32 @@ namespace XPCar.Consist.Summary
             try
             {
                 Access_BMV bmv = new Access_BMV();
-                bmv.GetMutiEnd(db);
+                bmv.GetMutiReadyOrReject(db);
                 Access_BMT bmt = new Access_BMT();
-                bmt.GetMutiEnd(db);
+                bmt.GetMutiReadyOrReject(db);
                 Access_BSP bsp = new Access_BSP();
-                bsp.GetMutiEnd(db);
+                bsp.GetMutiReadyOrReject(db);
 
                 if (bmv.IsNullData())
                 {
                     result.AppendResultIncorrectText("充电机未使用传输功能接收BMV报文");
                 }
                 else
-                    result.AppendResultCorrectText("充电机使用传输功能接收BMV报文");
+                    result.AppendResultCorrectText("充电机使用传输功能接收BMV报文或放弃连接");
 
                 if (bmt.IsNullData())
                 {
                     result.AppendResultIncorrectText("充电机未使用传输功能接收BMT报文");
                 }
                 else
-                    result.AppendResultCorrectText("充电机使用传输功能接收BMT报文");
+                    result.AppendResultCorrectText("充电机使用传输功能接收BMT报文或放弃连接");
 
                 if (bsp.IsNullData())
                 {
-                    result.AppendResultCorrectText("充电机未使用传输功能接收BSP报文");
+                    result.AppendResultIncorrectText("充电机未使用传输功能接收BSP报文");
                 }
                 else
-                    result.AppendResultCorrectText("充电机使用传输功能接收BSP报文");
+                    result.AppendResultCorrectText("充电机使用传输功能接收BSP报文或放弃连接");
 
                 report = result.ExportTestReport();
 

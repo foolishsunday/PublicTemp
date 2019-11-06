@@ -43,6 +43,7 @@ namespace XPCar.Prj.Model
         public int MutiLength { get; set; }
         public int PackageId { get; set; }
         public int IsFirstPackage { get; set; }
+        public int IsPackageReady { get; set; }
         public int IsPackageEnd { get; set; }
         public int TextId { get; set; }
         //public int Package
