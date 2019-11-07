@@ -7,7 +7,7 @@
     <ProjectGuid>{FD37FC6E-DD67-4620-AEE8-D66C100C6513}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>XPCar</RootNamespace>
-    <AssemblyName>ST-9980AP</AssemblyName>
+    <AssemblyName>ST-9980A+</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -36,7 +36,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;ST_9980AP_DC</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;ST_9980A_DC</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -583,7 +583,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\Ball_green.bmp" />
-    <None Include="Images\Main_Logo.ico" />
     <None Include="Images\EQ_Logo.ico" />
     <None Include="Images\Background_Science.jpg" />
     <None Include="Images\Button.jpg" />

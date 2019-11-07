@@ -37,10 +37,6 @@ namespace XPCar
         private frmMsgCan _frmMsgCan;
         private frmConsist _frmConsist;
         private frmBaseInfo _frmBaseInfo;
-        //private frmHandshake _frmHandshake;
-        //private frmChargePara _frmChargePara;
-        //private frmCharging _frmCharging;
-        //private frmChargeStop _frmChargeStop;
         private frmInterop _frmInterop;
         private frmUpgradeWin _frmUpgradeWin;
         private frmCanBtn _frmCanBtn;
@@ -72,6 +68,8 @@ namespace XPCar
             InitButton();
 #if ST_9980A_DC
             Init9980A();
+#elif ST_990_DC
+            Init990();
 #else
             InitWave();
             InitStatistics();
@@ -107,16 +105,14 @@ namespace XPCar
 #if ST_9980AP_DC
             this.Text = KeyConst.WinLabel.ST9980AP + KeyConst.Punctuation.Space + _MainController.Config.Title;
 #elif ST_9980A_DC
-            this.tbpInterop.Parent = null;
             this.Text = KeyConst.WinLabel.ST9980A + KeyConst.Punctuation.Space + _MainController.Config.Title;
 #elif ST_9980AP_AC
             this.Text = KeyConst.WinLabel.ST9980AP_AC + KeyConst.Punctuation.Space + _MainController.Config.Title;
+#elif ST_990_DC
+            this.Text = KeyConst.WinLabel.ST990 + KeyConst.Punctuation.Space + _MainController.Config.Title;
 #endif
 
             Prj.Prj.RepositoryManager.Reset();
-            //this.tbpWaveForm.Parent = null;
-            //this.tbpStatistics.Parent = null;
-
         }
         private void InitFrmSize()
         {
@@ -227,10 +223,18 @@ namespace XPCar
         }
         private void Init9980A()
         {
+            this.tbpInterop.Parent = null;
             this.tbpWaveForm.Parent = null;
             this.tbpStatistics.Parent = null;
         }
-#endregion 初始化
+        private void Init990()
+        {
+            this.tbpInterop.Parent = null;
+            this.tbpWaveForm.Parent = null;
+            this.tbpStatistics.Parent = null;
+            this.tbpConsist.Parent = null;
+        }
+        #endregion 初始化
 
 
         #region 条形Paint
@@ -578,8 +582,6 @@ namespace XPCar
             LoadButton(tbcMain.SelectedIndex);
         }
 
-#endregion 窗体事件
-
         private void TsmiSingle_Click(object sender, EventArgs e)
         {
 #if ST_9980AP_AC
@@ -653,5 +655,6 @@ namespace XPCar
             _frmConsistStd = new frmConsistConfig();
             _frmConsistStd.Show();
         }
+        #endregion 窗体事件
     }
 }

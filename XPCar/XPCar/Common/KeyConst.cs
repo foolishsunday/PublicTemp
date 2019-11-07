@@ -486,9 +486,10 @@ namespace XPCar.Common
         }
         public class WinLabel
         {
-            public const string ST9980AP = "充电桩测试系统ST-9980AP";
+            public const string ST9980AP = "充电桩测试系统ST-9980A+";
             public const string ST9980A = "充电桩测试系统ST-9980A";
             public const string ST9980AP_AC = "充电桩交流测试系统";
+            public const string ST990 = "充电桩交流测试系统ST-990";
         }
 
         //传输协议功能的状态：同意并准备接收，完成接收，拒绝接收

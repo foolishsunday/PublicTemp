@@ -27,6 +27,8 @@ namespace XPCar.Client
             lblLoginTitle.Text = KeyConst.WinLabel.ST9980A;
 #elif ST_9980AP_AC
             lblLoginTitle.Text = KeyConst.WinLabel.ST9980AP_AC;
+#elif ST_990_DC
+            lblLoginTitle.Text = KeyConst.WinLabel.ST990;
 #endif
 
             tbMachineCode.Text = Encrypt.DeviceHelper.GetMachineCode();

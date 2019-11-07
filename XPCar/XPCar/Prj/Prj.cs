@@ -22,13 +22,16 @@ namespace XPCar.Prj
 {
     public static class Prj
     {
-#if ST_9980AP_DC
-        public static string ConfigFilePath = "Aplus.exe.config";
-#elif ST_9980A_DC
-        public static string ConfigFilePath = "ST-9980A.exe.config";
-#elif ST_9980AP_AC
-        public static string ConfigFilePath = "ST-9980AP.exe.config";
-#endif
+        //#if ST_9980AP_DC
+        //        public static string ConfigFilePath = "Aplus.exe.config";
+        //#elif ST_9980A_DC
+        //        public static string ConfigFilePath = "ST-9980A.exe.config";
+        //#elif ST_9980AP_AC
+        //        public static string ConfigFilePath = "ST-9980AP.exe.config";
+        //#elif ST_990_DC
+        //        public static string ConfigFilePath = "ST-990.exe.config";
+        //#endif
+        public static string ConfigFilePath = ".exe.config";
         public static SerialPortIO PortIO;
         public static MainController MainController;
         public static RcvdProtocolManager RcvdProtocolManager;
