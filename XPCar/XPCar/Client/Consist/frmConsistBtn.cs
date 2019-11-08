@@ -31,7 +31,12 @@ namespace XPCar.Client
 
         private void BtnConsistReset_Click(object sender, EventArgs e)
         {
-            _frmConsist.PressReset();
+            DialogResult dr = MessageBox.Show("重置将会清空所有测试记录，确认重置?", "重置", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+            if (dr == DialogResult.OK)
+            {
+                _frmConsist.PressReset();
+            }
+
         }
 
         private void BtnExport_Click(object sender, EventArgs e)

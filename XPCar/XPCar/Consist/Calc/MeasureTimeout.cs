@@ -96,6 +96,22 @@ namespace XPCar.Consist.Calc
             _ResultText = span.ToString() + "ms";
             return span;
         }
+        public long MeasureFirstToLastLess(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
+        {
+            string earlier = earlierList[0].CreateTimestamp;
+            string later = laterList[laterList.Count - 1].CreateTimestamp;
+            long span = Function.CalcIntervalByTwoPara(later, earlier);
+            if (span <= TimeoutOffset(ms))
+            {
+                if (span < 0)
+                    span = 0;
+                _IsQualified = true;
+            }
+            else
+                _IsQualified = false;
+            _ResultText = span.ToString() + "ms";
+            return span;
+        }
         public long MeasureLastToLastWithinSec(List<ConsistMsg> earlierList, List<ConsistMsg> laterList, long ms)
         {
             string earlier = earlierList[earlierList.Count - 1].CreateTimestamp;

@@ -998,7 +998,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 72);
+            this.label3.Location = new System.Drawing.Point(33, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 12);
             this.label3.TabIndex = 82;
@@ -1007,7 +1007,7 @@
             // lblB_BPhaseV
             // 
             this.lblB_BPhaseV.AutoSize = true;
-            this.lblB_BPhaseV.Location = new System.Drawing.Point(147, 72);
+            this.lblB_BPhaseV.Location = new System.Drawing.Point(147, 78);
             this.lblB_BPhaseV.Name = "lblB_BPhaseV";
             this.lblB_BPhaseV.Size = new System.Drawing.Size(35, 12);
             this.lblB_BPhaseV.TabIndex = 80;
@@ -1175,7 +1175,7 @@
             // lblB_BPhaseI
             // 
             this.lblB_BPhaseI.AutoSize = true;
-            this.lblB_BPhaseI.Location = new System.Drawing.Point(144, 72);
+            this.lblB_BPhaseI.Location = new System.Drawing.Point(144, 78);
             this.lblB_BPhaseI.Name = "lblB_BPhaseI";
             this.lblB_BPhaseI.Size = new System.Drawing.Size(35, 12);
             this.lblB_BPhaseI.TabIndex = 85;
@@ -1193,7 +1193,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(30, 72);
+            this.label34.Location = new System.Drawing.Point(30, 78);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(71, 12);
             this.label34.TabIndex = 83;
@@ -1558,7 +1558,7 @@
             // lblA_BPhaseI
             // 
             this.lblA_BPhaseI.AutoSize = true;
-            this.lblA_BPhaseI.Location = new System.Drawing.Point(154, 72);
+            this.lblA_BPhaseI.Location = new System.Drawing.Point(154, 78);
             this.lblA_BPhaseI.Name = "lblA_BPhaseI";
             this.lblA_BPhaseI.Size = new System.Drawing.Size(35, 12);
             this.lblA_BPhaseI.TabIndex = 83;
@@ -1576,7 +1576,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(30, 72);
+            this.label29.Location = new System.Drawing.Point(30, 78);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(71, 12);
             this.label29.TabIndex = 82;

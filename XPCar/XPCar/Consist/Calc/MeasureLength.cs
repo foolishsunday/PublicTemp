@@ -39,12 +39,12 @@ namespace XPCar.Consist.Calc
                 case KeyConst.CanMsgId.CSD:
                 case KeyConst.CanMsgId.CML:
                 case KeyConst.CanMsgId.CRM:
-                case KeyConst.CanMsgId.CCS://27930旧国标CCS为7，补充说明里修改为8
                     std = 8;
                     break;
                 case KeyConst.CanMsgId.BSM:
                 case KeyConst.CanMsgId.BSD:
                 case KeyConst.CanMsgId.CTS:
+                case KeyConst.CanMsgId.CCS://27930旧国标CCS为7，补充说明里修改为8
                     std = 7;
                     break;
                 case KeyConst.CanMsgId.BST:
@@ -96,6 +96,13 @@ namespace XPCar.Consist.Calc
             {
                 _LengthResult = false;
                 text = KeyConst.Consist.Result.Unqualified;
+
+                if (_MsgName == KeyConst.CanMsgId.CCS)//CCS长度为7和8都合格
+                {
+                    if (dataLen == 8)
+                        _LengthResult = true;
+                    text = KeyConst.Consist.Result.Qualified;
+                }
             }
             return _MsgName + "长度" + KeyConst.Punctuation.Colon + dataLen + KeyConst.Punctuation.Space + text + KeyConst.Punctuation.Space + Environment.NewLine;
         }

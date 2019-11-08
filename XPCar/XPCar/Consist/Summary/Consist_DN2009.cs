@@ -17,8 +17,17 @@ namespace XPCar.Consist.Summary
             TestResult result = new TestResult(true);
             try
             {
+                Access_CRO cro = new Access_CRO();
+                cro.GetCRO_SPN2830_00(db);
+                if (cro.IsNullData())
+                {
+                    return report = result.ExportNullReport("SPN2830=00的CRO");
+                }
+
+
                 Access_BRO bro = new Access_BRO();
-                bro.GetBRO_SPN2829_00(db);
+                bro.GetAfter_SPN2829_00(db, cro.Data);
+                //bro.GetBRO_SPN2829_00(db);
                 if (bro.IsNullData())
                 {
                     return report = result.ExportNullReport(BRO);
@@ -31,7 +40,8 @@ namespace XPCar.Consist.Summary
                     return report = result.ExportNullReport("充电机");
                 }
                 MeasureTimeout mt = new MeasureTimeout();
-                mt.MeasureFirstToLastWithinSec(bro.Data, any.Data, 1000);
+                //mt.MeasureFirstToLastWithinSec(bro.Data, any.Data, 1000);
+                mt.MeasureFirstToLastLess(bro.Data, any.Data, 1000);
                 mt.AppendText("自首次接收到SPN2829=00的BRO报文起", "内，充电机停止了通讯");
                 result.AppendTestResult(mt.ExportTestResult());
 

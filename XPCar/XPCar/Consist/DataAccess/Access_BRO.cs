@@ -23,5 +23,9 @@ namespace XPCar.Consist.DataAccess
         {
             this._Data = db.QueryConsistMsg(BRO, "SPN2829", "00");
         }
+        public void GetAfter_SPN2829_00(DbService db, List<ConsistMsg> msg)
+        {
+            this._Data = db.QueryConsistAfter(BRO, "SPN2829", "00", msg[0].ObjectNo);
+        }
     }
 }
