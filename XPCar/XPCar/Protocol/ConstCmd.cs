@@ -122,7 +122,7 @@ namespace XPCar.Protocol
   
 
             public const int DC_GET = 16;
-            public const int AC_GET = 136;
+            public const int AC_GET = 144;
             public const int HANDSHAKE_GET = 22;//34
             public const int CHARGE_PARA_GET = 34;
             public const int CHARGING_GET = 24;//34

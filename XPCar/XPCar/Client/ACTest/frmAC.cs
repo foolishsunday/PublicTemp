@@ -139,35 +139,66 @@ namespace XPCar.Client.ACTest
         {
             Action async = delegate ()
             {
-                this.lblSingle_ChargeV.Text = this.lblA_ChargeV.Text = data.A_ChargeV;
-                this.lblSingle_ChargeI.Text = this.lblA_ChargeI.Text = data.A_ChargeI;
-                this.lblSingle_ChargeQuantity.Text = this.lblA_ChargeQuantity.Text = data.A_ChargeQuantity;
-                this.lblSingle_ChargePower.Text = this.lblA_ChargePower.Text = data.A_ChargePower;
-                this.lblSingle_DutyCycle.Text = this.lblA_DutyCycle.Text = data.A_DutyCycle;
-                this.lblSingle_CPVolt.Text = this.lblA_CPVolt.Text = data.A_CPVolt;
-                this.lblSingle_Frequency.Text = this.lblA_Frequency.Text = data.A_Frequency;
-                this.lblSingle_CCRes.Text = this.lblA_CCRes.Text = data.A_CCRes;
-                this.lblSingle_GunTemp.Text = this.lblA_GunTemp.Text = data.A_GunTemp;
-                this.lblSingle_RatedI.Text = this.lblA_RatedI.Text = data.A_RatedI;
-                this.lblSingle_PermitI.Text = this.lblA_PermitI.Text = data.A_PermitI;
-                this.lblSingle_ConnState.Text = this.lblA_ConnState.Text = data.A_ConnState;
-                this.lblSingle_SysState.Text = this.lblA_SysState.Text = data.A_SysState;
+                this.lblA_APhaseV.Text = data.A_APhaseV;
+                this.lblA_BPhaseV.Text = data.A_BPhaseV;
+                this.lblA_CPhaseV.Text = data.A_CPhaseV;
+                this.lblA_APhaseI.Text = data.A_APhaseI;
+                this.lblA_BPhaseI.Text = data.A_BPhaseI;
+                this.lblA_CPhaseI.Text = data.A_CPhaseI;
 
+                this.lblA_ChargeP.Text = data.A_ChargeP;
+                this.lblA_ChargeQuantity.Text = data.A_ChargeQuantity;
+                this.lblA_DutyCycle.Text = data.A_DutyCycle;
+                this.lblA_CPVolt.Text = data.A_CPVolt;
+                this.lblA_Frequency.Text = data.A_Frequency;
+                this.lblA_CCRes.Text = data.A_CCRes;
+                
+                this.lblA_PermitI.Text = data.A_PermitI;
+                this.lblA_RatedI.Text = data.A_RatedI;
+                this.lblA_GunTemp.Text = data.A_GunTemp;
+                this.lblA_ConnState.Text = data.A_ConnState;
+                this.lblA_SysState.Text = data.A_SysState;
+                /*****************************************/
 
-                this.lblB_ChargeV.Text = data.B_ChargeV;
-                this.lblB_ChargeI.Text = data.B_ChargeI;
+                this.lblB_APhaseV.Text = data.B_APhaseV;
+                this.lblB_BPhaseV.Text = data.B_BPhaseV;
+                this.lblB_CPhaseV.Text = data.B_CPhaseV;
+                this.lblB_APhaseI.Text = data.B_APhaseI;
+                this.lblB_BPhaseI.Text = data.B_BPhaseI;
+                this.lblB_CPhaseI.Text = data.B_CPhaseI;
+                
+                this.lblB_ChargeP.Text = data.B_ChargeP;
                 this.lblB_ChargeQuantity.Text = data.B_ChargeQuantity;
-                this.lblB_ChargePower.Text = data.B_ChargePower;
                 this.lblB_DutyCycle.Text = data.B_DutyCycle;
                 this.lblB_CPVolt.Text = data.B_CPVolt;
                 this.lblB_Frequency.Text = data.B_Frequency;
                 this.lblB_CCRes.Text = data.B_CCRes;
-                this.lblB_GunTemp.Text = data.B_GunTemp;
-                this.lblB_RatedI.Text = data.B_RatedI;
+                
                 this.lblB_PermitI.Text = data.B_PermitI;
+                this.lblB_RatedI.Text = data.B_RatedI;
+                this.lblB_GunTemp.Text = data.B_GunTemp;
                 this.lblB_ConnState.Text = data.B_ConnState;
                 this.lblB_SysState.Text = data.B_SysState;
-
+                /*****************************************/
+                this.lblS_APhaseV.Text = data.A_APhaseV;
+                this.lblS_BPhaseV.Text = data.A_BPhaseV;
+                this.lblS_CPhaseV.Text = data.A_CPhaseV;
+                this.lblS_APhaseI.Text = data.A_APhaseI;
+                this.lblS_BPhaseI.Text = data.A_BPhaseI;
+                this.lblS_CPhaseI.Text = data.A_CPhaseI;
+                
+                this.lblS_ChargeP.Text = data.A_ChargeP;
+                this.lblS_ChargeQuantity.Text = data.A_ChargeQuantity;
+                this.lblS_DutyCycle.Text = data.A_DutyCycle;
+                this.lblS_CPVolt.Text = data.A_CPVolt;
+                this.lblS_Frequency.Text = data.A_Frequency;
+                this.lblS_CCRes.Text = data.A_CCRes;
+                
+                this.lblS_PermitI.Text = data.A_PermitI;
+                this.lblS_RatedI.Text = data.A_RatedI;
+                this.lblS_GunTemp.Text = data.A_GunTemp;
+                this.lblS_ConnState.Text = data.A_ConnState;
+                this.lblS_SysState.Text = data.A_SysState;
             };
             this.BeginInvoke(async);
         }

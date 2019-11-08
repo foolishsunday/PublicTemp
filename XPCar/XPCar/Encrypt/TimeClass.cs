@@ -67,8 +67,8 @@ namespace XPCar.Encrypt
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test"); //ST-9980AP
 #elif ST_9980A_DC
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test_9980A");//ST-9980A
-#elif ST_9980AP_AC
-            RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\AC_Test_9980AP");//ST-9980B+
+#elif ST_9980BP
+            RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test_9980BP");//ST-9980B+
 #elif ST_990_DC
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test_990");//ST-990
 #endif
@@ -104,8 +104,8 @@ namespace XPCar.Encrypt
             RegistryKey key1 = Registry.CurrentUser.OpenSubKey("Software\\SaiterTest\\Test");
 #elif ST_9980A_DC
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test_9980A"); 
-#elif ST_9980AP_AC
-            RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\AC_Test_9980AP");
+#elif ST_9980BP
+            RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test_9980BP");
 #elif ST_990_DC
             RegistryKey key1 = Registry.CurrentUser.CreateSubKey("Software\\SaiterTest\\Test_990");
 #endif

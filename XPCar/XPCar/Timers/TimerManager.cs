@@ -34,7 +34,7 @@ namespace XPCar.Timers
             _CmdJob++;
             if (_CmdJob > 2)
                 _CmdJob = 0;
-#if ST_9980AP_AC
+#if ST_9980BP
             Prj.Prj.SendProtocolManager.HandleSendGetCmd(_FormIndex);
 #else
             if (_CmdJob == 0)//交替发送

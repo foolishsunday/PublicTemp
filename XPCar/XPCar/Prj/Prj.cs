@@ -26,8 +26,8 @@ namespace XPCar.Prj
         //        public static string ConfigFilePath = "Aplus.exe.config";
         //#elif ST_9980A_DC
         //        public static string ConfigFilePath = "ST-9980A.exe.config";
-        //#elif ST_9980AP_AC
-        //        public static string ConfigFilePath = "ST-9980AP.exe.config";
+        //#elif ST_9980BP
+        //        public static string ConfigFilePath = "ST-9980B+.exe.config";
         //#elif ST_990_DC
         //        public static string ConfigFilePath = "ST-990.exe.config";
         //#endif

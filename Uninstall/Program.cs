@@ -27,6 +27,8 @@ namespace Uninstall
                 System.Diagnostics.Process.Start(root + "\\msiexec.exe", "/x {4C2B4A1E-044D-466D-B4DD-B7C9C22D00B6} /qr");
 #elif ST_990_DC
                 System.Diagnostics.Process.Start(root + "\\msiexec.exe", "/x {0381654C-8517-4241-BE86-61AE09276D89} /qr");
+#elif ST_9980BP
+                System.Diagnostics.Process.Start(root + "\\msiexec.exe", "/x {49FD6722-EF0F-473D-AE03-0C7E211E8F3B} /qr");
 #endif
             }
         }

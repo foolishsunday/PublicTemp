@@ -47,7 +47,7 @@ namespace XPCar
         private frmStatistics _frmStatistics;
         private frmConsistConfig _frmConsistStd;
         private frmBMS _frmBMS;
-#if ST_9980AP_AC
+#if ST_9980BP
         private frmAC _frmAC;
 #endif
         private void FrmMain_Load(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace XPCar
             InitStatistics();
 #endif
 
-#if ST_9980AP_AC
+#if ST_9980BP
             InitAC();
             InitFrmSize();
 #else
@@ -106,8 +106,8 @@ namespace XPCar
             this.Text = KeyConst.WinLabel.ST9980AP + KeyConst.Punctuation.Space + _MainController.Config.Title;
 #elif ST_9980A_DC
             this.Text = KeyConst.WinLabel.ST9980A + KeyConst.Punctuation.Space + _MainController.Config.Title;
-#elif ST_9980AP_AC
-            this.Text = KeyConst.WinLabel.ST9980AP_AC + KeyConst.Punctuation.Space + _MainController.Config.Title;
+#elif ST_9980BP
+            this.Text = KeyConst.WinLabel.ST9980BP + KeyConst.Punctuation.Space + _MainController.Config.Title;
 #elif ST_990_DC
             this.Text = KeyConst.WinLabel.ST990 + KeyConst.Punctuation.Space + _MainController.Config.Title;
 #endif
@@ -116,8 +116,8 @@ namespace XPCar
         }
         private void InitFrmSize()
         {
-            this.Width = 1090;
-            this.Height = 600;
+            //this.Width = 1090;
+            //this.Height = 600;
         }
         private void InitSkin()
         {
@@ -168,14 +168,14 @@ namespace XPCar
         }
         private void InitSendTimer()
         {
-#if ST_9980AP_AC
+#if ST_9980BP
             Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.ACGet);
 #else
             Prj.Prj.TimerManager.SetFormIndex(KeyConst.TimeToSend.Page.BaseInfo);
 #endif
             Prj.Prj.TimerManager.Start();
         }
-#if ST_9980AP_AC
+#if ST_9980BP
         private void InitAC()
         {
             _frmAC = new frmAC();
@@ -585,14 +585,14 @@ namespace XPCar
 
         private void TsmiSingle_Click(object sender, EventArgs e)
         {
-#if ST_9980AP_AC
+#if ST_9980BP
             _frmAC.SingleOrDualForm(1);
 #endif
         }
 
         private void TsmiDual_Click(object sender, EventArgs e)
         {
-#if ST_9980AP_AC
+#if ST_9980BP
             _frmAC.SingleOrDualForm(2);
 #endif
         }

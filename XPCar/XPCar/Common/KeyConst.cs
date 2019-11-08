@@ -488,7 +488,7 @@ namespace XPCar.Common
         {
             public const string ST9980AP = "充电桩测试系统ST-9980A+";
             public const string ST9980A = "充电桩测试系统ST-9980A";
-            public const string ST9980AP_AC = "充电桩交流测试系统";
+            public const string ST9980BP = "充电桩交流测试系统ST-9980B+";
             public const string ST990 = "充电桩交流测试系统ST-990";
         }
 

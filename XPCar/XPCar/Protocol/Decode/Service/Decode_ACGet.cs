@@ -11,21 +11,19 @@ namespace XPCar.Protocol.Decode.Service
             try
             {
                 List<byte> buf = package.Buffer;
-                List<byte> content = BaseConvert.CutLists2Lists(buf, 9, ConstCmd.FrameLen.DC_SET);
+                List<byte> content = BaseConvert.CutLists2Lists(buf, 9, ConstCmd.FrameLen.AC_GET);
                 string[] arr = Function.SplitMsgData(content);
                 int i = 0;
                  
                 GetAC data = new GetAC();
-                data.A_ChargeV = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
-                string[] strsI = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
-                data.A_ChargeI = Function.DecodeCommonShrinkmKeepn(strsI, 1000, 3);
+                data.A_APhaseV = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.A_BPhaseV = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.A_CPhaseV = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.A_APhaseI = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.A_BPhaseI = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.A_CPhaseI = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
 
-                string[] strsPwr = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
-                data.A_ChargePower = Function.DecodeCommonShrinkmKeepn(strsPwr, 10000, 4);
-
-                string[] strsQnty = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
-                data.A_ChargeI = Function.DecodeCommonShrinkmKeepn(strsQnty, 100, 2);
-
+                data.A_ChargeP = DecodeCommonShrink100Keep2(arr[i++], arr[i++]);
                 data.A_ChargeQuantity = DecodeCommonShrink100Keep2(arr[i++], arr[i++]);
                 data.A_DutyCycle = DecodeCommonShrink100Keep2(arr[i++], arr[i++]);
                 data.A_CPVolt = DecodeCommonShrink100Keep2(arr[i++], arr[i++]);
@@ -43,25 +41,23 @@ namespace XPCar.Protocol.Decode.Service
                 data.A_SysState = DecodeSysState(arr[i++]);
 
                 /****************************************************************/
-                data.B_ChargeV = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
-                string[] strsI_B = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
-                data.B_ChargeI = Function.DecodeCommonShrinkmKeepn(strsI_B, 1000, 3);
+                data.B_APhaseV = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.B_BPhaseV = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.B_CPhaseV = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.B_APhaseI = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.B_BPhaseI = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
+                data.B_CPhaseI = DecodeCommonShrink10Keep1(arr[i++], arr[i++]);
 
-                string[] strsPwr_B = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
-                data.B_ChargePower = Function.DecodeCommonShrinkmKeepn(strsPwr_B, 10000, 4);
-
-                string[] strsQnty_B = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
-                data.B_ChargeI = Function.DecodeCommonShrinkmKeepn(strsQnty_B, 100, 2);
-
+                data.B_ChargeP = DecodeCommonShrink100Keep2(arr[i++], arr[i++]);
                 data.B_ChargeQuantity = DecodeCommonShrink100Keep2(arr[i++], arr[i++]);
                 data.B_DutyCycle = DecodeCommonShrink100Keep2(arr[i++], arr[i++]);
                 data.B_CPVolt = DecodeCommonShrink100Keep2(arr[i++], arr[i++]);
 
-                string[] strsFrq_B = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
-                data.B_Frequency = Function.DecodeCommonShrinkmKeepn(strsFrq_B, 100, 2);
+                strsFrq = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
+                data.B_Frequency = Function.DecodeCommonShrinkmKeepn(strsFrq, 100, 2);
 
-                string[] strsRes_B = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
-                data.B_CCRes = Function.DecodeCommonShrinkmKeepn(strsRes_B, 100, 2);
+                strsRes = new string[] { arr[i++], arr[i++], arr[i++], arr[i++] };
+                data.B_CCRes = Function.DecodeCommonShrinkmKeepn(strsRes, 100, 2);
 
                 data.B_PermitI = DecodeCommonShrink100Keep2(arr[i++], arr[i++]);
                 data.B_RatedI = DecodeValue(arr[i++], arr[i++]);
