@@ -111,7 +111,7 @@ namespace XPCar
 #elif ST_990_DC
             this.Text = KeyConst.WinLabel.ST990 + KeyConst.Punctuation.Space + _MainController.Config.Title;
 #endif
-
+            Log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + "()" + ": Version = " + this.Text);
             Prj.Prj.RepositoryManager.Reset();
         }
         private void InitFrmSize()
@@ -233,6 +233,7 @@ namespace XPCar
             this.tbpWaveForm.Parent = null;
             this.tbpStatistics.Parent = null;
             this.tbpConsist.Parent = null;
+            this.tsmiStdSetting.Visible = false;
         }
         #endregion 初始化
 

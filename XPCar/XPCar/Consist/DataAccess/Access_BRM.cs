@@ -25,5 +25,9 @@ namespace XPCar.Consist.DataAccess
         {
             this._Data = db.QueryConsistAfter(BRM, msg[0].ObjectNo);
         }
+        public void GetMutiEndAfter(DbService db, List<ConsistMsg> msg)
+        {
+            this._Data = db.QueryMutiEndAfter(BRM, msg[0].ObjectNo);
+        }
     }
 }

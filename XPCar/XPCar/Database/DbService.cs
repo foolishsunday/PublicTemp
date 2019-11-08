@@ -562,6 +562,24 @@ namespace XPCar.Database
 
             return null;
         }
+        public List<ConsistMsg> QueryMutiEndAfter(string msgName, int objNo)
+        {
+
+            try
+            {
+                using (var db = DbContext.GetInstance())
+                {
+                    var lists = db.Queryable<ConsistMsg>().Where(it => it.MsgName == msgName).Where(isEnd => isEnd.IsPackageEnd == 1).Where(con => con.ObjectNo > objNo).ToList();
+                    return lists;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(System.Reflection.MethodBase.GetCurrentMethod().Name + "()", ex);
+            }
+
+            return null;
+        }
 
         //public ConsistMsg QueryConsistMsg_FirstMsg(string symbol)
         //{

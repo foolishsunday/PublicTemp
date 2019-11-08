@@ -11,7 +11,7 @@ namespace XPCar.Consist.Summary
     {
         private string CRM = "CRM";
         private string CEM = "CEM";
-        private string BRM = "BRM";
+        //private string BRM = "BRM";
         public override TestItemsReport GenerateReport(DbService db, string consistId)
         {
             TestItemsReport report = new TestItemsReport();
@@ -24,7 +24,7 @@ namespace XPCar.Consist.Summary
                 //{
                 //    return report = result.ExportNullReport(BRM);
                 //}
-
+                MeasureTimeout mt = new MeasureTimeout();
 
                 Access_CEM cemTotal = new Access_CEM();
                 cemTotal.GetCEM(db);
@@ -43,19 +43,20 @@ namespace XPCar.Consist.Summary
                 }
 
                 Access_BRM brm = new Access_BRM();
-                brm.GetAfterMsg(db, crmSection.Data);
+                brm.GetMutiEndAfter(db, crmSection.Data);
                 if (brm.IsNullData())
                 {
-                    return report = result.ExportNullReport(BRM);
+                    result.AppendResultIncorrectText("自首次发送SPN2560=AA的CRM报文起5s内，充电机未使用传输协议功能接收BRM报文");
+                }
+                else
+                {
+                    mt.MeasureFirstToLastWithinSec(crmSection.Data, brm.Data, 5000);
+                    mt.AppendText("自首次发送SPN2560=AA的CRM报文起", "内，充电机使用传输协议功能接收BRM报文");
+                    result.AppendTestResult(mt.ExportTestResult());
                 }
 
-                MeasureTimeout mt = new MeasureTimeout();
-                mt.MeasureFirstToLastWithinSec(crmSection.Data, brm.Data, 5000);
-                mt.AppendText("自首次发送CRM报文起", "内，充电机使用传输协议功能接收BRM报文");
-                result.AppendTestResult(mt.ExportTestResult());
-
                 mt.MeasureFirstToLastWithinSec(crmSection.Data, crmSection.Data, 5000);
-                mt.AppendText("自首次发送CRM报文起", "内，充电机按周期发送该报文");
+                mt.AppendText("自首次发送SPN2560=AA的CRM报文起", "内，充电机按周期发送该报文");
                 result.AppendTestResult(mt.ExportTestResult());
 
                 Measure measure = new Measure(crmSection.Data, CRM);
@@ -64,7 +65,7 @@ namespace XPCar.Consist.Summary
 
 
                 mt.MeasureFirstToFirstWithoutSec(crmSection.Data, cemTotal.Data, 5000);
-                mt.AppendText("自首次发送CRM报文起超过", "，充电机发送CEM报文");
+                mt.AppendText("自首次发送SPN2560=AA的CRM报文起超过", "，充电机发送CEM报文");
                 result.AppendTestResult(mt.ExportTestResult());
 
                 measure = new Measure(cemTotal.Data, CEM);

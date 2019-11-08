@@ -20,7 +20,7 @@ namespace XPCar.Consist.Summary
             try
             {
                 Access_BCS bcs = new Access_BCS();
-                bcs.GetBCS(db);
+                bcs.GetMutiEnd(db);
                 if (bcs.IsNullData())
                 {
                     return report = result.ExportNullReport(BCS);
